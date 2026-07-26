@@ -1,0 +1,329 @@
+{
+  "ledger": [
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 1245,
+          "quote": "their former function as trading ports linking East and West",
+          "source_id": "src_ef6dc6aa8e69",
+          "start": 1185
+        }
+      ],
+      "id": "clm_584aa7655fda",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 1,
+      "recheck": "https://gtwhi.com.my/about-us/george-town-unesco-world-heritage-site/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "George Town's living heritage grew from a trading port linking Europe, the Middle East, the Indian subcontinent, the Malay Archipelago, and China.",
+      "topic_key": "penang.port.routes",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 3632,
+          "quote": "There are 37 places of worship, mainly mosques, Chinese temples, Indian temples and churches, within the core and buffer zones of George Town.",
+          "source_id": "src_ef6dc6aa8e69",
+          "start": 3490
+        }
+      ],
+      "id": "clm_42c4df958125",
+      "kind": "number",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 2,
+      "recheck": "https://gtwhi.com.my/about-us/george-town-unesco-world-heritage-site/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The World Heritage core and buffer zones contain 5,013 buildings and 37 functioning places of worship.",
+      "topic_key": "penang.heritage.scale",
+      "volatile": false
+    },
+    {
+      "as_of": "2019-02-01",
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 423,
+          "quote": "only 21% of those interviewed in our study have a definitive succession plan",
+          "source_id": "src_1b0eaea56f5c",
+          "start": 347
+        }
+      ],
+      "id": "clm_2964c0556fdf",
+      "kind": "number",
+      "marks": [
+        "m-reported"
+      ],
+      "notes": "A sampled study, not a current census.",
+      "ordinal": 3,
+      "recheck": "https://penanginstitute.org/publications/issues/making-food-hawking-in-penang-sustainable/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Only 21% of hawkers interviewed in a 2019 Penang Institute study had a definitive succession plan.",
+      "topic_key": "penang.hawkers.succession",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 419,
+          "quote": "Set in the backdrop of Penang, Jess reunites with her extended family and navigates a world of spirits and gangsters.",
+          "source_id": "src_9d254fc16865",
+          "start": 302
+        }
+      ],
+      "id": "clm_becfdc67bee5",
+      "kind": "entity",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 4,
+      "recheck": "https://www.penguinrandomhouse.com/books/318953/black-water-sister-by-zen-cho/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Zen Cho's Black Water Sister is a contemporary fantasy set against Penang, moving through family, spirits, and gangsters.",
+      "topic_key": "penang.reading.black-water-sister",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-02-12",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 6330,
+          "quote": "There are more than 2.9 million DuitNow QR merchants across Malaysia",
+          "source_id": "src_624786a38df5",
+          "start": 6262
+        }
+      ],
+      "id": "clm_569ed7bf5a14",
+      "kind": "number",
+      "marks": [
+        "m-checked",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 5,
+      "recheck": "https://www.paynet.my/about-us/media-centre/press-release/payments-network-malaysia-and-india-npci-international-sign-agreement-to-enable-cross-border-qr-payments.html",
+      "status": "active",
+      "superseded_by": null,
+      "text": "PayNet reported more than 2.9 million DuitNow QR merchants across Malaysia in February 2026.",
+      "topic_key": "malaysia.payments.duitnow-scale",
+      "volatile": true
+    },
+    {
+      "as_of": null,
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 274,
+          "quote": "Nasi kandar is associated with Tamil Muslim immigrant vendors in colonial Penang. The name refers to rice carried in baskets balanced with a shoulder pole.",
+          "source_id": "src_bd51c960a428",
+          "start": 119
+        }
+      ],
+      "id": "clm_b0b352319946",
+      "kind": "fact",
+      "marks": [
+        "m-reported"
+      ],
+      "notes": "",
+      "ordinal": 6,
+      "recheck": "https://mypenang.gov.my/all/my-stories/115/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Nasi kandar carries a Tamil-Muslim migration and labour history; its name refers to rice baskets balanced on a shoulder pole.",
+      "topic_key": "penang.food.nasi-kandar",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 488,
+          "quote": "The listing described a common room, social balcony, security lockers, a rooftop or bar, daily activities, group food outings, and quiet after midnight.",
+          "source_id": "src_352a94f4d869",
+          "start": 336
+        }
+      ],
+      "id": "clm_1f370b4beb55",
+      "kind": "fact",
+      "marks": [
+        "m-reported",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 7,
+      "recheck": "https://www.hostelworld.com/hostels/p/317702/ez-social-hostel-georgetown-penang/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "As captured on 26 July 2026, Hostelworld's EZ Social listing combined a large review base with common space, group food outings, lockers, and quiet after midnight.",
+      "topic_key": "penang.hostel.ez-social",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-02-12",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 6052,
+          "quote": "The initiative will be rolled out in two phases",
+          "source_id": "src_624786a38df5",
+          "start": 6005
+        }
+      ],
+      "id": "clm_d660efe157ff",
+      "kind": "fact",
+      "marks": [
+        "m-checked",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 8,
+      "recheck": "https://www.paynet.my/about-us/media-centre/press-release/payments-network-malaysia-and-india-npci-international-sign-agreement-to-enable-cross-border-qr-payments.html",
+      "status": "active",
+      "superseded_by": null,
+      "text": "PayNet and NPCI signed a phased agreement in February 2026; the announcement did not say that Indian UPI was already live at Malaysian DuitNow QR points.",
+      "topic_key": "malaysia.payments.upi-status",
+      "volatile": true
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 5911,
+          "quote": "The primary maximum generally occurs in October - November while the secondary maximum generally occurs in April - May.",
+          "source_id": "src_bcedd6b2f73f",
+          "start": 5792
+        },
+        {
+          "end": 6038,
+          "quote": "the primary minimum occurs in January - February and the secondary minimum occurs in June - July",
+          "source_id": "src_bcedd6b2f73f",
+          "start": 5942
+        }
+      ],
+      "id": "clm_f2bfe6431938",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "Climatology, not a trip forecast.",
+      "ordinal": 9,
+      "recheck": "https://www.met.gov.my/en/pendidikan/iklim-malaysia/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "In northwestern Peninsular Malaysia, climatological rainfall peaks generally occur around October-November and April-May, with lower periods around January-February and June-July.",
+      "topic_key": "penang.climate.rainfall",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 2448,
+          "quote": "the front row audience seats are left vacant for\nthese invisible (but thoroughly present, according to believers) guests",
+          "source_id": "src_18c92f0456d4",
+          "start": 2328
+        }
+      ],
+      "id": "clm_bd41e2146d58",
+      "kind": "fact",
+      "marks": [
+        "m-reported"
+      ],
+      "notes": "Use for practice, not dates; the page's printed festival dates are from 2015.",
+      "ordinal": 10,
+      "recheck": "https://mypenang.gov.my/culture-heritage/my-stories/46/?lg=en",
+      "status": "active",
+      "superseded_by": null,
+      "text": "During Penang's Hungry Ghost observances, temporary stages may be built and front-row seats left vacant for an invisible audience.",
+      "topic_key": "penang.belief.hungry-ghost",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 4636,
+          "quote": "Thieves on motorbikes can target tourists. They can cut straps or pull off bags carried on the shoulder closest to the road.",
+          "source_id": "src_0a25c447650e",
+          "start": 4512
+        }
+      ],
+      "id": "clm_011a7b9b8d8c",
+      "kind": "fact",
+      "marks": [
+        "m-checked",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 11,
+      "recheck": "https://www.gov.uk/foreign-travel-advice/malaysia/safety-and-security",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Malaysia travel advice warns that motorbike thieves can target bags carried on the shoulder closest to the road.",
+      "topic_key": "malaysia.safety.bag",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 10722,
+          "quote": "Drivers, particularly motorbike riders, do not always stop at traffic lights or pedestrian crossings.",
+          "source_id": "src_0a25c447650e",
+          "start": 10621
+        }
+      ],
+      "id": "clm_39a4b5cf8ee4",
+      "kind": "fact",
+      "marks": [
+        "m-checked",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 12,
+      "recheck": "https://www.gov.uk/foreign-travel-advice/malaysia/safety-and-security",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Drivers, especially motorbike riders, may not stop at traffic lights or pedestrian crossings.",
+      "topic_key": "malaysia.safety.road",
+      "volatile": true
+    }
+  ],
+  "schema_version": 1,
+  "visibility": "public"
+}

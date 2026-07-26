@@ -1,0 +1,22 @@
+{
+  "beach-street.jpg": {
+    "origin": "sourced",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Beach_Street%2C_George_Town_01.jpg/1280px-Beach_Street%2C_George_Town_01.jpg",
+    "credit": "C.W. Tan / Wikimedia Commons",
+    "license": "CC0",
+    "sha256": "d43a048e9f815f1f5d82b4472598fa847579fc138114521df5e094bae9bd0e72"
+  },
+  "kapitan-keling.jpg": {
+    "origin": "sourced",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Kapitan_Keling_Mosque%2C_Penang_%2812272171485%29.jpg/1280px-Kapitan_Keling_Mosque%2C_Penang_%2812272171485%29.jpg",
+    "credit": "shankar s. / Wikimedia Commons",
+    "license": "CC BY 2.0",
+    "sha256": "9b3250735561530f704c5b56bec61ec174744992b50946ed0116e17f73c9e4b5"
+  },
+  "hawker-illustration.png": {
+    "origin": "generated",
+    "generator": "OpenAI gpt-image-2-medium",
+    "prompt": "Editorial documentary-style illustration of a multigenerational Penang hawker hall after rain, in forest green, brick red and acid-lime with screenprint texture; no text, logos or watermarks.",
+    "sha256": "9b1ee69421ec3f2c39f6c2c5d56d72dd42d121690853261e45f4abcf1d5f6c90"
+  }
+}
