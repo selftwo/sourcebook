@@ -1,0 +1,188 @@
+{
+  "ledger": [
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 569,
+          "quote": "Just post it, give it a start Tyler will take care of the rest.",
+          "source_id": "src_35d531b5252e",
+          "start": 506
+        }
+      ],
+      "id": "clm_0191e70f5f01",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 1,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "The archive’s early anti-perfectionism rule was to start and post rather than wait for polish.",
+      "topic_key": "archive.comics.just-post",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 709,
+          "quote": "Adaptive perfectionism was weakly positively related to creativity, whereas maladaptive perfectionism was unrelated to creativity across five of the six measures.",
+          "source_id": "src_3ffdfcec6378",
+          "start": 547
+        }
+      ],
+      "id": "clm_369049e3ad15",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 2,
+      "recheck": "https://s3.amazonaws.com/jck_articles/WigerReiterPalmonKaufmanSilviainpress.pdf",
+      "status": "active",
+      "superseded_by": null,
+      "text": "A 2012 study found only weak and mixed relationships between adaptive perfectionism and creativity, not a simple opposition.",
+      "topic_key": "perfectionism.creativity.nuance",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 692,
+          "quote": "Worrying about its worth and value to others before it exists can keep us immobilized forever.",
+          "source_id": "src_f2e82d25460f",
+          "start": 598
+        }
+      ],
+      "id": "clm_497b7c938194",
+      "kind": "fact",
+      "marks": [
+        "m-reported"
+      ],
+      "notes": "",
+      "ordinal": 3,
+      "recheck": "https://www.bu.edu/articles/2017/lynda-barry-stone-distinguished-lecture/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Barry warns that judging a work’s value to others before it exists can immobilize the maker.",
+      "topic_key": "barry.value.immobilized",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 450,
+          "quote": "Good writer and a bad illustrator",
+          "source_id": "src_35d531b5252e",
+          "start": 417
+        }
+      ],
+      "id": "clm_4f48944466cf",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 4,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "A 2016 archive note deliberately paired good writing with bad illustration.",
+      "topic_key": "archive.comics.bad-illustrator",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 509,
+          "quote": "Their drawings seem to come from the movement of their hands, rather than an intention.",
+          "source_id": "src_4108335a34a8",
+          "start": 422
+        }
+      ],
+      "id": "clm_8927fe64c78c",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 5,
+      "recheck": "https://www.npr.org/2019/11/27/782921983/cartoonist-lynda-barry-drawing-has-to-come-out-of-your-body",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Lynda Barry describes young children’s drawings as arising from hand movement rather than a settled intention.",
+      "topic_key": "barry.hand.movement",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 646,
+          "quote": "She says the drawing can redirect a story: a slipped eyebrow changes surprise into anger, and the cartoonist can follow that accident.",
+          "source_id": "src_4108335a34a8",
+          "start": 512
+        }
+      ],
+      "id": "clm_8a2c43bb6fce",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 6,
+      "recheck": "https://www.npr.org/2019/11/27/782921983/cartoonist-lynda-barry-drawing-has-to-come-out-of-your-body",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Barry says a drawing accident can redirect the story being made.",
+      "topic_key": "barry.accident.story",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 644,
+          "quote": "I try to make images that don’t illustrate text and text that doesn’t describe the image.",
+          "source_id": "src_7d840b5a3dfd",
+          "start": 555
+        }
+      ],
+      "id": "clm_b5e1a95d07df",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 7,
+      "recheck": "https://channel.louisiana.dk/video/david-shrigley-everything-bad-about-art",
+      "status": "active",
+      "superseded_by": null,
+      "text": "David Shrigley describes a productive slippage in which image and text do not merely illustrate or describe one another.",
+      "topic_key": "shrigley.slippage",
+      "volatile": false
+    }
+  ],
+  "schema_version": 1,
+  "visibility": "public"
+}

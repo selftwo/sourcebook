@@ -1,0 +1,92 @@
+{
+  "claims": 8,
+  "gate_report": {},
+  "generated_at": "2026-07-26T11:58:56Z",
+  "question": "Can deliberate imperfection act as a creative technology rather than a lack of craft?",
+  "redacted_quotes": 0,
+  "sb_version": "0.1.0",
+  "schema_version": 1,
+  "sources": [
+    {
+      "canonical_locator": "input/01-stream-comics.md",
+      "id": "src_35d531b5252e",
+      "kind": "file",
+      "locator": "input/01-stream-comics.md",
+      "normalized_sha256": "3371387e56e6dc5861d8d60bf6c6e3e1a3aaf72cd7235b03cad9f031cab1f733",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "3371387e56e6dc5861d8d60bf6c6e3e1a3aaf72cd7235b03cad9f031cab1f733",
+      "retrieved_at": "2026-07-26T11:23:13Z",
+      "tier": "A",
+      "tier_reason": "Curated direct personal archive excerpt, explicitly public-safe and authoritative for the author’s own stated experience.",
+      "title": "01 stream comics"
+    },
+    {
+      "canonical_locator": "input/05-perfectionism-research.md",
+      "id": "src_3ffdfcec6378",
+      "kind": "file",
+      "locator": "input/05-perfectionism-research.md",
+      "normalized_sha256": "a428c0f28849424676aada1d731a6ff7a600b4d0058b31569d2f3e6a4212e699",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "a428c0f28849424676aada1d731a6ff7a600b4d0058b31569d2f3e6a4212e699",
+      "retrieved_at": "2026-07-26T11:23:15Z",
+      "tier": "A",
+      "tier_reason": "Primary, peer-reviewed, or museum/first-party source authoritative for the narrow claim class recorded in the snapshot.",
+      "title": "05 perfectionism research"
+    },
+    {
+      "canonical_locator": "input/02-lynda-barry-npr.md",
+      "id": "src_4108335a34a8",
+      "kind": "file",
+      "locator": "input/02-lynda-barry-npr.md",
+      "normalized_sha256": "d342e0234d49fea4349439c484d161ade90210cbb7429a59a1845c9337aff6f1",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "d342e0234d49fea4349439c484d161ade90210cbb7429a59a1845c9337aff6f1",
+      "retrieved_at": "2026-07-26T11:23:14Z",
+      "tier": "A",
+      "tier_reason": "Primary, peer-reviewed, or museum/first-party source authoritative for the narrow claim class recorded in the snapshot.",
+      "title": "02 lynda barry npr"
+    },
+    {
+      "canonical_locator": "input/04-david-shrigley.md",
+      "id": "src_7d840b5a3dfd",
+      "kind": "file",
+      "locator": "input/04-david-shrigley.md",
+      "normalized_sha256": "aa50ddaeb4fb6465b2048a177f07c5663fa55c2943c0d0f4ed1ce38280609da2",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "aa50ddaeb4fb6465b2048a177f07c5663fa55c2943c0d0f4ed1ce38280609da2",
+      "retrieved_at": "2026-07-26T11:23:14Z",
+      "tier": "A",
+      "tier_reason": "Primary, peer-reviewed, or museum/first-party source authoritative for the narrow claim class recorded in the snapshot.",
+      "title": "04 david shrigley"
+    },
+    {
+      "canonical_locator": "input/03-lynda-barry-classroom.md",
+      "id": "src_f2e82d25460f",
+      "kind": "file",
+      "locator": "input/03-lynda-barry-classroom.md",
+      "normalized_sha256": "b6d704d4cad7176580e9eb56bc26d01092b0a9f25f1ffced066d720c1fd33088",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "b6d704d4cad7176580e9eb56bc26d01092b0a9f25f1ffced066d720c1fd33088",
+      "retrieved_at": "2026-07-26T11:23:14Z",
+      "tier": "B",
+      "tier_reason": "Accountable first-party framework or university profile used with an explicit limitation note.",
+      "title": "03 lynda barry classroom"
+    }
+  ],
+  "tool_versions": {
+    "chunker": 1,
+    "indexer": 1,
+    "normalizer": 1
+  },
+  "visibility": "public"
+}

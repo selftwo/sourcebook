@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#ff5a1f" name="theme-color"/><title>Badly drawn, therefore shipped : a research zine</title><style>
+:root{--paper:#fffdf8;--ink:#191713;--orange:#b9340b;--rule:#222;--muted:#676158}*{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:"Courier New",monospace}body{margin:0;overflow-x:hidden}a{color:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:white;padding:.8rem;z-index:9}.bar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.65rem 1rem;background:#ff936f;border-bottom:2px solid var(--ink);font:bold .72rem/1 monospace;text-transform:uppercase}.bar a{text-decoration:none}.bar button{border:2px solid var(--ink);background:var(--paper);font:inherit;min-height:44px;padding:0 .8rem;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}.bar button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}.intro{padding:3.5rem 1rem 1.5rem;max-width:78rem;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:end}.intro h1{font:900 clamp(3.7rem,10vw,9.5rem)/.78 Arial Black,Arial,sans-serif;letter-spacing:-.03em;text-transform:uppercase;margin:0}.intro p{font:700 clamp(1rem,2vw,1.4rem)/1.25 monospace;margin:0}.legend{font-size:.7rem;color:var(--muted);margin-top:1rem}.strip{max-width:78rem;margin:auto;padding:1rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.page{position:relative;min-height:68svh;border:2px solid var(--ink);padding:clamp(1.2rem,4vw,3.5rem);background:var(--paper);overflow:hidden;box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;justify-content:space-between}.page:nth-child(3n){transform:rotate(.25deg)}.page:nth-child(4n){transform:rotate(-.2deg)}.page .num{font:bold .7rem monospace}.page h2{font:900 clamp(2.6rem,6vw,5.5rem)/.85 Arial Black,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.03em;margin:.7rem 0 1.2rem}.page p{max-width:38rem;font:500 clamp(1rem,1.6vw,1.2rem)/1.48 Georgia,serif}.page .small{font:.78rem/1.45 monospace;color:var(--muted)}.page img{width:100%;height:min(58svh,620px);object-fit:cover;filter:contrast(1.05);border:2px solid var(--ink)}.burst{position:absolute;right:-1rem;top:1rem;background:var(--orange);color:#fff;border:2px solid var(--ink);padding:.55rem 1.5rem;transform:rotate(5deg);font:bold .76rem monospace}.scribble{font:900 clamp(3rem,10vw,8rem)/1 Arial Black,sans-serif;color:var(--orange);letter-spacing:-.03em;transform:rotate(-3deg)}sup a{color:var(--orange);font:bold .65rem monospace;text-decoration:none}.equation{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.5rem;align-items:center;margin:2rem 0;font:bold clamp(.9rem,2vw,1.2rem) monospace}.equation b{border:2px solid;padding:1rem;text-align:center}.prompt{border-top:2px solid;margin-top:2rem;padding-top:1rem;font:bold .83rem/1.45 monospace}.sources{padding:4rem max(1rem,calc((100vw - 76rem)/2));border-top:2px solid;background:#fffaf0}.sources h2{font:900 3rem/.9 Arial Black,sans-serif;text-transform:uppercase}.sources details{border-top:2px solid}.sources summary{cursor:pointer;padding:1rem 0;font:bold .75rem monospace}.notes{padding:2rem 1rem;max-width:78rem;margin:auto;font:.72rem/1.5 monospace;color:var(--muted)}.ruined .page:nth-child(2){transform:rotate(-1.8deg) translateY(6px)}.ruined .page:nth-child(5){box-shadow:12px -4px 0 var(--orange)}.ruined .page:nth-child(7):after{content:"NO UNDO";position:absolute;right:1rem;bottom:1rem;color:var(--orange);font:900 2rem Arial Black;transform:rotate(-9deg)}@media(max-width:720px){.intro,.strip{grid-template-columns:1fr}.intro h1{font-size:3.5rem}.page{min-height:72svh}.bar span{display:none}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}@media print{@page{size:A5 portrait;margin:0}.bar,.intro,.sources,.notes{display:none!important}.strip{display:block;padding:0}.page{width:148mm;height:210mm;min-height:0;page-break-after:always;box-shadow:none;border:0;transform:none!important;padding:15mm}.page img{height:120mm}.page:last-child{page-break-after:auto}}
+.mark{font:700 .62rem monospace;text-transform:none;letter-spacing:0;border-bottom:2px solid currentColor;white-space:nowrap}.m-checked,.m-reported,.m-thin{color:inherit}.claim-hook{white-space:nowrap}
+.generated-label{position:relative;z-index:2;display:inline-block;background:#111;color:#fff;padding:.35rem .5rem;font:700 .62rem monospace;text-transform:uppercase;letter-spacing:0}
+</style></head><body><a class="skip" href="#zine">Skip to zine</a><header class="bar"><a href="../">Three studies / II</a><span>Screen zine + printable PDF</span><a download="" href="badly-drawn-therefore-shipped.pdf">PDF</a><button id="ruin" type="button">Ruin the layout</button></header><main><section class="intro"><h1>Badly drawn,<br/>therefore shipped</h1><div><p>An eight-page argument for deliberate imperfection as a creative technology.</p><div class="legend mark-legend"><span class="mark m-checked">checked</span> · <span class="mark m-reported">reported</span> · <span class="mark m-thin">synthesis</span> · print = A5 zine</div></div></section>
+<section class="strip" id="zine"><article class="page"><div><span class="num">01 / COVER</span><h2>The hand begins before the committee meets.</h2><p>A constraint can be an escape hatch. Not “make bad work forever.” Make the first move cheaper than the judgment attached to it.</p></div><div class="scribble">BEGIN →</div></article>
+<article class="page"><span class="burst">ARCHIVE, 2016</span><div><span class="num">02 / THE FORM</span><h2>Good writer. Bad illustrator.</h2><p data-claim="clm_4f48944466cf">The phrase appears as a deliberate pairing in an early comics note. <span class="claim-hook"><sup><a href="#c-clm_4f48944466cf">[4]</a></sup> <span class="mark m-checked">checked</span></span></p><p data-claim="clm_0191e70f5f01"> The same archive's instruction was blunt: start and post. <span class="claim-hook"><sup><a href="#c-clm_0191e70f5f01">[1]</a></sup> <span class="mark m-checked">checked</span></span></p></div><div class="prompt">FORM: stick figures, graphs, short observations.<br/>GRAMMAR: premise → setup → punchline.</div></article>
+<article class="page"><div><span class="num">03 / THE BODY</span><h2>Follow the moving hand.</h2><p data-claim="clm_8927fe64c78c">Lynda Barry describes children's drawings as emerging from hand movement rather than a settled intention. <span class="claim-hook"><sup><a href="#c-clm_8927fe64c78c">[5]</a></sup> <span class="mark m-checked">checked</span></span></p><p data-claim="clm_8a2c43bb6fce"> An eyebrow slips; surprise becomes anger; the story changes with it. <span class="claim-hook"><sup><a href="#c-clm_8a2c43bb6fce">[6]</a></sup> <span class="mark m-checked">checked</span></span></p></div><div class="prompt">PROMPT: Draw for ninety seconds. Do not erase. Let one mistake decide what happens next.</div></article>
+<article class="page"><div><span class="num">04 / THE OBJECT</span><img alt="Four intentionally rough stick-figure panels in black ink and orange crayon" data-asset="hero.webp" src="assets/hero.webp"/><span class="generated-label">Generated illustration</span></div><p class="small">Original generated study. The figures are not examples of Barry's or Shrigley's art and do not imitate either artist.</p></article>
+<article class="page"><div><span class="num">05 / PRE-JUDGMENT</span><h2>Worth is asked too early.</h2><p data-claim="clm_497b7c938194">Barry warns that worrying about value to others before the thing exists can immobilize the maker. <span class="claim-hook"><sup><a href="#c-clm_497b7c938194">[3]</a></sup> <span class="mark m-reported">reported</span></span></p><div class="equation"><b>idea</b><i>+</i><b>audience</b><i>=</i><b>freeze</b></div></div><div class="prompt">COUNTER-MOVE: separate the making clock from the judging clock.</div></article>
+<article class="page"><div><span class="num">06 / SLIPPAGE</span><h2>The text should not explain the picture.</h2><p data-claim="clm_b5e1a95d07df">David Shrigley calls the gap between image and text “slippage”: neither simply describes the other. <span class="claim-hook"><sup><a href="#c-clm_b5e1a95d07df">[7]</a></sup> <span class="mark m-checked">checked</span></span></p><p> The joke, or charge, lives in the voltage between them.</p></div><div class="prompt">PROMPT: Caption a drawing with the least likely true sentence.</div></article>
+<article class="page"><div><span class="num">07 / OBJECTION</span><h2>But standards are not the enemy.</h2><p data-claim="clm_369049e3ad15">Research on perfectionism and creativity is mixed. One 2012 study found weak positive links for adaptive perfectionism on some measures, not a clean opposition. <span class="claim-hook"><sup><a href="#c-clm_369049e3ad15">[2]</a></sup> <span class="mark m-checked">checked</span></span></p></div><div class="prompt">CORRECTION: roughness is useful when it opens discovery. It is not virtue by itself.</div></article>
+<article class="page"><div><span class="num">08 / EXIT</span><h2>Deliberate awkwardness is a form constraint.</h2><p data-claim="clm_770f548bf446">It can lower the cost of beginning, keep accidents available, and make the turn matter more than finish. <span class="claim-hook"><sup><a href="#c-clm_770f548bf446">[S]</a></sup> <span class="mark m-thin">synthesis</span></span></p></div><div class="scribble">SHIP<br/>THE<br/>MARK.</div></article></section>
+<section class="sources" id="sources"><h2>Back matter</h2><p>Exact evidence spans, limitations, and source tiers. The personal source is a narrow, public-safe excerpt:not the private archive.</p><!-- SB:LEDGER -->
+<ol class="ledger">
+  <li class="ledger-entry" id="c-clm_0191e70f5f01" value="1">
+    <p class="ledger-claim">The archive’s early anti-perfectionism rule was to start and post rather than wait for polish.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> 01 stream comics
+      <q class="ledger-quote">Just post it, give it a start Tyler will take care of the rest.</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_369049e3ad15" value="2">
+    <p class="ledger-claim">A 2012 study found only weak and mixed relationships between adaptive perfectionism and creativity, not a simple opposition.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span>
+      <a class="recheck" href="https://s3.amazonaws.com/jck_articles/WigerReiterPalmonKaufmanSilviainpress.pdf" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> 05 perfectionism research
+      <q class="ledger-quote">Adaptive perfectionism was weakly positively related to creativity, whereas maladaptive perfectionism was unrelated to creativity across five of the six measures.</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_497b7c938194" value="3">
+    <p class="ledger-claim">Barry warns that judging a work’s value to others before it exists can immobilize the maker.</p>
+    <p class="ledger-meta"><span class="mark m-reported">reported</span>
+      <a class="recheck" href="https://www.bu.edu/articles/2017/lynda-barry-stone-distinguished-lecture/" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-B">tier B</span> 03 lynda barry classroom
+      <q class="ledger-quote">Worrying about its worth and value to others before it exists can keep us immobilized forever.</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_4f48944466cf" value="4">
+    <p class="ledger-claim">A 2016 archive note deliberately paired good writing with bad illustration.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> 01 stream comics
+      <q class="ledger-quote">Good writer and a bad illustrator</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_8927fe64c78c" value="5">
+    <p class="ledger-claim">Lynda Barry describes young children’s drawings as arising from hand movement rather than a settled intention.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span>
+      <a class="recheck" href="https://www.npr.org/2019/11/27/782921983/cartoonist-lynda-barry-drawing-has-to-come-out-of-your-body" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> 02 lynda barry npr
+      <q class="ledger-quote">Their drawings seem to come from the movement of their hands, rather than an intention.</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_8a2c43bb6fce" value="6">
+    <p class="ledger-claim">Barry says a drawing accident can redirect the story being made.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span>
+      <a class="recheck" href="https://www.npr.org/2019/11/27/782921983/cartoonist-lynda-barry-drawing-has-to-come-out-of-your-body" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> 02 lynda barry npr
+      <q class="ledger-quote">She says the drawing can redirect a story: a slipped eyebrow changes surprise into anger, and the cartoonist can follow that accident.</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_b5e1a95d07df" value="7">
+    <p class="ledger-claim">David Shrigley describes a productive slippage in which image and text do not merely illustrate or describe one another.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span>
+      <a class="recheck" href="https://channel.louisiana.dk/video/david-shrigley-everything-bad-about-art" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> 04 david shrigley
+      <q class="ledger-quote">I try to make images that don’t illustrate text and text that doesn’t describe the image.</q>
+    </p>
+  </li>
+</ol>
+<ul class="ledger ledger-thin">
+  <li class="ledger-note">The author's inferences, recorded here and cited nowhere, because there is no source to cite.</li>
+  <li class="ledger-entry" id="c-clm_770f548bf446">
+    <p class="ledger-claim">Deliberate awkwardness can be a form constraint: it lowers the cost of beginning, keeps accidents available, and makes the turn matter more than finish.</p>
+    <p class="ledger-meta"><span class="mark m-thin">thin</span></p>
+  </li>
+</ul>
+<!-- /SB:LEDGER --></section></main><footer class="notes">Image: original AI-assisted editorial artwork, OpenAI gpt-image-2-medium, 26 July 2026. Research zine, not therapy or a scientific prescription. <a href="../">Return to the three-study index.</a></footer>
+<script>document.getElementById('ruin').addEventListener('click',()=>{document.body.classList.toggle('ruined');document.getElementById('ruin').textContent=document.body.classList.contains('ruined')?'Unruin (coward)':'Ruin the layout'});</script></body></html>

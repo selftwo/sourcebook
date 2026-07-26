@@ -1,0 +1,92 @@
+{
+  "claims": 7,
+  "gate_report": {},
+  "generated_at": "2026-07-26T11:51:53Z",
+  "question": "What becomes possible when work is made for love instead of a scoreboard?",
+  "redacted_quotes": 2,
+  "sb_version": "0.1.0",
+  "schema_version": 1,
+  "sources": [
+    {
+      "canonical_locator": "input/03-amabile-creativity.md",
+      "id": "src_5f71aed2e39c",
+      "kind": "file",
+      "locator": "input/03-amabile-creativity.md",
+      "normalized_sha256": "771b292a2ca2b643a5e8811500cb1c98b5177f7ef97cb31f0f3a4d71eac662ea",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "771b292a2ca2b643a5e8811500cb1c98b5177f7ef97cb31f0f3a4d71eac662ea",
+      "retrieved_at": "2026-07-26T11:23:11Z",
+      "tier": "A",
+      "tier_reason": "Primary, peer-reviewed, or museum/first-party source authoritative for the narrow claim class recorded in the snapshot.",
+      "title": "03 amabile creativity"
+    },
+    {
+      "canonical_locator": "input/02-amateur-etymology.md",
+      "id": "src_9d06041e14e4",
+      "kind": "file",
+      "locator": "input/02-amateur-etymology.md",
+      "normalized_sha256": "b827b4ace2cdf213ea5a63e9a2f35147efc69cc6789b95dad69eda05ed26dce9",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "b827b4ace2cdf213ea5a63e9a2f35147efc69cc6789b95dad69eda05ed26dce9",
+      "retrieved_at": "2026-07-26T11:23:11Z",
+      "tier": "B",
+      "tier_reason": "Specialist etymological reference used for word history; not authoritative for the social value of amateurism.",
+      "title": "02 amateur etymology"
+    },
+    {
+      "canonical_locator": "input/05-inner-game.md",
+      "id": "src_a4c146a2b2bc",
+      "kind": "file",
+      "locator": "input/05-inner-game.md",
+      "normalized_sha256": "bfe6f7539475e018647918483d887a701fb74893f4ba2b98485c08fd69538390",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "bfe6f7539475e018647918483d887a701fb74893f4ba2b98485c08fd69538390",
+      "retrieved_at": "2026-07-26T11:23:12Z",
+      "tier": "B",
+      "tier_reason": "Accountable first-party framework or university profile used with an explicit limitation note.",
+      "title": "05 inner game"
+    },
+    {
+      "canonical_locator": "input/01-stream-amateur.md",
+      "id": "src_b690e8097d18",
+      "kind": "file",
+      "locator": "input/01-stream-amateur.md",
+      "normalized_sha256": "c1b342c58dc947badd30cd965899928b72428ed55d67f57bf9c420f785884222",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "c1b342c58dc947badd30cd965899928b72428ed55d67f57bf9c420f785884222",
+      "retrieved_at": "2026-07-26T11:23:10Z",
+      "tier": "A",
+      "tier_reason": "Curated direct personal archive excerpt, explicitly public-safe and authoritative for the author’s own stated experience.",
+      "title": "01 stream amateur"
+    },
+    {
+      "canonical_locator": "input/04-art-brut.md",
+      "id": "src_f1def8fef902",
+      "kind": "file",
+      "locator": "input/04-art-brut.md",
+      "normalized_sha256": "67c8ca02ad3a14eb9c6b255eb7064901f2402d6277dfcd395b69b40bb348868c",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "67c8ca02ad3a14eb9c6b255eb7064901f2402d6277dfcd395b69b40bb348868c",
+      "retrieved_at": "2026-07-26T11:23:11Z",
+      "tier": "A",
+      "tier_reason": "Primary, peer-reviewed, or museum/first-party source authoritative for the narrow claim class recorded in the snapshot.",
+      "title": "04 art brut"
+    }
+  ],
+  "tool_versions": {
+    "chunker": 1,
+    "indexer": 1,
+    "normalizer": 1
+  },
+  "visibility": "public"
+}

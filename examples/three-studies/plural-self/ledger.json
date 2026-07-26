@@ -1,0 +1,176 @@
+{
+  "ledger": [
+    {
+      "as_of": null,
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 606,
+          "length": 246,
+          "quote_sha256": "cd446eafa681649d4a0fa3ca2df9f82fdec6c917022854cccf37c3fb18b5191b",
+          "redacted": true,
+          "source_id": "src_c121f8916243",
+          "start": 360
+        }
+      ],
+      "id": "clm_2e20e94ca573",
+      "kind": "interpretation",
+      "marks": [
+        "m-reported"
+      ],
+      "notes": "Archive-level editorial classification, not a diagnosis.",
+      "ordinal": 1,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "The archive contains recurring registers rather than one stable voice.",
+      "topic_key": "archive.multiple-registers",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 323,
+          "quote": "Self 1 is the conscious mind or ‘teller.’",
+          "source_id": "src_4e5babd881a8",
+          "start": 282
+        },
+        {
+          "end": 372,
+          "quote": "Self 2 is the unconscious mind or the doer.",
+          "source_id": "src_4e5babd881a8",
+          "start": 329
+        }
+      ],
+      "id": "clm_3163d1f03681",
+      "kind": "fact",
+      "marks": [
+        "m-reported"
+      ],
+      "notes": "A practical metaphor, not a literal two-agent model of mind.",
+      "ordinal": 2,
+      "recheck": "https://theinnergame.com/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The Inner Game names a judging teller and an intuitive doer as Self 1 and Self 2.",
+      "topic_key": "inner-game.two-selves",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 445,
+          "quote": "The first fact for us, then, as psychologists, is that thinking of some sort goes on.",
+          "source_id": "src_956de2465baf",
+          "start": 360
+        }
+      ],
+      "id": "clm_7c84431fbb82",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 3,
+      "recheck": "https://psychclassics.yorku.ca/James/Principles/prin9.htm",
+      "status": "active",
+      "superseded_by": null,
+      "text": "William James begins his account of consciousness from the fact that thinking goes on.",
+      "topic_key": "james.thought.goes-on",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 700,
+          "quote": "a multiplicity of dialogically interacting selves",
+          "source_id": "src_8883e5d5d389",
+          "start": 651
+        }
+      ],
+      "id": "clm_9f59aa04e124",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 4,
+      "recheck": "https://dialogischleiderschap.com/wp-content/uploads/2021/11/Hermans-Kempen-Van-Loon-1992-Dialogical-Self-American-Psychologist.pdf",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Dialogical-self theory conceives the self as a multiplicity of positions that can interact.",
+      "topic_key": "dialogical-self.multiplicity",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 563,
+          "quote": "Within each personal consciousness thought is always changing.",
+          "source_id": "src_956de2465baf",
+          "start": 501
+        },
+        {
+          "end": 635,
+          "quote": "Within each personal consciousness thought is sensibly continuous.",
+          "source_id": "src_956de2465baf",
+          "start": 569
+        }
+      ],
+      "id": "clm_a06f7cf05efb",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 5,
+      "recheck": "https://psychclassics.yorku.ca/James/Principles/prin9.htm",
+      "status": "active",
+      "superseded_by": null,
+      "text": "James describes thought within personal consciousness as both changing and sensibly continuous.",
+      "topic_key": "james.thought.characters",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 461,
+          "quote": "unexpected combinations can have an unsettling or humorous power",
+          "source_id": "src_8d9ff042a248",
+          "start": 397
+        }
+      ],
+      "id": "clm_c11a6061db28",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 6,
+      "recheck": "https://www.tate.org.uk/visit/tate-modern/display/materials-and-objects/collage",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Tate notes that collage can gain power from unexpected combinations.",
+      "topic_key": "collage.unexpected-combinations",
+      "volatile": false
+    }
+  ],
+  "schema_version": 1,
+  "visibility": "public"
+}

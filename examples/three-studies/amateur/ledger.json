@@ -1,0 +1,166 @@
+{
+  "ledger": [
+    {
+      "as_of": null,
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 938,
+          "length": 201,
+          "quote_sha256": "93f76bb05c9f1de2918a347cbf1442b2ae2717b335905f7a6b02653c33022812",
+          "redacted": true,
+          "source_id": "src_b690e8097d18",
+          "start": 737
+        }
+      ],
+      "id": "clm_0a095db643a4",
+      "kind": "interpretation",
+      "marks": [
+        "m-reported"
+      ],
+      "notes": "A direct personal reflection, not a general scientific claim.",
+      "ordinal": 1,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "The archive reports that unscored activity can feel more compounding because it creates room to discover without an objective measure.",
+      "topic_key": "archive.play.no-scoreboard",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 490,
+          "quote": "one who cultivates and participates (in something) but does not pursue it professionally or with an eye to gain",
+          "source_id": "src_9d06041e14e4",
+          "start": 379
+        }
+      ],
+      "id": "clm_727613c030ec",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 2,
+      "recheck": "https://www.etymonline.com/word/amateur",
+      "status": "active",
+      "superseded_by": null,
+      "text": "By the late eighteenth century, amateur could mean someone who participated without pursuing the activity professionally or for gain.",
+      "topic_key": "amateur.word.nonprofessional",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 383,
+          "quote": "art such as graffiti or naïve art which is made outside the academic tradition of fine art",
+          "source_id": "src_f1def8fef902",
+          "start": 293
+        }
+      ],
+      "id": "clm_7be2fef07445",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 3,
+      "recheck": "https://www.tate.org.uk/art/art-terms/a/art-brut",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Tate defines art brut as art made outside the academic tradition of fine art.",
+      "topic_key": "art.art-brut.outside",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 339,
+          "quote": "one who loves, lover",
+          "source_id": "src_9d06041e14e4",
+          "start": 319
+        }
+      ],
+      "id": "clm_b839edf8457c",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 4,
+      "recheck": "https://www.etymonline.com/word/amateur",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The English word 'amateur' descends from a word meaning lover.",
+      "topic_key": "amateur.word.lover",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 403,
+          "length": 195,
+          "quote_sha256": "471e1323e138a544c7e450b7b5f43240295ae6402e4f4753fbbfd8038244c84b",
+          "redacted": true,
+          "source_id": "src_a4c146a2b2bc",
+          "start": 208
+        }
+      ],
+      "id": "clm_bb27542ec149",
+      "kind": "fact",
+      "marks": [
+        "m-reported"
+      ],
+      "notes": "First-party summary of a coaching framework, not independent validation.",
+      "ordinal": 5,
+      "recheck": "https://theinnergame.com/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The Inner Game presents judgmental thinking and fear of failure as forms of self-interference.",
+      "topic_key": "inner-game.interference",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 806,
+          "quote": "Poems written under an extrinsic orientation were significantly less creative than those written in the other two conditions.",
+          "source_id": "src_5f71aed2e39c",
+          "start": 681
+        }
+      ],
+      "id": "clm_fd460fa71ba8",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "One controlled study of short poems; do not universalize.",
+      "ordinal": 6,
+      "recheck": "https://pages.pomona.edu/~ajr04747/Fall2008/Math58/Papers/Amabile_1985_psp-48-2-393.pdf",
+      "status": "active",
+      "superseded_by": null,
+      "text": "In Amabile’s 1985 experiment with 72 young writers, poems produced after an extrinsic-orientation prompt were rated less creative than poems in the other two conditions.",
+      "topic_key": "creativity.motivation.amabile",
+      "volatile": false
+    }
+  ],
+  "schema_version": 1,
+  "visibility": "public"
+}

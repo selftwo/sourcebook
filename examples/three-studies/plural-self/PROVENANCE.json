@@ -1,0 +1,92 @@
+{
+  "claims": 7,
+  "gate_report": {},
+  "generated_at": "2026-07-26T11:51:56Z",
+  "question": "What kind of self appears when a stream is treated as a collage of voices rather than one stable narrator?",
+  "redacted_quotes": 1,
+  "sb_version": "0.1.0",
+  "schema_version": 1,
+  "sources": [
+    {
+      "canonical_locator": "input/05-inner-game.md",
+      "id": "src_4e5babd881a8",
+      "kind": "file",
+      "locator": "input/05-inner-game.md",
+      "normalized_sha256": "58a4b1c463d918b3ce610a22fa5abd9b72909c04cdfdf10e63021d42b9d7dc72",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "58a4b1c463d918b3ce610a22fa5abd9b72909c04cdfdf10e63021d42b9d7dc72",
+      "retrieved_at": "2026-07-26T11:23:18Z",
+      "tier": "B",
+      "tier_reason": "Accountable first-party framework or university profile used with an explicit limitation note.",
+      "title": "05 inner game"
+    },
+    {
+      "canonical_locator": "input/03-dialogical-self.md",
+      "id": "src_8883e5d5d389",
+      "kind": "file",
+      "locator": "input/03-dialogical-self.md",
+      "normalized_sha256": "fc1a4c9dda10d2a2de14a1eadb8d4ffd6313b3965d2785e3a70081a60794fda6",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "fc1a4c9dda10d2a2de14a1eadb8d4ffd6313b3965d2785e3a70081a60794fda6",
+      "retrieved_at": "2026-07-26T11:23:17Z",
+      "tier": "A",
+      "tier_reason": "Primary, peer-reviewed, or museum/first-party source authoritative for the narrow claim class recorded in the snapshot.",
+      "title": "03 dialogical self"
+    },
+    {
+      "canonical_locator": "input/04-collage.md",
+      "id": "src_8d9ff042a248",
+      "kind": "file",
+      "locator": "input/04-collage.md",
+      "normalized_sha256": "d61db70abd2897086731c31b157bf6e7174888c13e0d0f6b4fc37226cc67cd89",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "d61db70abd2897086731c31b157bf6e7174888c13e0d0f6b4fc37226cc67cd89",
+      "retrieved_at": "2026-07-26T11:23:18Z",
+      "tier": "A",
+      "tier_reason": "Primary, peer-reviewed, or museum/first-party source authoritative for the narrow claim class recorded in the snapshot.",
+      "title": "04 collage"
+    },
+    {
+      "canonical_locator": "input/02-william-james.md",
+      "id": "src_956de2465baf",
+      "kind": "file",
+      "locator": "input/02-william-james.md",
+      "normalized_sha256": "a6ffe509e30180d3808b72e39d4c2243237fa2c4eae4645b6ff82757f2c57c91",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "a6ffe509e30180d3808b72e39d4c2243237fa2c4eae4645b6ff82757f2c57c91",
+      "retrieved_at": "2026-07-26T11:23:17Z",
+      "tier": "A",
+      "tier_reason": "Primary, peer-reviewed, or museum/first-party source authoritative for the narrow claim class recorded in the snapshot.",
+      "title": "02 william james"
+    },
+    {
+      "canonical_locator": "input/01-stream-voices.md",
+      "id": "src_c121f8916243",
+      "kind": "file",
+      "locator": "input/01-stream-voices.md",
+      "normalized_sha256": "add047d8cf6d00bbb89f9a47df9f87d122ae40cca658256bd216b5931a1abaa6",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "add047d8cf6d00bbb89f9a47df9f87d122ae40cca658256bd216b5931a1abaa6",
+      "retrieved_at": "2026-07-26T11:23:17Z",
+      "tier": "A",
+      "tier_reason": "Curated direct personal archive excerpt, explicitly public-safe and authoritative for the author’s own stated experience.",
+      "title": "01 stream voices"
+    }
+  ],
+  "tool_versions": {
+    "chunker": 1,
+    "indexer": 1,
+    "normalizer": 1
+  },
+  "visibility": "public"
+}

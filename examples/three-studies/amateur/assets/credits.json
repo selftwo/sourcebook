@@ -1,0 +1,11 @@
+{
+  "hero.webp": {
+    "origin": "generated",
+    "generator": "OpenAI gpt-image-2-medium",
+    "prompt": "Original editorial artwork for this Sourcebook; no named artist imitation.",
+    "created_at": "2026-07-26",
+    "credit": "AI-assisted editorial artwork prompted and reviewed for this publication",
+    "license": "Generated asset — publication use",
+    "sha256": "8d6b02b1bf19daca1990d9a6509db77fee3e4136203eed95c5be81ebb0a093e8"
+  }
+}
