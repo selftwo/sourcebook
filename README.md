@@ -41,7 +41,7 @@ from `file://`.
 ## Clone to a verified artifact in ten minutes
 
 ```bash
-git clone <this repo> sourcebook && cd sourcebook
+git clone https://github.com/selftwo/sourcebook.git && cd sourcebook
 
 # 1. Install the skill and commands into whichever harness you use.
 python3 scripts/install.py --harness claude       # or agents | codex | cursor | hermes | all
