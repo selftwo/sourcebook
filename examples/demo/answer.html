@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Can a Harbour card pay a fare on a Northline ferry right now?</title>
+<style>
+:root{
+  --ground:#ffffff;
+  --ink:#16181d;
+  --muted:#4b5261;
+  --hairline:#d4d7de;
+  --accent:#8a1f2e;
+  --checked:#1c5c3a;
+  --reported:#7a4a10;
+  --contested:#8a1f2e;
+  --moving:#1f4b8f;
+  --thin:#4b5261;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  --measure:66ch;
+  --rule:1px solid var(--hairline);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--ground);color:var(--ink)}
+body{margin:0;background:var(--ground);color:var(--ink);
+     font-family:var(--serif);font-size:1rem;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem 4rem}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ground);padding:0.5rem}
+.skip:focus{left:0;z-index:9}
+
+.masthead{border-bottom:3px solid var(--ink);padding:2.5rem 0 1.25rem;margin-bottom:2rem}
+.masthead h1{font-size:2.44140625rem;line-height:1.08;font-weight:600;
+  letter-spacing:-0.012em;margin:0 0 0.75rem;max-width:22ch}
+.standfirst{font-size:1.25rem;line-height:1.4;margin:0 0 1rem;max-width:var(--measure)}
+.byline{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin:0}
+.synthetic{font-family:var(--sans);font-size:0.8rem;color:var(--muted);
+  border:1px solid var(--hairline);padding:0.6rem 0.75rem;margin:1rem 0 0;max-width:var(--measure)}
+
+.columns{display:grid;grid-template-columns:1fr;gap:2rem}
+@media (min-width:56rem){
+  .columns{grid-template-columns:15rem minmax(0,1fr);gap:3rem}
+  .toc{position:sticky;top:1.5rem;align-self:start}
+}
+.toc{font-family:var(--sans);font-size:0.8rem;border-top:var(--rule);padding-top:0.75rem}
+.toc p{margin:0 0 0.5rem;color:var(--muted)}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc li{margin:0 0 0.4rem}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;
+  transition:border-color 120ms linear}
+.toc a:hover,.toc a[aria-current="true"]{border-bottom-color:var(--accent)}
+
+main{max-width:var(--measure)}
+section{scroll-margin-top:1.5rem;margin:0 0 2.5rem}
+section h2{font-size:1.5625rem;line-height:1.2;font-weight:600;margin:0 0 0.75rem;
+  padding-top:1rem;border-top:var(--rule)}
+p{margin:0 0 1rem}
+table{border-collapse:collapse;width:100%;font-size:0.8rem;font-family:var(--sans);margin:1.25rem 0}
+th,td{text-align:left;padding:0.5rem 0.75rem 0.5rem 0;border-bottom:var(--rule);vertical-align:top}
+th{font-weight:600}
+figure{margin:1.5rem 0}
+figcaption{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-top:0.5rem}
+.split{display:grid;grid-template-columns:1fr;gap:0;border-top:2px solid var(--ink);
+  border-bottom:2px solid var(--ink)}
+@media (min-width:44rem){.split{grid-template-columns:1fr 1fr}}
+.side{padding:1rem 1rem 0.5rem 0}
+.side:first-child{border-bottom:var(--rule)}
+@media (min-width:44rem){
+  .side:first-child{border-bottom:0;border-right:var(--rule);padding-right:1.5rem}
+  .side:last-child{padding-left:1.5rem}
+}
+.side-label{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin:0 0 0.5rem}
+
+.mark{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:1;
+  white-space:nowrap;padding:0.18em 0 0.1em;border-bottom:2px solid currentColor;
+  vertical-align:0.15em}
+.m-checked{color:var(--checked)}
+.m-reported{color:var(--reported)}
+.m-contested{color:var(--contested)}
+.m-moving{color:var(--moving)}
+.m-thin{color:var(--thin)}
+.mark-legend{font-family:var(--sans);font-size:0.8rem;color:var(--muted);
+  border-top:var(--rule);border-bottom:var(--rule);padding:0.75rem 0;margin:1.5rem 0}
+.mark-legend dl{display:grid;grid-template-columns:auto 1fr;gap:0.35rem 0.75rem;margin:0.5rem 0 0}
+.mark-legend dt,.mark-legend dd{margin:0}
+sup.ref{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:0}
+sup.ref a{color:var(--accent);text-decoration:none;padding:0 0.1em}
+
+.ledger{list-style:none;margin:0;padding:0}
+.ledger-entry{border-top:var(--rule);padding:1rem 0;display:grid;
+  grid-template-columns:2.5rem minmax(0,1fr);gap:0 0.75rem}
+.ledger-entry::before{content:"[" counter(list-item) "]";font-family:var(--sans);
+  font-size:0.8rem;color:var(--muted);grid-row:1 / span 4}
+.ledger-claim{margin:0 0 0.4rem;grid-column:2}
+.ledger-meta,.ledger-source{grid-column:2;font-family:var(--sans);font-size:0.8rem;
+  color:var(--muted);margin:0 0 0.35rem}
+.ledger-thin{margin-top:1rem}
+.ledger-note{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem}
+.ledger-thin .ledger-entry::before{content:"\00b7"}
+.tier{font-family:var(--sans);font-size:0.64rem;font-weight:600;color:var(--ink);
+  border:1px solid var(--hairline);padding:0.1em 0.35em;border-radius:2px}
+.ledger-quote{display:block;margin-top:0.35rem;color:var(--ink);font-family:var(--serif)}
+.as-of,.recheck{margin-left:0.5rem}
+
+.colophon{border-top:3px solid var(--ink);margin-top:3rem;padding-top:1rem;
+  font-family:var(--sans);font-size:0.8rem;color:var(--muted)}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;scroll-behavior:auto !important}
+}
+@media print{
+  .toc,.skip{display:none}
+  body{font-size:0.8rem}
+  .columns{grid-template-columns:1fr}
+  a{color:var(--ink)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the answer</a>
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Can a Harbour card pay a fare on a Northline ferry right now?</h1>
+  <p class="standfirst">No. The agreement is signed, the service is not live for Harbour
+  cards, and the plan that works today is cash, a paper ticket, or a Meridian Card.</p>
+  <p class="byline">Built <time datetime="2026-07-26">26 July 2026</time> from 4 sources
+  &middot; 1 disagreement adjudicated and shown &middot; 1 figure superseded and kept</p>
+  <p class="synthetic">This is the sourcebook demo. Its four sources are synthetic examples
+  shipped in <code>examples/demo/sources/</code>, and Northline Ferries, the Harbour Transit
+  Authority, the Meridian Card, and Harbour Trade Weekly are invented. The mechanism is real:
+  every citation below verifies byte-for-byte against those files.</p>
+</header>
+
+<div class="columns">
+<nav class="toc" aria-label="Contents">
+  <p>Contents</p>
+  <ol>
+    <li><a href="#answer">The short answer</a></li>
+    <li><a href="#signed">What was actually signed</a></li>
+    <li><a href="#disputed">Where the sources disagree</a></li>
+    <li><a href="#ground">At the gangway</a></li>
+    <li><a href="#scale">How big the scheme is</a></li>
+    <li><a href="#do">What to do instead</a></li>
+    <li><a href="#ledger">Ledger</a></li>
+  </ol>
+</nav>
+
+<main id="main">
+
+<section id="answer">
+  <h2>The short answer</h2>
+  <p data-claim="clm_38d64b78005c">Harbour Transit is not on Northline's live
+  interoperability list, and a Harbour card cannot be used to pay a fare on a Northline
+  service as of 12 February 2026.<sup class="ref"><a href="#c-clm_38d64b78005c">1</a></sup>
+  <span class="mark m-contested">contested</span> <span class="mark m-moving">moving</span></p>
+  <p data-claim="clm_19548dbc234b">For a trip in the next few months, plan to pay with cash, a
+  paper ticket, or a Meridian Card rather than a Harbour card.
+  <span class="mark m-thin">thin</span></p>
+  <p>That second sentence is the author's inference. It carries no superscript because there
+  is no source that says it, and the ledger records it as such.</p>
+</section>
+
+<section id="signed">
+  <h2>What was actually signed</h2>
+  <p data-claim="clm_eb027a5b0314">Northline Ferries and the Harbour Transit Authority signed
+  a fare interoperability agreement on 3 January
+  2026.<sup class="ref"><a href="#c-clm_eb027a5b0314">2</a></sup>
+  <span class="mark m-checked">checked</span></p>
+  <p data-claim="clm_7372280596d2">The signed agreement covers forty-two terminals across the
+  two networks.<sup class="ref"><a href="#c-clm_7372280596d2">3</a></sup>
+  <span class="mark m-checked">checked</span></p>
+  <p data-claim="clm_b4b1884d43ab">Neither operator has announced a date for passenger
+  availability.<sup class="ref"><a href="#c-clm_b4b1884d43ab">4</a></sup>
+  <span class="mark m-checked">checked</span> <span class="mark m-moving">moving</span></p>
+  <p>An agreement is a framework for future acceptance. It is not acceptance. The distinction
+  is the whole of this answer, and it is exactly the distinction the two sources below draw
+  differently.</p>
+</section>
+
+<section id="disputed">
+  <h2>Where the sources disagree</h2>
+  <p>One cluster was flagged on the topic <code>northline.harbour.live</code> and adjudicated
+  <code>both_stand</code>. Both claims are true about different things, and a reader who sees
+  only the second one turns up at the gangway and cannot board. So both are printed.</p>
+  <div class="split">
+    <div class="side">
+      <p class="side-label">The operator, 12 February 2026</p>
+      <p data-claim="clm_38d64b78005c">Harbour Transit is absent from the published live list,
+      and a Harbour card is declined at the
+      reader.<sup class="ref"><a href="#c-clm_38d64b78005c">1</a></sup>
+      <span class="mark m-contested">contested</span> <span class="mark m-moving">moving</span></p>
+    </div>
+    <div class="side">
+      <p class="side-label">The trade press, 6 January 2026</p>
+      <p data-claim="clm_ba5cb17942ab">Trade reporting describes the January 2026 agreement as
+      enabling Harbour cards to be used for fare payment on Northline coastal
+      services.<sup class="ref"><a href="#c-clm_ba5cb17942ab">5</a></sup>
+      <span class="mark m-contested">contested</span></p>
+    </div>
+  </div>
+  <p>The reporting is not wrong about the agreement. It is describing what the agreement is
+  for, in the present tense, five weeks before the operator published a live list that does
+  not include Harbour.</p>
+</section>
+
+<section id="ground">
+  <h2>At the gangway</h2>
+  <p data-claim="clm_377add821344">Travellers report Harbour cards being declined at the
+  Northline gangway in December 2025 and again in February
+  2026.<sup class="ref"><a href="#c-clm_377add821344">6</a></sup>
+  <span class="mark m-reported">reported</span></p>
+  <p data-claim="clm_8b4adc521f32">The same travellers report that Meridian card taps work on
+  the routes they used.<sup class="ref"><a href="#c-clm_8b4adc521f32">7</a></sup>
+  <span class="mark m-reported">reported</span></p>
+  <p>Both are held at <span class="mark m-reported">reported</span> rather than
+  <span class="mark m-checked">checked</span>, because a forum thread is real signal about
+  what travellers hit and no authority at all about what the scheme supports. The shape is
+  trustworthy. A count taken from it would not be.</p>
+</section>
+
+<section id="scale">
+  <h2>How big the scheme is</h2>
+  <p data-claim="clm_5add19271ae5">Northline reports 1.4 million active Meridian Cards in
+  circulation as of 12 February 2026.<sup class="ref"><a href="#c-clm_5add19271ae5">8</a></sup>
+  <span class="mark m-checked">checked</span> <span class="mark m-moving">moving</span></p>
+  <p data-claim="clm_574ac1fbf54a">The only partner schemes live for cross-border tap-and-go
+  on Northline services are Calder Transit and Vantis
+  Rail.<sup class="ref"><a href="#c-clm_574ac1fbf54a">9</a></sup>
+  <span class="mark m-checked">checked</span> <span class="mark m-moving">moving</span></p>
+  <table>
+    <caption class="side-label">Partner schemes on Northline coastal services, 12 February 2026</caption>
+    <thead>
+      <tr><th scope="col">Scheme</th><th scope="col">Status</th><th scope="col">Since</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">Calder Transit</th><td>Live</td><td>4 August 2025</td></tr>
+      <tr><th scope="row">Vantis Rail</th><td>Live</td><td>19 November 2025</td></tr>
+      <tr><th scope="row">Harbour Transit</th><td>Agreement signed, not live</td><td>3 January 2026</td></tr>
+    </tbody>
+  </table>
+  <p>A second figure was recorded and then superseded: the trade report cited an earlier
+  industry estimate of 1.9 million. The operator issues the cards and publishes the definition
+  of an active card, and its figure is five weeks more recent, so tier and recency point the
+  same way. The estimate stays in the ledger with its evidence rather than being deleted.</p>
+</section>
+
+<section id="do">
+  <h2>What to do instead</h2>
+  <p data-claim="clm_fc44ae58adbc">Paper tickets and cash remain available at every Northline
+  terminal counter and at the quayside
+  machines.<sup class="ref"><a href="#c-clm_fc44ae58adbc">10</a></sup>
+  <span class="mark m-checked">checked</span></p>
+  <p data-claim="clm_19548dbc234b">For a trip in the next few months, plan to pay with cash, a
+  paper ticket, or a Meridian Card rather than a Harbour card.
+  <span class="mark m-thin">thin</span></p>
+  <p>Recheck before travelling: the operator publishes the live list, and that page is linked
+  from every <span class="mark m-moving">moving</span> entry in the ledger below.</p>
+</section>
+
+<section id="ledger">
+  <h2>Ledger</h2>
+  <div class="mark-legend">
+    <p>How to read the marks:</p>
+    <dl>
+      <dt><span class="mark m-checked">checked</span></dt><dd>Verified against a primary or credible secondary source. Trust it.</dd>
+      <dt><span class="mark m-reported">reported</span></dt><dd>Real signal, weaker authority. Trust the shape, not the number.</dd>
+      <dt><span class="mark m-contested">contested</span></dt><dd>Sources disagree and both are shown here. Read both.</dd>
+      <dt><span class="mark m-moving">moving</span></dt><dd>True as of the printed date. Recheck at the link.</dd>
+      <dt><span class="mark m-thin">thin</span></dt><dd>The author's inference. No source, because there is not one.</dd>
+    </dl>
+  </div>
+  <!-- SB:LEDGER -->
+<ol class="ledger">
+  <li class="ledger-entry" id="c-clm_38d64b78005c" value="1">
+    <p class="ledger-claim">Harbour Transit is not on Northline&#x27;s live interoperability list, and a Harbour card cannot be used to pay a fare on a Northline service as of 12 February 2026.</p>
+    <p class="ledger-meta"><span class="mark m-contested">contested</span> <span class="mark m-moving">moving</span>
+      <span class="as-of">as of 2026-02-12</span>
+      <a class="recheck" href="https://northline.example/fares/interoperability" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> Fare payment interoperability &middot; Northline Ferries
+      <q class="ledger-quote">Harbour Transit is not on the live
+list above, and Harbour cards cannot currently be used to pay a fare on a Northline service.</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_eb027a5b0314" value="2">
+    <p class="ledger-claim">Northline Ferries and the Harbour Transit Authority signed a fare interoperability agreement on 3 January 2026.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> Joint announcement: Northline Ferries and Harbour Transit Authority &middot; Northline Ferries and Harbour Transit Authority
+      <q class="ledger-quote">signed an agreement covering fare
+interoperability between the Harbour card and Northline coastal ferry services</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_7372280596d2" value="3">
+    <p class="ledger-claim">The signed agreement covers forty-two terminals across the two networks.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> Joint announcement: Northline Ferries and Harbour Transit Authority &middot; Northline Ferries and Harbour Transit Authority
+      <q class="ledger-quote">The agreement covers forty-two terminals across the two networks.</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_b4b1884d43ab" value="4">
+    <p class="ledger-claim">Neither operator has announced a date for passenger availability.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span> <span class="mark m-moving">moving</span>
+      <span class="as-of">as of 2026-01-03</span>
+      <a class="recheck" href="https://harbourtradeweekly.example/2026/01/06/interoperability-deal" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> Joint announcement: Northline Ferries and Harbour Transit Authority &middot; Northline Ferries and Harbour Transit Authority
+      <q class="ledger-quote">Neither party is announcing a date for passenger availability.</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_ba5cb17942ab" value="5">
+    <p class="ledger-claim">Trade reporting describes the January 2026 agreement as enabling Harbour cards to be used for fare payment on Northline coastal services.</p>
+    <p class="ledger-meta"><span class="mark m-contested">contested</span>
+      <span class="as-of">as of 2026-01-06</span>
+    </p>
+    <p class="ledger-source"><span class="tier tier-B">tier B</span> Harbour and Northline sign card interoperability deal &middot; Harbour Trade Weekly
+      <q class="ledger-quote">have signed an agreement that enables
+Harbour cards to be used for fare payment on Northline coastal services</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_377add821344" value="6">
+    <p class="ledger-claim">Travellers report Harbour cards being declined at the Northline gangway in December 2025 and again in February 2026.</p>
+    <p class="ledger-meta"><span class="mark m-reported">reported</span>
+      <span class="as-of">as of 2026-02-16</span>
+    </p>
+    <p class="ledger-source"><span class="tier tier-C">tier C</span> Thread: Harbour card on the Northline ferry? &middot; Ferry Travellers Forum
+      <q class="ledger-quote">Tried tapping my Harbour card at the Northline gangway on Tuesday. Declined twice.</q>
+    </p>
+    <p class="ledger-source"><span class="tier tier-C">tier C</span> Thread: Harbour card on the Northline ferry? &middot; Ferry Travellers Forum
+      <q class="ledger-quote">Staff at the quay said the link is not switched on yet</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_8b4adc521f32" value="7">
+    <p class="ledger-claim">The same travellers report that Meridian card taps work on the routes they used.</p>
+    <p class="ledger-meta"><span class="mark m-reported">reported</span>
+      <span class="as-of">as of 2026-02-16</span>
+    </p>
+    <p class="ledger-source"><span class="tier tier-C">tier C</span> Thread: Harbour card on the Northline ferry? &middot; Ferry Travellers Forum
+      <q class="ledger-quote">the Meridian tap works
+fine on every route I have taken this year</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_5add19271ae5" value="8">
+    <p class="ledger-claim">Northline reports 1.4 million active Meridian Cards in circulation as of 12 February 2026.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span> <span class="mark m-moving">moving</span>
+      <span class="as-of">as of 2026-02-12</span>
+      <a class="recheck" href="https://northline.example/fares/interoperability" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> Fare payment interoperability &middot; Northline Ferries
+      <q class="ledger-quote">There are 1.4 million active Meridian Cards in circulation as of 12 February 2026.</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_574ac1fbf54a" value="9">
+    <p class="ledger-claim">The only partner schemes live for cross-border tap-and-go on Northline services are Calder Transit and Vantis Rail.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span> <span class="mark m-moving">moving</span>
+      <span class="as-of">as of 2026-02-12</span>
+      <a class="recheck" href="https://northline.example/fares/interoperability" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> Fare payment interoperability &middot; Northline Ferries
+      <q class="ledger-quote">Calder Transit, live since 4 August 2025
+- Vantis Rail, live since 19 November 2025</q>
+    </p>
+  </li>
+  <li class="ledger-entry" id="c-clm_fc44ae58adbc" value="10">
+    <p class="ledger-claim">Paper tickets and cash remain available at every Northline terminal counter and at the quayside machines.</p>
+    <p class="ledger-meta"><span class="mark m-checked">checked</span>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> Fare payment interoperability &middot; Northline Ferries
+      <span class="ledger-span">quote withheld under the quote budget; chars 305&ndash;408 of the source</span>
+    </p>
+  </li>
+</ol>
+<ul class="ledger ledger-thin">
+  <li class="ledger-note">The author's inferences, recorded here and cited nowhere, because there is no source to cite.</li>
+  <li class="ledger-entry" id="c-clm_19548dbc234b">
+    <p class="ledger-claim">For a trip in the next few months, plan to pay with cash, a paper ticket, or a Meridian Card rather than a Harbour card.</p>
+    <p class="ledger-meta"><span class="mark m-thin">thin</span></p>
+  </li>
+</ul>
+<!-- /SB:LEDGER -->
+</section>
+
+<footer class="colophon">
+  <p>Built with sourcebook &middot; <time datetime="2026-07-26">26 July 2026</time>
+  &middot; 4 sources. Every factual sentence above is pinned to a byte span in a source you
+  can open yourself, and <code>sb verify</code> compares them character by character.</p>
+</footer>
+
+</main>
+</div>
+</div>
+
+<script>
+/* Enhancement only. Every word above reads with this file deleted. */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  var targets = links.map(function (a) { return document.getElementById(a.hash.slice(1)); });
+  if (!('IntersectionObserver' in window)) { return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var i = targets.indexOf(e.target);
+      if (i < 0) { return; }
+      links[i].setAttribute('aria-current', e.isIntersecting ? 'true' : 'false');
+    });
+  }, { rootMargin: '-10% 0px -70% 0px' });
+  targets.forEach(function (t) { if (t) { io.observe(t); } });
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sourcebook.dev/schemas/manifest.schema.json",
+  "title": "sourcebook workspace manifest",
+  "type": "object",
+  "required": ["schema_version", "state", "capabilities", "config"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "sb_version": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "question": {"type": "string"},
+    "state": {"type": "string", "enum": ["INIT","COLLECT","EXTRACT","CHUNK","INDEX","PLAN","GROUND","ADJUDICATE","COMPOSE","RENDER","VERIFY","PACKAGE","DONE","REVISE","BLOCKED"]},
+    "artifact_type": {"type": ["string", "null"], "enum": ["answer","explainer","deck","brief","infographic","podcast", null]},
+    "revise_count": {"type": "integer", "minimum": 0},
+    "capabilities": {
+      "type": "object",
+      "required": ["web_fetch", "image_gen", "tts"],
+      "properties": {
+        "web_fetch": {"type": "string", "enum": ["agent", "script", "none"]},
+        "image_gen": {"type": "string", "enum": ["agent", "none"]},
+        "tts": {"type": "string", "enum": ["agent", "external", "none"]}
+      },
+      "additionalProperties": false
+    },
+    "config": {
+      "type": "object",
+      "properties": {
+        "chunk_target": {"type": "integer", "minimum": 200},
+        "chunk_overlap": {"type": "integer", "minimum": 0}
+      }
+    },
+    "lint_waivers": {"type": "object", "additionalProperties": {"type": "string", "minLength": 8}},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "tool_versions": {"type": "object"},
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["state", "at"],
+        "properties": {
+          "state": {"type": "string"},
+          "at": {"type": "string", "format": "date-time"},
+          "note": {"type": "string"}
+        }
+      }
+    }
+  }
+}

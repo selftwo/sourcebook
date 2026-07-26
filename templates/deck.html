@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Deck &middot; sourcebook</title>
+<style>
+:root{
+  --ground:#ffffff;
+  --ink:#16181d;
+  --muted:#4b5261;
+  --hairline:#d4d7de;
+  --accent:#8a1f2e;
+  --checked:#1c5c3a;
+  --reported:#7a4a10;
+  --contested:#8a1f2e;
+  --moving:#1f4b8f;
+  --thin:#4b5261;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  --rule:1px solid var(--hairline);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--ground);color:var(--ink)}
+body{margin:0;background:var(--ground);color:var(--ink);
+     font-family:var(--serif);font-size:1rem;line-height:1.5}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Without JavaScript every slide is simply a section of a scrolling document.
+   The deck behaviour is added by script, never depended upon. */
+.slide{border-top:3px solid var(--ink);padding:2rem 1.5rem 2.5rem;
+  max-width:60rem;margin:0 auto}
+.slide h2{font-size:1.953125rem;line-height:1.15;font-weight:600;margin:0 0 1rem;max-width:20ch}
+.slide p{font-size:1.25rem;line-height:1.4;margin:0 0 1rem;max-width:40ch}
+.slide-index{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin:0 0 0.5rem}
+
+.notes{display:block;border-top:var(--rule);margin-top:1.5rem;padding-top:0.75rem;
+  font-family:var(--sans);font-size:0.8rem;color:var(--muted)}
+.notes p{font-size:0.8rem;max-width:none;margin:0 0 0.35rem}
+
+.deck-nav{position:sticky;bottom:0;display:flex;gap:0.5rem;justify-content:center;
+  padding:0.75rem;background:var(--ground);border-top:var(--rule);z-index:2}
+.deck-nav button{font-family:var(--sans);font-size:0.8rem;min-height:44px;min-width:44px;
+  padding:0 1rem;background:var(--ground);color:var(--ink);
+  border:1px solid var(--hairline);border-radius:2px;cursor:pointer}
+.deck-nav[hidden]{display:none}
+
+/* one slide at a time, only once script has confirmed it can drive it */
+.deck.js .slide{display:none}
+.deck.js .slide.is-current{display:block;min-height:calc(100dvh - 5rem)}
+.deck.js .notes{display:none}
+.deck.js.show-notes .notes{display:block}
+
+.mark{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:1;
+  white-space:nowrap;padding:0.18em 0 0.1em;border-bottom:2px solid currentColor;
+  vertical-align:0.15em}
+.m-checked{color:var(--checked)}
+.m-reported{color:var(--reported)}
+.m-contested{color:var(--contested)}
+.m-moving{color:var(--moving)}
+.m-thin{color:var(--thin)}
+.mark-legend{font-family:var(--sans);font-size:0.8rem;color:var(--muted);
+  border-top:var(--rule);padding-top:0.75rem;margin:1.5rem 0 0}
+.mark-legend dl{display:grid;grid-template-columns:auto 1fr;gap:0.35rem 0.75rem;margin:0.5rem 0 0}
+.mark-legend dt,.mark-legend dd{margin:0}
+sup.ref{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:0}
+sup.ref a{color:var(--accent);text-decoration:none;padding:0 0.1em}
+
+.ledger{list-style:none;margin:0;padding:0}
+.ledger-entry{border-top:var(--rule);padding:0.75rem 0;display:grid;
+  grid-template-columns:2.5rem minmax(0,1fr);gap:0 0.75rem}
+.ledger-entry::before{content:"[" counter(list-item) "]";font-family:var(--sans);
+  font-size:0.8rem;color:var(--muted)}
+.ledger-claim{margin:0 0 0.35rem;grid-column:2;font-size:1rem}
+.ledger-meta,.ledger-source{grid-column:2;font-family:var(--sans);font-size:0.8rem;
+  color:var(--muted);margin:0 0 0.25rem}
+.ledger-quote{display:block;color:var(--ink);font-family:var(--serif)}
+.ledger-thin{margin-top:1rem}
+.ledger-note{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem}
+.ledger-thin .ledger-entry::before{content:"\00b7"}
+.tier{font-weight:600;color:var(--ink)}
+.colophon{font-family:var(--sans);font-size:0.8rem;color:var(--muted)}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;scroll-behavior:auto !important}
+}
+@media print{
+  .deck-nav{display:none}
+  .slide{page-break-after:always;min-height:0}
+  .notes{display:block}
+}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <section class="slide is-current" id="s1">
+    <p class="slide-index">1</p>
+    <h2>One claim per slide. This is the claim.</h2>
+    <p data-claim="clm_000000000000">The slide body states it in a sentence a listener can
+    repeat.<sup class="ref"><a href="#c-clm_000000000000">1</a></sup>
+    <span class="mark m-checked">checked</span></p>
+    <aside class="notes">
+      <p>Speaker notes carry the citation. Source: tier A operator page, retrieved 2026-01-01.</p>
+      <p>If you cannot say where the number came from, do not say the number.</p>
+    </aside>
+  </section>
+
+  <section class="slide" id="s2">
+    <p class="slide-index">2</p>
+    <h2>A contested claim shows both sides on the same slide</h2>
+    <p data-claim="clm_000000000001">The operator's own status
+    page.<sup class="ref"><a href="#c-clm_000000000001">2</a></sup>
+    <span class="mark m-contested">contested</span></p>
+    <p data-claim="clm_000000000002">The trade report saying the opposite, kept
+    visible.<sup class="ref"><a href="#c-clm_000000000002">3</a></sup>
+    <span class="mark m-contested">contested</span></p>
+    <aside class="notes">
+      <p>Adjudicated both_stand. Do not pick a side from the podium either.</p>
+    </aside>
+  </section>
+
+  <section class="slide" id="s-ledger">
+    <p class="slide-index">3</p>
+    <h2>Ledger</h2>
+    <div class="mark-legend">
+      <p>How to read the marks:</p>
+      <dl>
+        <dt><span class="mark m-checked">checked</span></dt><dd>Verified against a primary or credible secondary source.</dd>
+        <dt><span class="mark m-reported">reported</span></dt><dd>Real signal, weaker authority.</dd>
+        <dt><span class="mark m-contested">contested</span></dt><dd>Sources disagree and both are shown.</dd>
+        <dt><span class="mark m-moving">moving</span></dt><dd>True as of the printed date.</dd>
+        <dt><span class="mark m-thin">thin</span></dt><dd>The author's inference.</dd>
+      </dl>
+    </div>
+    <!-- SB:LEDGER -->
+    <!-- /SB:LEDGER -->
+    <p class="colophon">Built with sourcebook &middot;
+      <time datetime="2026-01-01">1 January 2026</time> &middot;
+      <span data-source-count>0</span> sources</p>
+  </section>
+
+</div>
+
+<nav class="deck-nav" id="nav" aria-label="Slides" hidden>
+  <button type="button" data-step="-1">Previous slide</button>
+  <button type="button" data-step="1">Next slide</button>
+  <button type="button" data-notes>Speaker notes</button>
+</nav>
+
+<script>
+/* Enhancement only. With this script removed the deck is a scrolling document and every
+   slide, including the speaker notes, is readable. ?print keeps it that way. */
+(function () {
+  var deck = document.getElementById('deck');
+  var nav = document.getElementById('nav');
+  var slides = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+  if (slides.length < 2 || location.search.indexOf('print') > -1) { return; }
+  deck.classList.add('js');
+  nav.hidden = false;
+  var at = 0;
+  function show(i) {
+    at = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, n) {
+      if (n === at) { s.classList.add('is-current'); } else { s.classList.remove('is-current'); }
+    });
+    location.hash = slides[at].id;
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { show(at + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { show(at - 1); }
+  });
+  nav.addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b) { return; }
+    if (b.hasAttribute('data-notes')) { deck.classList.toggle('show-notes'); return; }
+    show(at + Number(b.getAttribute('data-step')));
+  });
+  var touch = 0;
+  deck.addEventListener('touchstart', function (e) { touch = e.changedTouches[0].clientX; });
+  deck.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touch;
+    if (Math.abs(dx) > 60) { show(at + (dx < 0 ? 1 : -1)); }
+  });
+  var start = slides.map(function (s) { return s.id; }).indexOf(location.hash.slice(1));
+  show(start > -1 ? start : 0);
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sourcebook.dev/schemas/credits.schema.json",
+  "title": "asset credits, keyed by file name",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": ["origin"],
+    "properties": {
+      "origin": {"type": "string", "enum": ["sourced", "generated"]},
+      "source": {"type": "string"},
+      "credit": {"type": "string"},
+      "license": {"type": "string"},
+      "license_url": {"type": "string"},
+      "generator": {"type": "string"},
+      "prompt": {"type": "string"},
+      "created_at": {"type": "string"},
+      "retrieved_at": {"type": "string"},
+      "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "additionalProperties": false
+  }
+}

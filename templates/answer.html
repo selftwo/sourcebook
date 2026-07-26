@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Answer &middot; sourcebook</title>
+<style>
+:root{
+  --ground:#ffffff;
+  --panel:#f3f4f6;
+  --ink:#16181d;
+  --muted:#4b5261;
+  --hairline:#d4d7de;
+  --accent:#8a1f2e;
+  --checked:#1c5c3a;
+  --reported:#7a4a10;
+  --contested:#8a1f2e;
+  --moving:#1f4b8f;
+  --thin:#4b5261;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  --measure:66ch;
+  --rule:1px solid var(--hairline);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--ground);color:var(--ink)}
+body{margin:0;background:var(--ground);color:var(--ink);
+     font-family:var(--serif);font-size:1rem;line-height:1.55;
+     text-rendering:optimizeLegibility}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem 4rem}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ground);padding:0.5rem}
+.skip:focus{left:0;z-index:9}
+
+/* masthead ------------------------------------------------------------- */
+.masthead{border-bottom:3px solid var(--ink);padding:2.5rem 0 1.25rem;margin-bottom:2rem}
+.masthead h1{font-size:2.44140625rem;line-height:1.08;font-weight:600;
+  letter-spacing:-0.012em;margin:0 0 0.75rem;max-width:22ch}
+.standfirst{font-size:1.25rem;line-height:1.4;margin:0 0 1rem;max-width:var(--measure);color:var(--ink)}
+.byline{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin:0}
+
+/* layout --------------------------------------------------------------- */
+.columns{display:grid;grid-template-columns:1fr;gap:2rem}
+@media (min-width:56rem){
+  .columns{grid-template-columns:15rem minmax(0,1fr);gap:3rem}
+  .toc{position:sticky;top:1.5rem;align-self:start}
+}
+.toc{font-family:var(--sans);font-size:0.8rem;border-top:var(--rule);padding-top:0.75rem}
+.toc p{margin:0 0 0.5rem;color:var(--muted)}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc li{margin:0 0 0.4rem}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;
+  transition:border-color 120ms linear}
+.toc a:hover,.toc a[aria-current="true"]{border-bottom-color:var(--accent)}
+
+/* reading -------------------------------------------------------------- */
+main{max-width:var(--measure)}
+section{scroll-margin-top:1.5rem;margin:0 0 2.5rem}
+section h2{font-size:1.5625rem;line-height:1.2;font-weight:600;margin:0 0 0.75rem;
+  padding-top:1rem;border-top:var(--rule)}
+section h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.5rem}
+p{margin:0 0 1rem}
+blockquote{margin:1.25rem 0;padding-left:1rem;border-left:3px solid var(--hairline);
+  color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:0.8rem;font-family:var(--sans)}
+th,td{text-align:left;padding:0.5rem 0.75rem 0.5rem 0;border-bottom:var(--rule);vertical-align:top}
+th{font-weight:600}
+figure{margin:1.5rem 0}
+figcaption{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-top:0.5rem}
+
+/* marks ---------------------------------------------------------------- */
+.mark{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:1;
+  white-space:nowrap;padding:0.18em 0 0.1em;border-bottom:2px solid currentColor;
+  vertical-align:0.15em}
+.m-checked{color:var(--checked)}
+.m-reported{color:var(--reported)}
+.m-contested{color:var(--contested)}
+.m-moving{color:var(--moving)}
+.m-thin{color:var(--thin)}
+.mark-legend{font-family:var(--sans);font-size:0.8rem;color:var(--muted);
+  border-top:var(--rule);border-bottom:var(--rule);padding:0.75rem 0;margin:1.5rem 0}
+.mark-legend dl{display:grid;grid-template-columns:auto 1fr;gap:0.35rem 0.75rem;margin:0.5rem 0 0}
+.mark-legend dt,.mark-legend dd{margin:0}
+sup.ref{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:0}
+sup.ref a{color:var(--accent);text-decoration:none;padding:0 0.1em}
+
+/* ledger --------------------------------------------------------------- */
+.ledger{list-style:none;counter-reset:none;margin:0;padding:0}
+.ledger-entry{border-top:var(--rule);padding:1rem 0;display:grid;
+  grid-template-columns:2.5rem minmax(0,1fr);gap:0 0.75rem}
+.ledger-entry::before{content:"[" counter(list-item) "]";font-family:var(--sans);
+  font-size:0.8rem;color:var(--muted);grid-row:1 / span 4}
+.ledger-claim{margin:0 0 0.4rem;grid-column:2}
+.ledger-meta,.ledger-source{grid-column:2;font-family:var(--sans);font-size:0.8rem;
+  color:var(--muted);margin:0 0 0.35rem}
+.ledger-thin{margin-top:1rem}
+.ledger-note{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem}
+.ledger-thin .ledger-entry::before{content:"\00b7"}
+.tier{font-family:var(--sans);font-size:0.64rem;font-weight:600;color:var(--ink);
+  border:1px solid var(--hairline);padding:0.1em 0.35em;border-radius:2px}
+.ledger-quote{display:block;margin-top:0.35rem;color:var(--ink);font-family:var(--serif)}
+.as-of,.recheck{margin-left:0.5rem}
+
+/* footer --------------------------------------------------------------- */
+.colophon{border-top:3px solid var(--ink);margin-top:3rem;padding-top:1rem;
+  font-family:var(--sans);font-size:0.8rem;color:var(--muted)}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;scroll-behavior:auto !important}
+}
+@media print{
+  .toc,.skip{display:none}
+  body{font-size:0.8rem}
+  .columns{grid-template-columns:1fr}
+  a{color:var(--ink)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the answer</a>
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Replace this with the question, answered</h1>
+  <p class="standfirst">Replace this with the thesis from plan.json: one sentence a reader
+  could act on, with the date it was true.</p>
+  <p class="byline">Built <time datetime="2026-01-01">1 January 2026</time> from
+  <span data-source-count>0</span> sources</p>
+</header>
+
+<div class="columns">
+<nav class="toc" aria-label="Contents">
+  <p>Contents</p>
+  <ol>
+    <li><a href="#answer">The short answer</a></li>
+    <li><a href="#detail">What the sources say</a></li>
+    <li><a href="#ledger">Ledger</a></li>
+  </ol>
+</nav>
+
+<main id="main">
+
+<section id="answer">
+  <h2>The short answer</h2>
+  <p data-claim="clm_000000000000">Replace this sentence with the finding. Every factual
+  sentence carries a data-claim id, a superscript into the ledger, and the mark its
+  confidence earned.<sup class="ref"><a href="#c-clm_000000000000">1</a></sup>
+  <span class="mark m-checked">checked</span></p>
+  <p>A sentence with no claim id is your own connective prose. It carries no citation and
+  no mark, and it should not assert a fact.</p>
+</section>
+
+<section id="detail">
+  <h2>What the sources say</h2>
+  <p data-claim="clm_000000000001">A claim held at reported, because its only evidence is
+  pattern evidence rather than an authority on the
+  fact.<sup class="ref"><a href="#c-clm_000000000001">2</a></sup>
+  <span class="mark m-reported">reported</span></p>
+  <p data-claim="clm_000000000002">A claim that is true as of a printed date and is the kind
+  of thing that changes.<sup class="ref"><a href="#c-clm_000000000002">3</a></sup>
+  <span class="mark m-checked">checked</span> <span class="mark m-moving">moving</span></p>
+</section>
+
+<section id="ledger">
+  <h2>Ledger</h2>
+  <div class="mark-legend">
+    <p>How to read the marks:</p>
+    <dl>
+      <dt><span class="mark m-checked">checked</span></dt><dd>Verified against a primary or credible secondary source. Trust it.</dd>
+      <dt><span class="mark m-reported">reported</span></dt><dd>Real signal, weaker authority. Trust the shape, not the number.</dd>
+      <dt><span class="mark m-contested">contested</span></dt><dd>Sources disagree and both are shown here. Read both.</dd>
+      <dt><span class="mark m-moving">moving</span></dt><dd>True as of the printed date. Recheck at the link.</dd>
+      <dt><span class="mark m-thin">thin</span></dt><dd>The author's inference. No source, because there is not one.</dd>
+    </dl>
+  </div>
+  <!-- SB:LEDGER -->
+  <!-- /SB:LEDGER -->
+</section>
+
+<footer class="colophon">
+  <p>Built with sourcebook &middot; <time datetime="2026-01-01">1 January 2026</time>
+  &middot; <span data-source-count>0</span> sources. Every factual sentence above is pinned
+  to a byte span in a source you can open yourself.</p>
+</footer>
+
+</main>
+</div>
+</div>
+
+<script>
+/* Enhancement only. Every word above reads with this file deleted. */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  var targets = links.map(function (a) { return document.getElementById(a.hash.slice(1)); });
+  if (!('IntersectionObserver' in window)) { return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var i = targets.indexOf(e.target);
+      if (i < 0) { return; }
+      links[i].setAttribute('aria-current', e.isIntersecting ? 'true' : 'false');
+    });
+  }, { rootMargin: '-10% 0px -70% 0px' });
+  targets.forEach(function (t) { if (t) { io.observe(t); } });
+}());
+</script>
+</body>
+</html>

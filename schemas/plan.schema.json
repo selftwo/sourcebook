@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sourcebook.dev/schemas/plan.schema.json",
+  "title": "the agent's artifact plan",
+  "type": "object",
+  "required": ["schema_version", "type", "title", "thesis", "sections"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "type": {"type": "string", "enum": ["answer","explainer","deck","brief","infographic","podcast"]},
+    "title": {"type": "string", "minLength": 3},
+    "audience": {"type": "string"},
+    "thesis": {"type": "string", "minLength": 10},
+    "register": {"type": "string"},
+    "images": {
+      "type": "object",
+      "required": ["mode"],
+      "properties": {
+        "mode": {"type": "string", "enum": ["none", "source", "generate"]},
+        "slots": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "constraints": {"type": "object"},
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "heading", "claim_ids"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "heading": {"type": "string"},
+          "intent": {"type": "string"},
+          "claim_ids": {"type": "array", "items": {"type": "string", "pattern": "^clm_[0-9a-f]{12}$"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

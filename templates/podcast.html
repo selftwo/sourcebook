@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Episode transcript &middot; sourcebook</title>
+<style>
+:root{
+  --ground:#ffffff;
+  --ink:#16181d;
+  --muted:#4b5261;
+  --hairline:#d4d7de;
+  --accent:#8a1f2e;
+  --checked:#1c5c3a;
+  --reported:#7a4a10;
+  --contested:#8a1f2e;
+  --moving:#1f4b8f;
+  --thin:#4b5261;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  --rule:1px solid var(--hairline);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--ground);color:var(--ink)}
+body{margin:0;background:var(--ground);color:var(--ink);
+     font-family:var(--serif);font-size:1rem;line-height:1.5}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:48rem;margin:0 auto;padding:2rem 1.25rem 3rem}
+
+.head{border-bottom:3px solid var(--ink);padding-bottom:1rem;margin-bottom:1.5rem}
+h1{font-size:1.953125rem;line-height:1.1;font-weight:600;margin:0 0 0.5rem;max-width:24ch}
+.meta{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin:0}
+
+.segment{margin:2rem 0}
+.segment h2{font-size:1.25rem;font-weight:600;margin:0 0 0.75rem;padding-top:0.75rem;
+  border-top:var(--rule)}
+.line{display:grid;grid-template-columns:1fr;gap:0.15rem;margin:0 0 1rem}
+@media (min-width:44rem){.line{grid-template-columns:7rem minmax(0,1fr);gap:0 1rem}}
+.who{font-family:var(--sans);font-size:0.8rem;font-weight:600;color:var(--muted);margin:0}
+.said{margin:0}
+.kind{font-family:var(--sans);font-size:0.64rem;color:var(--muted)}
+
+.mark{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:1;
+  white-space:nowrap;padding:0.18em 0 0.1em;border-bottom:2px solid currentColor;
+  vertical-align:0.15em}
+.m-checked{color:var(--checked)}
+.m-reported{color:var(--reported)}
+.m-contested{color:var(--contested)}
+.m-moving{color:var(--moving)}
+.m-thin{color:var(--thin)}
+.mark-legend{font-family:var(--sans);font-size:0.8rem;color:var(--muted);
+  border-top:var(--rule);border-bottom:var(--rule);padding:0.75rem 0;margin:1.5rem 0}
+.mark-legend dl{display:grid;grid-template-columns:auto 1fr;gap:0.35rem 0.75rem;margin:0.5rem 0 0}
+.mark-legend dt,.mark-legend dd{margin:0}
+sup.ref{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:0}
+sup.ref a{color:var(--accent);text-decoration:none;padding:0 0.1em}
+
+.ledger{list-style:none;margin:0;padding:0}
+.ledger-entry{border-top:var(--rule);padding:0.75rem 0;display:grid;
+  grid-template-columns:2.5rem minmax(0,1fr);gap:0 0.75rem}
+.ledger-entry::before{content:"[" counter(list-item) "]";font-family:var(--sans);
+  font-size:0.8rem;color:var(--muted)}
+.ledger-claim{margin:0 0 0.35rem;grid-column:2}
+.ledger-meta,.ledger-source{grid-column:2;font-family:var(--sans);font-size:0.8rem;
+  color:var(--muted);margin:0 0 0.25rem}
+.ledger-quote{display:block;color:var(--ink);font-family:var(--serif)}
+.ledger-thin{margin-top:1rem}
+.ledger-note{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem}
+.ledger-thin .ledger-entry::before{content:"\00b7"}
+.tier{font-weight:600;color:var(--ink)}
+.colophon{font-family:var(--sans);font-size:0.8rem;color:var(--muted);
+  border-top:3px solid var(--ink);margin-top:2rem;padding-top:0.75rem}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="head">
+  <h1>Replace this with the episode title</h1>
+  <p class="meta">Two hosts &middot; <span data-source-count>0</span> sources &middot;
+    outline then transcript &middot; every factual line carries a claim id.
+    Audio is optional: build/podcast.ttsplan.json drives any speech tool you already have.</p>
+</header>
+
+<section class="segment">
+  <h2>Segment 1: the question</h2>
+
+  <div class="line">
+    <p class="who">Ana</p>
+    <p class="said" data-claim="clm_000000000000">A factual line names its claim, so the
+    boundary between what the sources support and what the hosts are riffing on stays
+    machine-checkable.<sup class="ref"><a href="#c-clm_000000000000">1</a></sup>
+    <span class="mark m-checked">checked</span></p>
+  </div>
+
+  <div class="line">
+    <p class="who">Ravi</p>
+    <p class="said">An opinion line carries no claim id and no mark, and it is typed as
+    opinion in podcast.script.json. <span class="kind">opinion</span></p>
+  </div>
+
+  <div class="line">
+    <p class="who">Ana</p>
+    <p class="said" data-claim="clm_000000000001">A line about something that changes prints
+    the date it was true.<sup class="ref"><a href="#c-clm_000000000001">2</a></sup>
+    <span class="mark m-checked">checked</span> <span class="mark m-moving">moving</span></p>
+  </div>
+</section>
+
+<div class="mark-legend">
+  <p>How to read the marks:</p>
+  <dl>
+    <dt><span class="mark m-checked">checked</span></dt><dd>Verified against a primary or credible secondary source.</dd>
+    <dt><span class="mark m-reported">reported</span></dt><dd>Real signal, weaker authority.</dd>
+    <dt><span class="mark m-contested">contested</span></dt><dd>Sources disagree and both are shown.</dd>
+    <dt><span class="mark m-moving">moving</span></dt><dd>True as of the printed date.</dd>
+    <dt><span class="mark m-thin">thin</span></dt><dd>The author's inference.</dd>
+  </dl>
+</div>
+
+<section>
+  <h2>Ledger</h2>
+  <!-- SB:LEDGER -->
+  <!-- /SB:LEDGER -->
+</section>
+
+<footer class="colophon">
+  <p>Built with sourcebook &middot; <time datetime="2026-01-01">1 January 2026</time>
+  &middot; <span data-source-count>0</span> sources</p>
+</footer>
+
+</div>
+</body>
+</html>

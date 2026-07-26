@@ -1,0 +1,268 @@
+{
+  "claims": [
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_19548dbc234b",
+      "kind": "recommendation",
+      "notes": "",
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "For a trip in the next few months, plan to pay with cash, a paper ticket, or a Meridian Card rather than a Harbour card.",
+      "topic_key": "traveller.plan",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-01-06",
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 685,
+          "quote": "An earlier industry\nestimate put the number of active Meridian Cards at 1.9 million",
+          "source_id": "src_058d16216794",
+          "start": 602
+        }
+      ],
+      "id": "clm_24a42b008f78",
+      "kind": "number",
+      "notes": "",
+      "recheck": "https://harbourtradeweekly.example/2026/01/06/interoperability-deal",
+      "status": "active",
+      "superseded_by": null,
+      "text": "An earlier industry estimate put the number of active Meridian Cards at 1.9 million.",
+      "topic_key": "meridian.cards.active",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-02-16",
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 160,
+          "quote": "Tried tapping my Harbour card at the Northline gangway on Tuesday. Declined twice.",
+          "source_id": "src_ccde41bed7b4",
+          "start": 78
+        },
+        {
+          "end": 413,
+          "quote": "Staff at the quay said the link is not switched on yet",
+          "source_id": "src_ccde41bed7b4",
+          "start": 359
+        }
+      ],
+      "id": "clm_377add821344",
+      "kind": "fact",
+      "notes": "",
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "Travellers report Harbour cards being declined at the Northline gangway in December 2025 and again in February 2026.",
+      "topic_key": "northline.harbour.traveller-reports",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-02-12",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 1220,
+          "quote": "Harbour Transit is not on the live\nlist above, and Harbour cards cannot currently be used to pay a fare on a Northline service.",
+          "source_id": "src_1823e227204b",
+          "start": 1093
+        }
+      ],
+      "id": "clm_38d64b78005c",
+      "kind": "fact",
+      "notes": "",
+      "recheck": "https://northline.example/fares/interoperability",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Harbour Transit is not on Northline's live interoperability list, and a Harbour card cannot be used to pay a fare on a Northline service as of 12 February 2026.",
+      "topic_key": "northline.harbour.live",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-02-12",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 775,
+          "quote": "Calder Transit, live since 4 August 2025\n- Vantis Rail, live since 19 November 2025",
+          "source_id": "src_1823e227204b",
+          "start": 692
+        }
+      ],
+      "id": "clm_574ac1fbf54a",
+      "kind": "entity",
+      "notes": "",
+      "recheck": "https://northline.example/fares/interoperability",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The only partner schemes live for cross-border tap-and-go on Northline services are Calder Transit and Vantis Rail.",
+      "topic_key": "northline.livelist",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-02-12",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 492,
+          "quote": "There are 1.4 million active Meridian Cards in circulation as of 12 February 2026.",
+          "source_id": "src_1823e227204b",
+          "start": 410
+        }
+      ],
+      "id": "clm_5add19271ae5",
+      "kind": "number",
+      "notes": "",
+      "recheck": "https://northline.example/fares/interoperability",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Northline reports 1.4 million active Meridian Cards in circulation as of 12 February 2026.",
+      "topic_key": "meridian.cards.active",
+      "volatile": true
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 828,
+          "quote": "The agreement covers forty-two terminals across the two networks.",
+          "source_id": "src_8c4cd8d0fb38",
+          "start": 763
+        }
+      ],
+      "id": "clm_7372280596d2",
+      "kind": "number",
+      "notes": "",
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "The signed agreement covers forty-two terminals across the two networks.",
+      "topic_key": "harbour.agreement.scope",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-02-16",
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 628,
+          "quote": "the Meridian tap works\nfine on every route I have taken this year",
+          "source_id": "src_ccde41bed7b4",
+          "start": 563
+        }
+      ],
+      "id": "clm_8b4adc521f32",
+      "kind": "fact",
+      "notes": "",
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "The same travellers report that Meridian card taps work on the routes they used.",
+      "topic_key": "northline.meridian.works",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-01-03",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 661,
+          "quote": "Neither party is announcing a date for passenger availability.",
+          "source_id": "src_8c4cd8d0fb38",
+          "start": 599
+        }
+      ],
+      "id": "clm_b4b1884d43ab",
+      "kind": "fact",
+      "notes": "",
+      "recheck": "https://harbourtradeweekly.example/2026/01/06/interoperability-deal",
+      "status": "active",
+      "superseded_by": null,
+      "text": "Neither operator has announced a date for passenger availability.",
+      "topic_key": "harbour.agreement.availability",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-01-06",
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 273,
+          "quote": "have signed an agreement that enables\nHarbour cards to be used for fare payment on Northline coastal services",
+          "source_id": "src_058d16216794",
+          "start": 164
+        }
+      ],
+      "id": "clm_ba5cb17942ab",
+      "kind": "fact",
+      "notes": "",
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "Trade reporting describes the January 2026 agreement as enabling Harbour cards to be used for fare payment on Northline coastal services.",
+      "topic_key": "northline.harbour.live",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 320,
+          "quote": "signed an agreement covering fare\ninteroperability between the Harbour card and Northline coastal ferry services",
+          "source_id": "src_8c4cd8d0fb38",
+          "start": 208
+        }
+      ],
+      "id": "clm_eb027a5b0314",
+      "kind": "date",
+      "notes": "",
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "Northline Ferries and the Harbour Transit Authority signed a fare interoperability agreement on 3 January 2026.",
+      "topic_key": "harbour.agreement.signed",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 408,
+          "quote": "Paper\ntickets remain available at every terminal counter and at the quayside machines, which take\ncash.",
+          "source_id": "src_1823e227204b",
+          "start": 305
+        }
+      ],
+      "id": "clm_fc44ae58adbc",
+      "kind": "fact",
+      "notes": "",
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "Paper tickets and cash remain available at every Northline terminal counter and at the quayside machines.",
+      "topic_key": "northline.paper-tickets",
+      "volatile": false
+    }
+  ],
+  "schema_version": 1
+}

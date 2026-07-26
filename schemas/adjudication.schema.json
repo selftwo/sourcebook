@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sourcebook.dev/schemas/adjudication.schema.json",
+  "title": "recorded adjudications of contradiction clusters",
+  "type": "object",
+  "required": ["schema_version", "adjudications"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "adjudications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cluster_id", "topic_key", "claim_ids", "outcome", "reason", "decided_at"],
+        "properties": {
+          "cluster_id": {"type": "string", "pattern": "^cls_[0-9a-f]{12}$"},
+          "topic_key": {"type": "string"},
+          "claim_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "outcome": {"type": "string", "enum": ["supersede", "both_stand", "scope_split", "retract"]},
+          "reason": {"type": "string", "minLength": 20},
+          "decided_at": {"type": "string", "format": "date-time"},
+          "winner": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,44 @@
+sourcebook
+Copyright 2026 The sourcebook authors
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+--------------------------------------------------------------------------------
+
+Attribution of ideas, not of code.
+
+sourcebook borrows three ideas conceptually and reimplements a much smaller
+version of each. No code was copied from any of them, and sourcebook depends on
+none of them at build time or at run time.
+
+  * Open Notebook (Apache-2.0) -- the retrieve-then-cite shape, heading-aware
+    chunking, and the outline-then-transcript podcast structure. sourcebook
+    reimplements these as agent instructions and a stdlib CLI rather than as a
+    graph, and deliberately changes the provenance model: Open Notebook anchors a
+    citation to a record id, so a re-index can orphan it, whereas a sourcebook
+    citation is a byte span into an immutable normalized.md and survives any
+    re-chunking.
+
+  * A design-rules lineage of anti-slop critique. The machine-checkable half of
+    those rules is compiled here into scripts/sourcebook/lint/rules.py with stable
+    rule ids and exit codes; the judgment half stays prose in
+    skills/sourcebook/reference/visual.md. The rule registry is a dated snapshot of
+    2026's defaults, not eternal law, and is versioned like every other algorithm
+    in the kit.
+
+  * A citation-apparatus lineage: superscripts anchoring into a numbered source
+    ledger, inline confidence marks, and a credits.json for asset provenance.
+    sourcebook formalises these into a five-mark vocabulary and a license validator.
+
+The example sources under examples/demo/sources/ are synthetic. Northline Ferries,
+the Harbour Transit Authority, the Meridian Card, Calder Transit, Vantis Rail, and
+Harbour Trade Weekly are invented for the demo and describe no real organisation.

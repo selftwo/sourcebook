@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sourcebook.dev/schemas/claim.schema.json",
+  "title": "the claim ledger",
+  "type": "object",
+  "required": ["schema_version", "claims"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text", "topic_key", "kind", "confidence", "evidence", "status"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^clm_[0-9a-f]{12}$"},
+          "text": {"type": "string", "minLength": 3},
+          "topic_key": {"type": "string", "pattern": "^[a-z0-9]+([._-][a-z0-9]+)*$"},
+          "kind": {"type": "string", "enum": ["fact","number","date","entity","quote","definition","interpretation","recommendation"]},
+          "confidence": {"type": "string", "enum": ["verified","reported","contested","inferred","unsupported"]},
+          "volatile": {"type": "boolean"},
+          "as_of": {"type": ["string", "null"], "format": "date"},
+          "recheck": {"type": ["string", "null"], "format": "uri"},
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["source_id", "start", "end"],
+              "properties": {
+                "source_id": {"type": "string", "pattern": "^src_[0-9a-f]{12}$"},
+                "start": {"type": "integer", "minimum": 0},
+                "end": {"type": "integer", "minimum": 1},
+                "quote": {"type": "string"},
+                "quote_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "length": {"type": "integer", "minimum": 0},
+                "redacted": {"type": "boolean"}
+              },
+              "additionalProperties": false
+            }
+          },
+          "contradicts": {"type": "array", "items": {"type": "string"}},
+          "status": {"type": "string", "enum": ["active", "superseded", "retracted"]},
+          "superseded_by": {"type": ["string", "null"]},
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

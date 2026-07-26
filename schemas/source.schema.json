@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sourcebook.dev/schemas/source.schema.json",
+  "title": "a single collected source",
+  "type": "object",
+  "required": ["schema_version", "id", "kind", "locator", "canonical_locator", "tier", "tier_reason", "retrieved_at", "status"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^src_[0-9a-f]{12}$"},
+    "kind": {"type": "string", "enum": ["url", "file", "paste"]},
+    "locator": {"type": "string", "minLength": 1},
+    "canonical_locator": {"type": "string", "minLength": 1},
+    "title": {"type": ["string", "null"]},
+    "author": {"type": ["string", "null"]},
+    "publisher": {"type": ["string", "null"]},
+    "published_at": {"type": ["string", "null"]},
+    "retrieved_at": {"type": "string", "format": "date-time"},
+    "tier": {"type": "string", "enum": ["A", "B", "C", "D"]},
+    "tier_reason": {"type": "string"},
+    "license": {"type": ["string", "null"]},
+    "media_type": {"type": ["string", "null"]},
+    "lang": {"type": ["string", "null"]},
+    "raw_sha256": {"type": ["string", "null"]},
+    "normalized_sha256": {"type": ["string", "null"]},
+    "normalizer_version": {"type": ["integer", "null"]},
+    "extraction": {
+      "type": "object",
+      "properties": {
+        "tool": {"type": "string"},
+        "version": {"type": "integer"},
+        "ok": {"type": "boolean"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "status": {"type": "string", "enum": ["pending", "needs_extraction", "ready", "failed"]},
+    "error": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

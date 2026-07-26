@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Brief &middot; sourcebook</title>
+<style>
+:root{
+  --ground:#ffffff;
+  --ink:#16181d;
+  --muted:#4b5261;
+  --hairline:#d4d7de;
+  --accent:#8a1f2e;
+  --checked:#1c5c3a;
+  --reported:#7a4a10;
+  --contested:#8a1f2e;
+  --moving:#1f4b8f;
+  --thin:#4b5261;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  --rule:1px solid var(--hairline);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--ground);color:var(--ink)}
+body{margin:0;background:var(--ground);color:var(--ink);
+     font-family:var(--serif);font-size:1rem;line-height:1.4}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* A4 and Letter both. No fixed positioning anywhere, so print is faithful. */
+@page{size:A4;margin:16mm}
+.sheet{max-width:190mm;margin:0 auto;padding:12mm 8mm}
+.head{border-bottom:3px solid var(--ink);padding-bottom:0.75rem;margin-bottom:1rem;
+  display:grid;gap:0.5rem}
+.head h1{font-size:1.953125rem;line-height:1.1;font-weight:600;margin:0;max-width:26ch;
+  letter-spacing:-0.01em}
+.head .thesis{font-size:1.25rem;line-height:1.35;margin:0;max-width:60ch}
+.head .meta{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin:0}
+
+.grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+@media (min-width:50rem){.grid{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:2rem}}
+h2{font-size:1.25rem;font-weight:600;margin:1.25rem 0 0.5rem;padding-top:0.5rem;
+  border-top:var(--rule)}
+h2:first-child{margin-top:0;border-top:0;padding-top:0}
+p{margin:0 0 0.75rem}
+.dense p{font-size:1rem;line-height:1.45}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:0.8rem}
+th,td{text-align:left;padding:0.4rem 0.6rem 0.4rem 0;border-bottom:var(--rule);vertical-align:top}
+th{font-weight:600}
+.aside{font-family:var(--sans);font-size:0.8rem;color:var(--muted)}
+.aside h2{font-family:var(--serif);color:var(--ink)}
+
+.mark{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:1;
+  white-space:nowrap;padding:0.18em 0 0.1em;border-bottom:2px solid currentColor;
+  vertical-align:0.15em}
+.m-checked{color:var(--checked)}
+.m-reported{color:var(--reported)}
+.m-contested{color:var(--contested)}
+.m-moving{color:var(--moving)}
+.m-thin{color:var(--thin)}
+.mark-legend{font-family:var(--sans);font-size:0.8rem;color:var(--muted);
+  border-top:var(--rule);border-bottom:var(--rule);padding:0.5rem 0;margin:1rem 0}
+.mark-legend dl{display:grid;grid-template-columns:auto 1fr;gap:0.25rem 0.75rem;margin:0.35rem 0 0}
+.mark-legend dt,.mark-legend dd{margin:0}
+sup.ref{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:0}
+sup.ref a{color:var(--accent);text-decoration:none;padding:0 0.1em}
+
+.footer-ledger{border-top:3px solid var(--ink);margin-top:1.5rem;padding-top:0.75rem}
+.footer-ledger h2{border-top:0;padding-top:0;margin-top:0}
+.ledger{list-style:none;margin:0;padding:0;column-gap:2rem}
+@media (min-width:50rem){.ledger{columns:2}}
+.ledger-entry{break-inside:avoid;border-top:var(--rule);padding:0.5rem 0;
+  font-family:var(--sans);font-size:0.8rem}
+.ledger-entry::before{content:"[" counter(list-item) "] ";color:var(--muted)}
+.ledger-claim{display:inline;margin:0;font-family:var(--serif);font-size:1rem;color:var(--ink)}
+.ledger-meta,.ledger-source{margin:0.25rem 0 0;color:var(--muted)}
+.ledger-quote{display:block;color:var(--ink);font-family:var(--serif)}
+.ledger-thin{margin-top:1rem}
+.ledger-note{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem}
+.ledger-thin .ledger-entry::before{content:"\00b7"}
+.tier{font-weight:600;color:var(--ink)}
+.colophon{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-top:1rem}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important}
+}
+@media print{
+  .sheet{padding:0;max-width:none}
+  a{color:var(--ink)}
+  body{font-size:0.8rem}
+}
+</style>
+</head>
+<body>
+<article class="sheet">
+
+  <header class="head">
+    <h1>Replace this with the brief's subject, stated as a finding</h1>
+    <p class="thesis">One sentence a reader could act on, with the date it was true.</p>
+    <p class="meta">Prepared <time datetime="2026-01-01">1 January 2026</time> &middot;
+      <span data-source-count>0</span> sources &middot; prints to A4 and Letter</p>
+  </header>
+
+  <div class="grid">
+    <div class="dense">
+      <h2>What is the case</h2>
+      <p data-claim="clm_000000000000">Dense prose, mostly structure and type. Every factual
+      sentence is pinned.<sup class="ref"><a href="#c-clm_000000000000">1</a></sup>
+      <span class="mark m-checked">checked</span></p>
+
+      <h2>What is disputed</h2>
+      <p data-claim="clm_000000000001">Both sides of an adjudicated disagreement stay on the
+      page.<sup class="ref"><a href="#c-clm_000000000001">2</a></sup>
+      <span class="mark m-contested">contested</span></p>
+
+      <h2>What to do</h2>
+      <p data-claim="clm_000000000002">The recommendation, marked as the inference it
+      is.<span class="mark m-thin">thin</span></p>
+    </div>
+
+    <aside class="aside">
+      <h2>At a glance</h2>
+      <table>
+        <caption class="aside">Every row is a claim in the ledger.</caption>
+        <tr><th scope="row">Status</th><td>Signed, not live</td></tr>
+        <tr><th scope="row">As of</th><td>2026-01-01</td></tr>
+        <tr><th scope="row">Sources</th><td>2 tier A, 1 tier B, 1 tier C</td></tr>
+      </table>
+      <div class="mark-legend">
+        <p>Marks:</p>
+        <dl>
+          <dt><span class="mark m-checked">checked</span></dt><dd>trust it</dd>
+          <dt><span class="mark m-reported">reported</span></dt><dd>trust the shape, not the number</dd>
+          <dt><span class="mark m-contested">contested</span></dt><dd>read both</dd>
+          <dt><span class="mark m-moving">moving</span></dt><dd>recheck at the link</dd>
+          <dt><span class="mark m-thin">thin</span></dt><dd>weigh it as opinion</dd>
+        </dl>
+      </div>
+    </aside>
+  </div>
+
+  <section class="footer-ledger">
+    <h2>Ledger</h2>
+    <!-- SB:LEDGER -->
+    <!-- /SB:LEDGER -->
+    <p class="colophon">Built with sourcebook &middot;
+      <time datetime="2026-01-01">1 January 2026</time> &middot;
+      <span data-source-count>0</span> sources</p>
+  </section>
+
+</article>
+</body>
+</html>

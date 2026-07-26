@@ -1,0 +1,29 @@
+{
+  "adjudications": [
+    {
+      "claim_ids": [
+        "clm_38d64b78005c",
+        "clm_ba5cb17942ab"
+      ],
+      "cluster_id": "cls_5fa7c52aef47",
+      "decided_at": "2026-07-26T10:02:11Z",
+      "outcome": "both_stand",
+      "reason": "The operator's own page is a status claim: Harbour is absent from the live list and a tap is declined today. The trade report is a claim about what the signed agreement is for. Both are accurate about different things, and a traveller who reads only the second one turns up at the gangway and cannot board. Both stand, and both appear in the artifact.",
+      "topic_key": "northline.harbour.live",
+      "winner": null
+    },
+    {
+      "claim_ids": [
+        "clm_5add19271ae5",
+        "clm_24a42b008f78"
+      ],
+      "cluster_id": "cls_1964cdb230c6",
+      "decided_at": "2026-07-26T10:04:40Z",
+      "outcome": "supersede",
+      "reason": "Both figures describe the same population. The operator issues the cards and publishes the definition of an active card, so it is closer to the fact than an unattributed industry estimate, and its figure is five weeks more recent. Tier and recency point the same way, so this is a supersede rather than a genuine disagreement.",
+      "topic_key": "meridian.cards.active",
+      "winner": "clm_5add19271ae5"
+    }
+  ],
+  "schema_version": 1
+}

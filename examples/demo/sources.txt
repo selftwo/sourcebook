@@ -1,0 +1,12 @@
+# Live URLs for the online variant of the demo.
+#
+# The repository ships the runbook and these locators, never the captured third-party
+# text. `make demo` does not use this file: it runs entirely from the synthetic sources
+# in examples/demo/sources/, offline.
+#
+# To run the demo against real sources, replace these with your own and follow BRIEF.md.
+
+https://example.org/operator/fare-interoperability
+https://example.org/operator/press/joint-announcement
+https://example.org/trade/interoperability-deal
+https://example.org/forum/gangway-thread

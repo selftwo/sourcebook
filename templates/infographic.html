@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Figures &middot; sourcebook</title>
+<style>
+:root{
+  --ground:#ffffff;
+  --ink:#16181d;
+  --muted:#4b5261;
+  --hairline:#d4d7de;
+  --accent:#8a1f2e;
+  --accent-2:#1f4b8f;
+  --checked:#1c5c3a;
+  --reported:#7a4a10;
+  --contested:#8a1f2e;
+  --moving:#1f4b8f;
+  --thin:#4b5261;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  --rule:1px solid var(--hairline);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--ground);color:var(--ink)}
+body{margin:0;background:var(--ground);color:var(--ink);
+     font-family:var(--serif);font-size:1rem;line-height:1.45}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:56rem;margin:0 auto;padding:2rem 1.25rem 3rem}
+
+.head{border-bottom:3px solid var(--ink);padding-bottom:1rem;margin-bottom:2rem}
+h1{font-size:1.953125rem;line-height:1.1;font-weight:600;margin:0 0 0.5rem;max-width:24ch;
+  letter-spacing:-0.01em}
+.thesis{font-size:1.25rem;margin:0 0 0.5rem;max-width:56ch}
+.meta{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin:0}
+
+figure{margin:0 0 2.5rem;border-top:var(--rule);padding-top:1rem}
+figure h2{font-size:1.25rem;font-weight:600;margin:0 0 0.75rem}
+figcaption{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-top:0.75rem}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.axis{stroke:var(--hairline);stroke-width:1}
+.gridline{stroke:var(--hairline);stroke-width:1;stroke-dasharray:2 3}
+.barfill{fill:var(--accent)}
+.barfill-2{fill:var(--accent-2)}
+.tick{font-family:var(--sans);font-size:0.64rem;fill:var(--muted)}
+.value{font-family:var(--sans);font-size:0.8rem;font-weight:600;fill:var(--ink)}
+
+.mark{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:1;
+  white-space:nowrap;padding:0.18em 0 0.1em;border-bottom:2px solid currentColor;
+  vertical-align:0.15em}
+.m-checked{color:var(--checked)}
+.m-reported{color:var(--reported)}
+.m-contested{color:var(--contested)}
+.m-moving{color:var(--moving)}
+.m-thin{color:var(--thin)}
+.mark-legend{font-family:var(--sans);font-size:0.8rem;color:var(--muted);
+  border-top:var(--rule);border-bottom:var(--rule);padding:0.75rem 0;margin:2rem 0}
+.mark-legend dl{display:grid;grid-template-columns:auto 1fr;gap:0.35rem 0.75rem;margin:0.5rem 0 0}
+.mark-legend dt,.mark-legend dd{margin:0}
+sup.ref{font-family:var(--sans);font-size:0.64rem;font-weight:600;line-height:0}
+sup.ref a{color:var(--accent);text-decoration:none;padding:0 0.1em}
+
+.ledger{list-style:none;margin:0;padding:0}
+.ledger-entry{border-top:var(--rule);padding:0.75rem 0;display:grid;
+  grid-template-columns:2.5rem minmax(0,1fr);gap:0 0.75rem}
+.ledger-entry::before{content:"[" counter(list-item) "]";font-family:var(--sans);
+  font-size:0.8rem;color:var(--muted)}
+.ledger-claim{margin:0 0 0.35rem;grid-column:2}
+.ledger-meta,.ledger-source{grid-column:2;font-family:var(--sans);font-size:0.8rem;
+  color:var(--muted);margin:0 0 0.25rem}
+.ledger-quote{display:block;color:var(--ink);font-family:var(--serif)}
+.ledger-thin{margin-top:1rem}
+.ledger-note{font-family:var(--sans);font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem}
+.ledger-thin .ledger-entry::before{content:"\00b7"}
+.tier{font-weight:600;color:var(--ink)}
+.colophon{font-family:var(--sans);font-size:0.8rem;color:var(--muted);
+  border-top:3px solid var(--ink);margin-top:2rem;padding-top:0.75rem}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="head">
+  <h1>Replace this with what the numbers say</h1>
+  <p class="thesis">Every number on this page is a claim of kind number in the ledger. If a
+  figure does not encode a claim, it is deleted rather than decorated.</p>
+  <p class="meta"><time datetime="2026-01-01">1 January 2026</time> &middot;
+    <span data-source-count>0</span> sources</p>
+</header>
+
+<figure data-claim="clm_000000000000">
+  <h2>Partner schemes by status</h2>
+  <svg viewBox="0 0 640 200" role="img" aria-labelledby="fig1-title fig1-desc">
+    <title id="fig1-title">Partner schemes by status</title>
+    <desc id="fig1-desc">Live: 2. Signed but not live: 1. No agreement: 5.</desc>
+    <line class="axis" x1="150" y1="10" x2="150" y2="180"></line>
+    <line class="gridline" x1="248" y1="10" x2="248" y2="180"></line>
+    <line class="gridline" x1="346" y1="10" x2="346" y2="180"></line>
+    <line class="gridline" x1="444" y1="10" x2="444" y2="180"></line>
+    <text class="tick" x="150" y="196" text-anchor="middle">0</text>
+    <text class="tick" x="248" y="196" text-anchor="middle">2</text>
+    <text class="tick" x="346" y="196" text-anchor="middle">4</text>
+    <text class="tick" x="444" y="196" text-anchor="middle">6</text>
+    <text class="tick" x="142" y="35" text-anchor="end">Live</text>
+    <rect class="barfill" x="150" y="20" width="98" height="22"></rect>
+    <text class="value" x="258" y="36">2</text>
+    <text class="tick" x="142" y="90" text-anchor="end">Signed, not live</text>
+    <rect class="barfill-2" x="150" y="75" width="49" height="22"></rect>
+    <text class="value" x="209" y="91">1</text>
+    <text class="tick" x="142" y="145" text-anchor="end">No agreement</text>
+    <rect class="barfill" x="150" y="130" width="245" height="22"></rect>
+    <text class="value" x="405" y="146">5</text>
+  </svg>
+  <figcaption>Counts as of 1 January 2026.<sup class="ref"><a href="#c-clm_000000000000">1</a></sup>
+  <span class="mark m-checked">checked</span> <span class="mark m-moving">moving</span>
+  Source: the operator's own published interoperability list.</figcaption>
+</figure>
+
+<figure data-claim="clm_000000000001">
+  <h2>Two sources, one number, no agreement</h2>
+  <svg viewBox="0 0 640 140" role="img" aria-labelledby="fig2-title fig2-desc">
+    <title id="fig2-title">Reported card counts</title>
+    <desc id="fig2-desc">Operator: 1.4 million. Trade estimate: 1.9 million.</desc>
+    <line class="axis" x1="150" y1="10" x2="150" y2="120"></line>
+    <line class="gridline" x1="300" y1="10" x2="300" y2="120"></line>
+    <line class="gridline" x1="450" y1="10" x2="450" y2="120"></line>
+    <text class="tick" x="150" y="136" text-anchor="middle">0</text>
+    <text class="tick" x="300" y="136" text-anchor="middle">1.0m</text>
+    <text class="tick" x="450" y="136" text-anchor="middle">2.0m</text>
+    <text class="tick" x="142" y="35" text-anchor="end">Operator</text>
+    <rect class="barfill" x="150" y="20" width="210" height="22"></rect>
+    <text class="value" x="370" y="36">1.4m</text>
+    <text class="tick" x="142" y="90" text-anchor="end">Trade estimate</text>
+    <rect class="barfill-2" x="150" y="75" width="285" height="22"></rect>
+    <text class="value" x="445" y="91">1.9m</text>
+  </svg>
+  <figcaption>The two figures are both shown because the ledger records both.<sup class="ref"><a href="#c-clm_000000000001">2</a></sup>
+  <span class="mark m-contested">contested</span> No axis is unlabeled and no bar is truncated.</figcaption>
+</figure>
+
+<div class="mark-legend">
+  <p>How to read the marks:</p>
+  <dl>
+    <dt><span class="mark m-checked">checked</span></dt><dd>Verified against a primary or credible secondary source.</dd>
+    <dt><span class="mark m-reported">reported</span></dt><dd>Real signal, weaker authority.</dd>
+    <dt><span class="mark m-contested">contested</span></dt><dd>Sources disagree and both are shown.</dd>
+    <dt><span class="mark m-moving">moving</span></dt><dd>True as of the printed date.</dd>
+    <dt><span class="mark m-thin">thin</span></dt><dd>The author's inference.</dd>
+  </dl>
+</div>
+
+<section>
+  <h2>Ledger</h2>
+  <!-- SB:LEDGER -->
+  <!-- /SB:LEDGER -->
+</section>
+
+<footer class="colophon">
+  <p>Built with sourcebook &middot; <time datetime="2026-01-01">1 January 2026</time>
+  &middot; <span data-source-count>0</span> sources</p>
+</footer>
+
+</div>
+</body>
+</html>

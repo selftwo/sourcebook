@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sourcebook.dev/schemas/chunk.schema.json",
+  "title": "one chunk record (one JSON object per line in chunks/<src_id>.jsonl)",
+  "type": "object",
+  "required": ["chunk_id", "source_id", "ordinal", "start", "end", "heading_path"],
+  "properties": {
+    "chunk_id": {"type": "string", "pattern": "^src_[0-9a-f]{12}#c\\d{4}$"},
+    "source_id": {"type": "string", "pattern": "^src_[0-9a-f]{12}$"},
+    "ordinal": {"type": "integer", "minimum": 0},
+    "start": {"type": "integer", "minimum": 0},
+    "end": {"type": "integer", "minimum": 1},
+    "heading_path": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

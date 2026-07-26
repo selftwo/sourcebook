@@ -1,0 +1,44 @@
+/* The five uncertainty marks, plus the legend that appears exactly once.
+   Inline this block into every artifact. It is the visible product: human words,
+   placed on the sentence they qualify, never decorative.
+
+   checked   verified against a tier A/B source        trust it
+   reported  real signal, weaker authority             trust the shape, not the number
+   contested sources disagree and both are shown       read both
+   moving    true as of a printed date                 recheck at the link
+   thin      the author's inference, no source         weigh it as opinion            */
+
+.mark {
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  padding: 0.18em 0 0.1em;
+  border-bottom: 2px solid currentColor;
+  vertical-align: 0.15em;
+}
+
+.m-checked   { color: var(--checked); }
+.m-reported  { color: var(--reported); }
+.m-contested { color: var(--contested); }
+.m-moving    { color: var(--moving); }
+.m-thin      { color: var(--thin); }
+
+.mark-legend {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 0.75rem 0;
+  margin: 1.5rem 0;
+}
+
+.mark-legend dl { display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 0.75rem; margin: 0.5rem 0 0; }
+.mark-legend dt { margin: 0; }
+.mark-legend dd { margin: 0; }
+
+sup.ref { font-family: var(--sans); font-size: 0.64rem; font-weight: 600; line-height: 0; }
+sup.ref a { color: var(--accent); text-decoration: none; padding: 0 0.1em; }
+sup.ref a:hover { text-decoration: underline; }

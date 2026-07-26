@@ -1,0 +1,78 @@
+{
+  "audience": "one traveller planning a coastal trip in the next few months",
+  "constraints": {
+    "breakpoints": [
+      360,
+      768,
+      1200
+    ],
+    "motion": "minimal",
+    "palette_strategy": "committed"
+  },
+  "images": {
+    "mode": "none",
+    "slots": []
+  },
+  "register": "editorial",
+  "schema_version": 1,
+  "sections": [
+    {
+      "claim_ids": [
+        "clm_38d64b78005c",
+        "clm_19548dbc234b"
+      ],
+      "heading": "The short answer",
+      "id": "answer",
+      "intent": "state the finding, its date, and what to do"
+    },
+    {
+      "claim_ids": [
+        "clm_eb027a5b0314",
+        "clm_7372280596d2",
+        "clm_b4b1884d43ab"
+      ],
+      "heading": "What was actually signed",
+      "id": "signed",
+      "intent": "the agreement, its scope, and what it does not yet include"
+    },
+    {
+      "claim_ids": [
+        "clm_ba5cb17942ab",
+        "clm_38d64b78005c"
+      ],
+      "heading": "Where the sources disagree",
+      "id": "disputed",
+      "intent": "both sides of the adjudicated conflict, side by side"
+    },
+    {
+      "claim_ids": [
+        "clm_377add821344",
+        "clm_8b4adc521f32"
+      ],
+      "heading": "What travellers are hitting at the gangway",
+      "id": "ground",
+      "intent": "pattern evidence, held at reported"
+    },
+    {
+      "claim_ids": [
+        "clm_5add19271ae5",
+        "clm_574ac1fbf54a"
+      ],
+      "heading": "How big the Meridian scheme is",
+      "id": "scale",
+      "intent": "the number, its date, and the estimate it supersedes"
+    },
+    {
+      "claim_ids": [
+        "clm_fc44ae58adbc",
+        "clm_19548dbc234b"
+      ],
+      "heading": "What to do instead",
+      "id": "do",
+      "intent": "the fallback that works today"
+    }
+  ],
+  "thesis": "No. The agreement is signed, the service is not live for Harbour cards, and the plan that works today is cash, a paper ticket, or a Meridian Card.",
+  "title": "Can a Harbour card pay a fare on a Northline ferry right now?",
+  "type": "answer"
+}
