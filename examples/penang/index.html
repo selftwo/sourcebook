@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#f3eddf">
 <meta name="description" content="A source-grounded, mobile field deck for reading George Town through food, migration, belief, and living heritage.">
 <title>Penang, from the table outward</title>
+
 <style>
 :root{
   --paper:#f3eddf;--paper2:#e7dfce;--ink:#18251f;--muted:#5f675e;--red:#b23a2d;
@@ -25,7 +26,7 @@ h1,h2,h3,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:500;letter-sp
 .hero{padding:0;display:grid;align-items:end;background:#1b2d27;color:#fff}.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.05);opacity:.58}.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,18,14,.05),rgba(8,18,14,.2) 42%,rgba(8,18,14,.93))}.hero>.inner{position:relative;z-index:1;margin:0;padding:5.5rem 1.15rem 7rem}.hero .kicker{color:var(--acid)}.hero .lead{color:#f2e8d5}.stamp{display:inline-block;margin-top:1.2rem;padding:.45rem .65rem;border:1px solid rgba(255,255,255,.5);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
 .flow{display:grid;grid-template-columns:1fr;gap:.75rem;margin:2rem 0}.flow-step{border-top:1px solid currentColor;padding:.8rem 0;display:grid;grid-template-columns:3rem 1fr;gap:.5rem}.flow-step b{font-family:var(--serif);font-size:2rem;font-weight:500}.flow-step span{font-size:1.05rem}.arrow{display:none}
 .photo-grid{display:grid;gap:.7rem}.photo{position:relative;min-height:38svh;overflow:hidden;background:#c8c0b1}.photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.photo figcaption{position:absolute;left:.7rem;bottom:.7rem;max-width:80%;padding:.35rem .5rem;background:rgba(243,237,223,.9);color:var(--ink);font-size:.65rem}
-.menu{display:grid;gap:.6rem;margin-top:1.5rem}.dish{border:1px solid currentColor;background:transparent;color:inherit;text-align:left;padding:1rem;min-height:4.2rem;cursor:pointer}.dish b{display:block;font-family:var(--serif);font-size:1.4rem;font-weight:500}.dish span{display:block;max-height:0;overflow:hidden;opacity:0;transition:.22s ease}.dish[aria-expanded="true"]{background:var(--ink);color:var(--paper)}.dish[aria-expanded="true"] span{max-height:8rem;opacity:1;margin-top:.45rem}
+.menu{display:grid;gap:.6rem;margin-top:1.5rem}.dish{border:1px solid currentColor;background:transparent;color:inherit;text-align:left;min-height:4.2rem}.dish summary{list-style:none;padding:1rem;cursor:pointer;font-family:var(--serif);font-size:1.4rem}.dish summary::-webkit-details-marker{display:none}.dish span{display:block;padding:0 1rem 1rem}.dish[open]{background:var(--ink);color:var(--paper)}
 .river{display:grid;grid-template-columns:repeat(4,1fr);gap:.3rem;align-items:end;height:14rem;margin:2rem 0}.bar{position:relative;background:var(--blue);height:var(--h);min-height:2rem}.bar span{position:absolute;bottom:.45rem;left:50%;transform:translateX(-50%) rotate(-90deg);color:#fff;white-space:nowrap;font-size:.65rem}.bar:nth-child(2),.bar:nth-child(4){background:var(--red)}
 .walkline{position:relative;margin:2rem 0 0;padding-left:1.2rem;border-left:2px solid rgba(255,255,255,.5)}.stop{padding:0 0 1.2rem 1rem;position:relative}.stop::before{content:"";position:absolute;width:.72rem;height:.72rem;border-radius:50%;background:var(--acid);left:-1.58rem;top:.2rem}.stop b{display:block;font-family:var(--serif);font-size:1.35rem}.empty-seat{font-family:var(--serif);font-size:clamp(5rem,25vw,6rem);line-height:.7;color:var(--acid);margin:1.4rem 0 2rem;letter-spacing:-.03em}
 .split-number{display:grid;gap:1.5rem}.big-number{font-family:var(--serif);font-size:clamp(4.5rem,24vw,6rem);line-height:.8;letter-spacing:-.03em}.vs{border-top:1px solid currentColor;padding-top:.8rem}.paradox{font-size:clamp(1.6rem,7vw,3.5rem);line-height:1.05;font-family:var(--serif);max-width:22ch}
@@ -34,15 +35,18 @@ h1,h2,h3,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:500;letter-sp
 .tabs{display:flex;gap:.4rem;overflow:auto;padding-bottom:.5rem}.tabs button{flex:0 0 auto;border:1px solid currentColor;background:transparent;color:inherit;padding:.65rem .8rem;cursor:pointer}.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}.trip-panel{margin-top:1rem;padding:1.2rem;border:1px solid currentColor}.trip-panel[hidden]{display:none}.trip-panel h3{font-family:var(--serif);font-size:1.8rem;font-weight:500}.days{display:flex;gap:.25rem;margin:.8rem 0}.days i{display:block;height:.55rem;flex:1;background:var(--red)}.days i.light{opacity:.25}
 .shelf{display:grid;gap:.7rem;margin-top:1.5rem}.book{border-top:1px solid currentColor;padding:1rem 0}.book b{display:block;font-family:var(--serif);font-size:1.45rem}.book em{color:#4b1c13;font-style:normal;font-size:.72rem;text-transform:none;letter-spacing:0}
 .rules{display:grid;gap:0}.rule{display:grid;grid-template-columns:2.2rem 1fr;gap:.7rem;padding:.85rem 0;border-top:1px solid currentColor}.rule strong{font-family:var(--serif);font-size:1.8rem;font-weight:500}.rule p{margin:0}.rule details{grid-column:2}.rule summary{cursor:pointer;color:var(--muted)}
+.more{margin-top:1rem}.more>summary{cursor:pointer;border-top:1px solid currentColor;padding:.8rem 0;font-weight:800}
 .sources{align-items:flex-start;padding-top:6rem}.source-intro{max-width:45rem}.mark{font-size:.62rem;text-transform:none;letter-spacing:0;border-bottom:2px solid currentColor;padding-bottom:.08rem;white-space:nowrap}.checked,.m-checked{color:#235f46}.reported,.m-reported{color:#8a4f14}.moving,.m-moving{color:#294f74}.thin,.m-thin{color:#50564f}sup.ref a{text-decoration:none;color:var(--red);font-weight:800}.ledger{list-style:none;padding:0;margin:1.5rem 0}.ledger-entry{border-top:1px solid var(--line);padding:1rem 0}.ledger-entry::before{content:"[" counter(list-item) "] ";font-weight:800;color:var(--red)}.ledger-claim{display:inline}.ledger-meta,.ledger-source{font-size:.72rem;color:var(--muted)}.ledger-quote{display:block;margin:.45rem 0 0;padding-left:.8rem;border-left:2px solid var(--line);color:var(--ink)}.ledger-thin{margin-top:1.5rem}.ledger-note{font-size:.8rem;color:var(--muted)}.tier{font-size:.62rem;border:1px solid currentColor;padding:.08rem .25rem}.as-of,.recheck{margin-left:.45rem}
-.footer{border-top:1px solid var(--line);padding-top:1rem;font-size:.72rem;color:var(--muted)}
+.footer{border-top:1px solid var(--line);padding-top:1rem;font-size:.72rem;color:var(--muted)}.evidence{margin:1.5rem 0}.evidence>summary{cursor:pointer;border:1px solid currentColor;padding:1rem;font-weight:800}.evidence[open]>summary{margin-bottom:1rem}
 .decknav{position:fixed;z-index:20;left:max(.7rem,env(safe-area-inset-left));right:max(.7rem,env(safe-area-inset-right));bottom:max(.7rem,env(safe-area-inset-bottom));display:flex;align-items:center;gap:.7rem;padding:.65rem .75rem;border:1px solid rgba(24,37,31,.2);border-radius:999px;background:rgba(243,237,223,.96);color:var(--ink);backdrop-filter:blur(14px)}.decknav button{border:0;background:transparent;color:inherit;padding:.2rem;min-width:2.75rem;min-height:2.75rem;cursor:pointer}.progress{height:3px;flex:1;background:rgba(24,37,31,.18);overflow:hidden}.progress i{display:block;width:7%;height:100%;background:var(--red);transition:width .2s}.count{font-size:.72rem;min-width:3rem;text-align:right}.jump{position:fixed;z-index:19;right:1rem;bottom:5rem;width:min(18rem,calc(100vw - 2rem));max-height:70svh;overflow:auto;padding:.7rem;background:var(--ink);color:var(--paper);box-shadow:0 18px 60px rgba(0,0,0,.35)}.jump[hidden]{display:none}.jump a{display:block;padding:.72rem;border-bottom:1px solid rgba(255,255,255,.16);text-decoration:none}.jump a:last-child{border:0}
 @media(min-width:720px){.scene{padding:6rem 4rem}.scene-no{left:4rem}.hero>.inner{padding:8rem 4rem}.flow{grid-template-columns:repeat(5,1fr);align-items:center}.flow-step{grid-template-columns:1fr;min-height:9rem}.arrow{display:block;text-align:center}.photo-grid{grid-template-columns:1.1fr .9fr}.photo{min-height:60svh}.menu{grid-template-columns:repeat(2,1fr)}.split-number{grid-template-columns:1fr 1fr;align-items:end}.loop{grid-template-columns:1fr auto 1fr auto 1fr;align-items:center}.loop-arrow{transform:none}.shelf{grid-template-columns:repeat(3,1fr)}.book{padding-right:1rem}.rules{grid-template-columns:1fr 1fr;column-gap:3rem}.tabs{justify-content:flex-start}.trip-panel{max-width:44rem}.decknav{left:50%;right:auto;transform:translateX(-50%);width:30rem}}
+@media(max-width:719px){.scene{padding-top:3.75rem;padding-bottom:4.75rem}.photo{min-height:34svh}#s9 .loop{grid-template-columns:repeat(3,1fr);gap:.3rem}#s9 .loop div{border-radius:0;padding:.6rem;font-size:.72rem}#s9 .loop-arrow{display:none}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 @media print{.decknav,.jump{display:none}.scene{min-height:auto;page-break-after:always;padding:2rem}.hero{min-height:100vh}}
 </style>
 </head>
 <body>
+<noscript><style>.decknav,.jump{display:none!important}</style></noscript>
 <a class="skip" href="#s1">Skip to the deck</a>
 <div class="deck" id="deck">
 <section class="scene hero" id="s1" data-title="The table outward">
@@ -57,7 +61,7 @@ h1,h2,h3,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:500;letter-sp
 <section class="scene acid" id="s2" data-title="The whole idea">
 <div class="scene-no"></div><div class="inner"><p class="kicker">The whole idea</p>
 <h2>The table is a map of the sea.</h2>
-<p class="lead" data-claim="clm_584aa7655fda">George Town's living heritage grew from a trading port linking Europe, the Middle East, the Indian subcontinent, the Malay Archipelago, and China.<sup class="ref"><a href="#c-clm_584aa7655fda">1</a></sup> <span class="mark checked m-checked">checked</span></p>
+<p class="lead" data-claim="clm_584aa7655fda">George Town's multicultural living heritage grew along trade routes from Europe through the Middle East, the Indian subcontinent and the Malay Archipelago to China.<sup class="ref"><a href="#c-clm_584aa7655fda">1</a></sup> <span class="mark checked m-checked">checked</span></p>
 <div class="flow" aria-label="The deck's research path">
 <div class="flow-step"><b>Sea</b><span>Water carries workers, traders, gods and appetites.</span></div><div class="arrow">→</div>
 <div class="flow-step"><b>Street</b><span>Communities build kitchens, jetties and places of worship.</span></div><div class="arrow">→</div>
@@ -67,58 +71,58 @@ h1,h2,h3,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:500;letter-sp
 <section class="scene cream" id="s3" data-title="Five-minute city">
 <div class="scene-no"></div><div class="inner"><p class="kicker">A useful mental map</p><h2>Five minutes can cross several worlds.</h2>
 <div class="photo-grid"><figure class="photo"><img src="assets/kapitan-keling.jpg" alt="Kapitan Keling Mosque behind palms"><figcaption>Kapitan Keling Mosque · shankar s. / Wikimedia Commons · CC BY 2.0</figcaption></figure>
-<div><p class="lead" data-claim="clm_42c4df958125">The heritage core and buffer zones contain 5,013 buildings and 37 functioning places of worship.<sup class="ref"><a href="#c-clm_42c4df958125">2</a></sup> <span class="mark checked m-checked">checked</span></p>
-<div class="walkline"><div class="stop"><b>Jalan Masjid Kapitan Keling</b><span>Mosque, temple, church, clan institutions.</span></div><div class="stop"><b>Little India</b><span>Music, sarees, incense, Tamil food language.</span></div><div class="stop"><b>Weld Quay</b><span>Family names extend over the water.</span></div></div></div></div></div></section>
+<div><p class="lead" data-claim="clm_42c4df958125">The heritage core and buffer zones contain 5,013 buildings, including long-time homes and places of worship still in use; 37 worship sites sit within the two zones.<sup class="ref"><a href="#c-clm_42c4df958125">2</a></sup> <span class="mark checked m-checked">checked</span></p>
+<details class="more"><summary>Open the five-minute walk</summary><div class="walkline"><div class="stop"><b>Jalan Masjid Kapitan Keling</b><span>Mosque, temple, church, clan institutions.</span></div><div class="stop"><b>Little India</b><span>Music, sarees, incense, Tamil food language.</span></div><div class="stop"><b>Weld Quay</b><span>Family names extend over the water.</span></div></div></details></div></div></div></section>
 
 <section class="scene red" id="s4" data-title="Menu as passenger list">
 <div class="scene-no"></div><div class="inner"><p class="kicker">Research output 01 · tap the menu</p><h2>A menu can read like a passenger list.</h2>
 <p class="lead">Tap a dish. The point is not who “invented” it; the point is which routes, workers and techniques became ordinary.</p>
 <div class="menu">
-<button class="dish" aria-expanded="false"><b>Nasi kandar</b><span data-claim="clm_b0b352319946">Tamil-Muslim migration and labour history; rice baskets balanced on a shoulder pole.<sup class="ref"><a href="#c-clm_b0b352319946">3</a></sup> <span class="mark reported m-reported">reported</span></span></button>
-<button class="dish" aria-expanded="false"><b>Hokkien mee</b><span>Southern Chinese noodle grammar, transformed by the ingredients and appetites of Penang.</span></button>
-<button class="dish" aria-expanded="false"><b>Nyonya cooking</b><span>Home food where Chinese technique, Malay aromatics and long family memory keep negotiating.</span></button>
-<button class="dish" aria-expanded="false"><b>Roti + curry</b><span>Port-city breakfast: migration becomes habit before most of the city has properly woken.</span></button>
+<details class="dish"><summary>Nasi kandar</summary><span data-claim="clm_b0b352319946">Tamil-Muslim migration and labour history; rice baskets balanced on a shoulder pole.<sup class="ref"><a href="#c-clm_b0b352319946">6</a></sup> <span class="mark reported m-reported">reported</span></span></details>
+<details class="dish"><summary>Hokkien mee</summary><span>Southern Chinese noodle grammar, transformed by the ingredients and appetites of Penang.</span></details>
+<details class="dish"><summary>Nyonya cooking</summary><span>Home food where Chinese technique, Malay aromatics and long family memory keep negotiating.</span></details>
+<details class="dish"><summary>Roti + curry</summary><span>Port-city breakfast: migration becomes habit before most of the city has properly woken.</span></details>
 </div></div></section>
 
 <section class="scene cream" id="s5" data-title="The kopitiam method">
 <div class="scene-no"></div><div class="inner"><p class="kicker">Research output 02 · observation protocol</p><h2>Do not just order. Watch the room work.</h2>
 <div class="photo-grid"><figure class="photo"><img src="assets/hawker-illustration.png" alt="Editorial illustration of a multigenerational Penang hawker hall with cooks, diners, steam and shared tables" data-origin="generated"><figcaption>Generated illustration · OpenAI gpt-image-2-medium</figcaption></figure>
-<div class="rules"><div class="rule"><strong>1</strong><p>Who owns the table, and who only owns the bowl?</p></div><div class="rule"><strong>2</strong><p>Which stall takes payment, and when?</p></div><div class="rule"><strong>3</strong><p>Who orders with words, fingers, memory or eye contact?</p></div><div class="rule"><strong>4</strong><p>What changes between breakfast, rain, lunch and closing?</p></div></div>
-<p class="small">The repeat visit is the method: same coffee, different hour.</p></div></div></section>
+<details class="more"><summary>Open the four-question protocol</summary><div class="rules"><div class="rule"><strong>1</strong><p>Who owns the table, and who only owns the bowl?</p></div><div class="rule"><strong>2</strong><p>Which stall takes payment, and when?</p></div><div class="rule"><strong>3</strong><p>Who orders with words, fingers, memory or eye contact?</p></div><div class="rule"><strong>4</strong><p>What changes between breakfast, rain, lunch and closing?</p></div></div>
+<p class="small">The repeat visit is the method: same coffee, different hour.</p></details></div></div></section>
 
 <section class="scene green" id="s6" data-title="Working calendar">
 <div class="scene-no"></div><div class="inner"><p class="kicker">Research output 03 · belief as infrastructure</p><h2>Some seats are occupied by people you cannot see.</h2>
 <div class="empty-seat" aria-hidden="true">⌑⌑⌑</div>
-<p class="lead" data-claim="clm_bd41e2146d58">During Hungry Ghost observances, temporary stages may be built and the front row left vacant for an invisible audience.<sup class="ref"><a href="#c-clm_bd41e2146d58">4</a></sup> <span class="mark reported m-reported">reported</span></p>
+<p class="lead" data-claim="clm_bd41e2146d58">During Hungry Ghost observances, temporary stages may be built and the front row left vacant for an invisible audience.<sup class="ref"><a href="#c-clm_bd41e2146d58">10</a></sup> <span class="mark reported m-reported">reported</span></p>
 <details><summary>How to stand there well</summary><p>Stay out of the empty front row. Ask before photographing people or offerings. Observe first; interpretation can wait.</p></details>
 </div></section>
 
 <section class="scene acid" id="s7" data-title="The preservation paradox">
 <div class="scene-no"></div><div class="inner"><p class="kicker">Research output 04 · the contradiction</p><h2>The buildings may survive the city inside them.</h2>
-<div class="split-number"><div><div class="big-number">5,013</div><p>buildings in the protected core and buffer zones</p></div><div class="vs"><div class="big-number">21%</div><p data-claim="clm_2964c0556fdf">of hawkers in one 2019 study had a definite successor.<sup class="ref"><a href="#c-clm_2964c0556fdf">5</a></sup> <span class="mark reported m-reported">sampled</span></p></div></div>
+<div class="split-number"><div><div class="big-number">5,013</div><p>buildings in the protected core and buffer zones</p></div><div class="vs"><div class="big-number">21%</div><p data-claim="clm_2964c0556fdf">of hawkers in one 2019 study had a definite successor.<sup class="ref"><a href="#c-clm_2964c0556fdf">3</a></sup> <span class="mark reported m-reported">sampled</span></p></div></div>
 <p class="paradox" data-claim="clm_5edf29e831a4">A city can protect every building and still lose the practices the buildings were made to hold. <span class="mark thin m-thin">interpretation</span></p>
 </div></section>
 
 <section class="scene night" id="s8" data-title="Technology suddenly breaks">
 <div class="scene-no"></div><div class="inner"><p class="kicker">Research output 05 · payment reality</p><h2>Technology works until it suddenly doesn't.</h2>
 <div class="phone"><div class="screen"><div class="payrow"><span>DuitNow QR</span><b>everywhere-ish</b></div><div class="payrow"><span>Cards</span><b>uneven</b></div><div class="payrow"><span>Cash</span><b>boringly useful</b></div><div class="payrow"><span>Indian UPI</span><b>recheck</b></div></div></div>
-<div class="status-line"><i class="signal"></i><div><b data-claim="clm_569ed7bf5a14">PayNet reported 2.9m+ DuitNow QR merchants nationwide.<sup class="ref"><a href="#c-clm_569ed7bf5a14">6</a></sup> <span class="mark m-checked m-moving">checked · moving</span></b></div></div>
-<div class="status-line"><i class="signal wait"></i><div><b data-claim="clm_d660efe157ff">The UPI-DuitNow announcement described a phased rollout, not a live date.<sup class="ref"><a href="#c-clm_d660efe157ff">7</a></sup> <span class="mark m-checked m-moving">checked · moving</span></b></div></div>
+<div class="status-line"><i class="signal"></i><div><b data-claim="clm_569ed7bf5a14">PayNet reported 2.9m+ DuitNow QR merchants nationwide.<sup class="ref"><a href="#c-clm_569ed7bf5a14">5</a></sup> <span class="mark m-checked m-moving">checked · moving</span></b></div></div>
+<div class="status-line"><i class="signal wait"></i><div><b data-claim="clm_d660efe157ff">The UPI-DuitNow announcement described a phased rollout, not a live date.<sup class="ref"><a href="#c-clm_d660efe157ff">8</a></sup> <span class="mark m-checked m-moving">checked · moving</span></b></div></div>
 </div></section>
 
 <section class="scene cream" id="s9" data-title="A social base">
 <div class="scene-no"></div><div class="inner"><p class="kicker">Research output 06 · hostel as social layer</p><h2>Use the hostel to meet people. Use the city to have a trip.</h2>
 <div class="loop"><div><b>Evening</b>common room, food outing, one new name</div><span class="loop-arrow">→</span><div><b>Day</b>walk alone, follow a question, stay outside</div><span class="loop-arrow">→</span><div><b>Morning</b>return to one coffee shop, become recognizable</div></div>
 <p class="hostel-note" data-claim="clm_7cc528541662">The useful loop is contact in the evening, the city during the day, and enough sleep to return tomorrow. <span class="mark thin m-thin">recommendation</span></p>
-<details><summary>Current social-base lead</summary><p data-claim="clm_1f370b4beb55">A 26 July 2026 EZ Social listing snapshot combined a large review base with common space, group food outings, lockers, and quiet after midnight.<sup class="ref"><a href="#c-clm_1f370b4beb55">8</a></sup> <span class="mark m-reported m-moving">reported · moving</span> Re-read the newest reviews before booking.</p></details>
+<details><summary>Current social-base lead</summary><p data-claim="clm_1f370b4beb55">A 26 July 2026 EZ Social listing snapshot combined a large review base with common space, group food outings, lockers, and quiet after midnight.<sup class="ref"><a href="#c-clm_1f370b4beb55">7</a></sup> <span class="mark m-reported m-moving">reported · moving</span> Re-read the newest reviews before booking.</p></details>
 </div></section>
 
 <section class="scene red" id="s10" data-title="Choose a trip shape">
 <div class="scene-no"></div><div class="inner"><p class="kicker">Research output 07 · three possible trips</p><h2>Choose a shape, not an itinerary.</h2>
 <div class="tabs" role="tablist" aria-label="Trip shapes"><button role="tab" aria-selected="true" aria-controls="trip-a" id="tab-a">6 nights</button><button role="tab" aria-selected="false" aria-controls="trip-b" id="tab-b">8 nights</button><button role="tab" aria-selected="false" aria-controls="trip-c" id="tab-c">10 nights</button></div>
 <div class="trip-panel" role="tabpanel" id="trip-a" aria-labelledby="tab-a"><h3>The tight first reading</h3><div class="days"><i></i><i></i><i></i><i></i><i></i><i></i></div><p>George Town base. One Penang Hill/Air Itam spoke. One open day. Repeat two breakfasts.</p></div>
-<div class="trip-panel" role="tabpanel" id="trip-b" aria-labelledby="tab-b" hidden><h3>The balanced form</h3><div class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>George Town base. Air Itam, a north-coast village day, and enough empty space to revisit a street after rain.</p></div>
-<div class="trip-panel" role="tabpanel" id="trip-c" aria-labelledby="tab-c" hidden><h3>The slow version</h3><div class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>One base, three spokes, two fully unplanned days, and the chance to notice which place you keep returning to.</p></div>
+<div class="trip-panel" role="tabpanel" id="trip-b" aria-labelledby="tab-b"><h3>The balanced form</h3><div class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>George Town base. Air Itam, a north-coast village day, and enough empty space to revisit a street after rain.</p></div>
+<div class="trip-panel" role="tabpanel" id="trip-c" aria-labelledby="tab-c"><h3>The slow version</h3><div class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>One base, three spokes, two fully unplanned days, and the chance to notice which place you keep returning to.</p></div>
 <p data-claim="clm_9844cc085686">One George Town base plus a few outward spokes lets repeated mornings create recognition while day trips correct the postcard. <span class="mark thin m-thin">recommendation</span></p>
 </div></section>
 
@@ -131,7 +135,7 @@ h1,h2,h3,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:500;letter-sp
 
 <section class="scene acid" id="s12" data-title="Reading shelf">
 <div class="scene-no"></div><div class="inner"><p class="kicker">Research output 09 · culture shelf</p><h2>Read one book before. Let the city complicate it.</h2>
-<div class="shelf"><div class="book" data-claim="clm_becfdc67bee5"><em>Before</em><b>Black Water Sister</b><p>Zen Cho · family, spirits and gangsters against Penang.<sup class="ref"><a href="#c-clm_becfdc67bee5">10</a></sup> <span class="mark m-checked">checked</span></p></div><div class="book"><em>During</em><b>Streets of George Town</b><p>A field companion for names, buildings, and the stories hiding in plain sight.</p></div><div class="book"><em>After</em><b>Penang Hokkien</b><p>Language as evidence that a port does not merely import culture; it makes local forms.</p></div></div>
+<div class="shelf"><div class="book" data-claim="clm_becfdc67bee5"><em>Before</em><b>Black Water Sister</b><p>Zen Cho · family, spirits and gangsters against Penang.<sup class="ref"><a href="#c-clm_becfdc67bee5">4</a></sup> <span class="mark m-checked">checked</span></p></div><div class="book"><em>During</em><b>Streets of George Town</b><p>A field companion for names, buildings, and the stories hiding in plain sight.</p></div><div class="book"><em>After</em><b>Penang Hokkien</b><p>Language as evidence that a port does not merely import culture; it makes local forms.</p></div></div>
 </div></section>
 
 <section class="scene green" id="s13" data-title="Carry lightly">
@@ -139,30 +143,28 @@ h1,h2,h3,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:500;letter-sp
 <div class="rules"><div class="rule"><strong>1</strong><p data-claim="clm_011a7b9b8d8c">Keep your bag away from the road side; motorbike theft is a documented risk.<sup class="ref"><a href="#c-clm_011a7b9b8d8c">11</a></sup> <span class="mark m-checked m-moving">checked · moving</span></p></div><div class="rule"><strong>2</strong><p data-claim="clm_39a4b5cf8ee4">Do not assume a crossing controls traffic; riders may not stop.<sup class="ref"><a href="#c-clm_39a4b5cf8ee4">12</a></sup> <span class="mark m-checked m-moving">checked · moving</span></p></div><div class="rule"><strong>3</strong><p>Carry some cash even if the QR stickers make that feel silly.</p></div><div class="rule"><strong>4</strong><p>Cover shoulders and knees when a place of worship asks; follow the entrance signs.</p></div></div>
 </div></section>
 
-<section class="scene night" id="s14" data-title="The question to carry">
-<div class="scene-no"></div><div class="inner"><p class="kicker">The question to carry</p><h2>What does a city have to keep doing to remain itself?</h2>
-<p class="lead">Eat first. Then trace the ingredients, labour, worship, rent, weather and family memory that keep the meal possible.</p>
-<p class="small">That question is better than “Have I seen everything?”</p>
-</div></section>
-
-<section class="scene sources cream" id="s15" data-title="Sources and ledger">
+<section class="scene sources cream" id="s14" data-title="Sources and ledger">
 <div class="scene-no"></div><div class="inner"><p class="kicker">Transparent grounding</p><h2>Open the evidence.</h2>
 <div class="source-intro mark-legend"><p class="lead">Facts are checked, dated, and separated from interpretation. “Moving” claims should be reopened before booking.</p><p><span class="mark m-checked">checked</span> primary or credible source · <span class="mark m-reported">reported</span> weaker or sampled evidence · <span class="mark m-moving">moving</span> date-sensitive · <span class="mark m-thin">interpretation</span> deliberately unsourced synthesis</p></div>
+<details class="evidence"><summary>Open 15 claims, source quotes and recheck links</summary>
 <!-- SB:LEDGER -->
 <ol class="ledger">
   <li class="ledger-entry" id="c-clm_584aa7655fda" value="1">
-    <p class="ledger-claim">George Town&#x27;s living heritage grew from a trading port linking Europe, the Middle East, the Indian subcontinent, the Malay Archipelago, and China.</p>
+    <p class="ledger-claim">George Town&#x27;s multicultural living heritage grew along trade routes from Europe through the Middle East, the Indian subcontinent and the Malay Archipelago to China.</p>
     <p class="ledger-meta"><span class="mark m-checked">checked</span>
       <a class="recheck" href="https://gtwhi.com.my/about-us/george-town-unesco-world-heritage-site/" rel="nofollow noopener">recheck</a>
     </p>
     <p class="ledger-source"><span class="tier tier-A">tier A</span> George Town UNESCO World Heritage Site &middot; George Town World Heritage Incorporated
-      <q class="ledger-quote">their former function as trading ports linking East and West</q>
+      <q class="ledger-quote">trade routes from Great Britain and Europe through the Middle East, the Indian subcontinent and the Malay Archipelago to China</q>
     </p>
   </li>
   <li class="ledger-entry" id="c-clm_42c4df958125" value="2">
-    <p class="ledger-claim">The World Heritage core and buffer zones contain 5,013 buildings and 37 functioning places of worship.</p>
+    <p class="ledger-claim">The heritage core and buffer zones contain 5,013 buildings, including long-time homes and places of worship still in use; 37 worship sites sit within the two zones.</p>
     <p class="ledger-meta"><span class="mark m-checked">checked</span>
       <a class="recheck" href="https://gtwhi.com.my/about-us/george-town-unesco-world-heritage-site/" rel="nofollow noopener">recheck</a>
+    </p>
+    <p class="ledger-source"><span class="tier tier-A">tier A</span> George Town UNESCO World Heritage Site &middot; George Town World Heritage Incorporated
+      <q class="ledger-quote">contain a total of 5,013 buildings, including shophouses which are home to long-time residents, and places of worship that are still functioning</q>
     </p>
     <p class="ledger-source"><span class="tier tier-A">tier A</span> George Town UNESCO World Heritage Site &middot; George Town World Heritage Incorporated
       <q class="ledger-quote">There are 37 places of worship, mainly mosques, Chinese temples, Indian temples and churches, within the core and buffer zones of George Town.</q>
@@ -286,6 +288,13 @@ these invisible (but thoroughly present, according to believers) guests</q>
 </ul>
 <!-- /SB:LEDGER -->
 <div class="footer"><p>Built with sourcebook on <time datetime="2026-07-26">26 July 2026</time> · 10 sources · standalone HTML · no analytics.</p><p>Image credits: Cmglee, philip.mallis, shankar s., C.W. Tan via Wikimedia Commons. Full source URLs and licences accompany the downloaded image files.</p></div>
+</details>
+</div></section>
+
+<section class="scene night" id="s15" data-title="The question to carry">
+<div class="scene-no"></div><div class="inner"><p class="kicker">The question to carry</p><h2>What does a city have to keep doing to remain itself?</h2>
+<p class="lead">Eat first. Then trace the ingredients, labour, worship and weather that keep the meal possible.</p>
+<p class="small">That question is better than “Have I seen everything?”</p>
 </div></section>
 </div>
 <nav class="decknav" aria-label="Deck navigation"><button id="menu" aria-expanded="false" aria-controls="jump">☰</button><button id="prev" aria-label="Previous scene">←</button><div class="progress" aria-hidden="true"><i id="bar"></i></div><button id="next" aria-label="Next scene">→</button><span class="count" id="count">01 / 15</span></nav>
@@ -297,7 +306,7 @@ these invisible (but thoroughly present, according to believers) guests</q>
  function show(i){at=Math.max(0,Math.min(scenes.length-1,i));scenes[at].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
  document.getElementById('prev').onclick=()=>show(at-1);document.getElementById('next').onclick=()=>show(at+1);menu.onclick=()=>{jump.hidden=!jump.hidden;menu.setAttribute('aria-expanded',String(!jump.hidden))};
  let ticking=false;function updateAt(){const y=innerHeight*.35;let next=scenes.findIndex(s=>{const r=s.getBoundingClientRect();return r.top<=y&&r.bottom>y});if(next<0)next=Math.max(0,scenes.findIndex(s=>s.getBoundingClientRect().top>y)-1);at=next<0?scenes.length-1:next;count.textContent=String(at+1).padStart(2,'0')+' / '+scenes.length;bar.style.width=((at+1)/scenes.length*100)+'%';ticking=false}addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateAt);ticking=true}},{passive:true});updateAt();
- document.querySelectorAll('.dish').forEach(b=>b.onclick=()=>b.setAttribute('aria-expanded',String(b.getAttribute('aria-expanded')!=='true')));
+ const panels=[...document.querySelectorAll('[role="tabpanel"]')];panels.slice(1).forEach(x=>x.hidden=true);
  document.querySelectorAll('[role="tab"]').forEach(t=>t.onclick=()=>{document.querySelectorAll('[role="tab"]').forEach(x=>x.setAttribute('aria-selected','false'));document.querySelectorAll('[role="tabpanel"]').forEach(x=>x.hidden=true);t.setAttribute('aria-selected','true');document.getElementById(t.getAttribute('aria-controls')).hidden=false});
  const requested=new URLSearchParams(location.search).get('scene');if(requested&&document.getElementById(requested)){requestAnimationFrame(()=>document.getElementById(requested).scrollIntoView())}
  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')show(at+1);if(e.key==='ArrowLeft'||e.key==='PageUp')show(at-1);if(e.key==='Escape'){jump.hidden=true;menu.setAttribute('aria-expanded','false')}});

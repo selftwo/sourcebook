@@ -13,7 +13,7 @@
     {
       "gate": "quotes",
       "findings": [],
-      "note": "13/13 byte-exact"
+      "note": "14/14 byte-exact"
     },
     {
       "gate": "confidence",
