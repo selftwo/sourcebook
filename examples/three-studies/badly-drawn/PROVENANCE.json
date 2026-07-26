@@ -1,17 +1,76 @@
 {
   "claims": 8,
-  "gate_report": {},
-  "generated_at": "2026-07-26T11:58:56Z",
+  "gate_report": {
+    "gates": [
+      {
+        "findings": [],
+        "gate": "schemas",
+        "note": "5 sources, 8 claims"
+      },
+      {
+        "findings": [],
+        "gate": "normalizer",
+        "note": "5 sources at v1"
+      },
+      {
+        "findings": [],
+        "gate": "quotes",
+        "note": "7/7 byte-exact"
+      },
+      {
+        "findings": [],
+        "gate": "confidence",
+        "note": "8 claims consistent"
+      },
+      {
+        "findings": [],
+        "gate": "tiers",
+        "note": "0 claim(s) correctly held at reported"
+      },
+      {
+        "findings": [],
+        "gate": "volatility",
+        "note": "0 volatile claim(s), all dated"
+      },
+      {
+        "findings": [],
+        "gate": "clusters",
+        "note": "0 cluster(s), 0 adjudicated"
+      },
+      {
+        "findings": [],
+        "gate": "plan",
+        "note": "no plan.json yet"
+      },
+      {
+        "findings": [],
+        "gate": "html",
+        "note": "8 refs resolved, 8 ledger entries, 7 ordinals"
+      },
+      {
+        "findings": [],
+        "gate": "licenses",
+        "note": "1 asset(s), 1 referenced"
+      },
+      {
+        "findings": [],
+        "gate": "lint",
+        "note": "0 errors, 1 waived, 0 unresolved"
+      }
+    ],
+    "pass": true
+  },
+  "generated_at": "2026-07-26T12:13:22Z",
   "question": "Can deliberate imperfection act as a creative technology rather than a lack of craft?",
   "redacted_quotes": 0,
   "sb_version": "0.1.0",
   "schema_version": 1,
   "sources": [
     {
-      "canonical_locator": "input/01-stream-comics.md",
+      "canonical_locator": null,
       "id": "src_35d531b5252e",
       "kind": "file",
-      "locator": "input/01-stream-comics.md",
+      "locator": null,
       "normalized_sha256": "3371387e56e6dc5861d8d60bf6c6e3e1a3aaf72cd7235b03cad9f031cab1f733",
       "normalizer_version": 1,
       "published_at": null,
@@ -23,10 +82,10 @@
       "title": "01 stream comics"
     },
     {
-      "canonical_locator": "input/05-perfectionism-research.md",
+      "canonical_locator": null,
       "id": "src_3ffdfcec6378",
       "kind": "file",
-      "locator": "input/05-perfectionism-research.md",
+      "locator": null,
       "normalized_sha256": "a428c0f28849424676aada1d731a6ff7a600b4d0058b31569d2f3e6a4212e699",
       "normalizer_version": 1,
       "published_at": null,
@@ -38,10 +97,10 @@
       "title": "05 perfectionism research"
     },
     {
-      "canonical_locator": "input/02-lynda-barry-npr.md",
+      "canonical_locator": null,
       "id": "src_4108335a34a8",
       "kind": "file",
-      "locator": "input/02-lynda-barry-npr.md",
+      "locator": null,
       "normalized_sha256": "d342e0234d49fea4349439c484d161ade90210cbb7429a59a1845c9337aff6f1",
       "normalizer_version": 1,
       "published_at": null,
@@ -53,10 +112,10 @@
       "title": "02 lynda barry npr"
     },
     {
-      "canonical_locator": "input/04-david-shrigley.md",
+      "canonical_locator": null,
       "id": "src_7d840b5a3dfd",
       "kind": "file",
-      "locator": "input/04-david-shrigley.md",
+      "locator": null,
       "normalized_sha256": "aa50ddaeb4fb6465b2048a177f07c5663fa55c2943c0d0f4ed1ce38280609da2",
       "normalizer_version": 1,
       "published_at": null,
@@ -68,10 +127,10 @@
       "title": "04 david shrigley"
     },
     {
-      "canonical_locator": "input/03-lynda-barry-classroom.md",
+      "canonical_locator": null,
       "id": "src_f2e82d25460f",
       "kind": "file",
-      "locator": "input/03-lynda-barry-classroom.md",
+      "locator": null,
       "normalized_sha256": "b6d704d4cad7176580e9eb56bc26d01092b0a9f25f1ffced066d720c1fd33088",
       "normalizer_version": 1,
       "published_at": null,

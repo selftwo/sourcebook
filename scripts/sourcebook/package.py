@@ -68,6 +68,17 @@ def provenance(root: Path, gate: dict | None = None) -> dict:
     }
 
 
+def _gate_report(root: Path) -> dict:
+    path = root / "build" / "verify.json"
+    if not path.is_file():
+        return {}
+    try:
+        report = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return report if report.get("pass") is True else {}
+
+
 def package(root: Path, out: str = "dist", public: bool = False, do_verify: bool = False) -> int:
     root = Path(root)
     out_dir = Path(out)
@@ -86,6 +97,8 @@ def package(root: Path, out: str = "dist", public: bool = False, do_verify: bool
     shipped: list[Path] = []
     for p in sorted(build.rglob("*")):
         if p.is_dir() or p.name.endswith(".tmp"):
+            continue
+        if public and (p.name.endswith(".src.html") or p.name == "ledger.fragment.html"):
             continue
         rel = p.relative_to(build)
         dest = out_dir / rel
@@ -107,9 +120,15 @@ def package(root: Path, out: str = "dist", public: bool = False, do_verify: bool
                             "ledger": claims})
     shipped.append(ledger_out)
 
-    prov = provenance(root)
+    prov = provenance(root, _gate_report(root))
     prov["visibility"] = "public" if public else "private"
     prov["redacted_quotes"] = redactions
+    if public:
+        for source in prov["sources"]:
+            for key in ("locator", "canonical_locator"):
+                value = source.get(key)
+                if value and not value.startswith(("http://", "https://")):
+                    source[key] = None
     if not public:
         for sid in [s["id"] for s in sources(root) if s.get("status") == "ready"]:
             src = root / "sources" / sid / "normalized.md"

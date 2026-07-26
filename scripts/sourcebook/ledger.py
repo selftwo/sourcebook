@@ -337,6 +337,13 @@ def render_json(root: Path) -> str:
         c["ordinal"] = n
         c["marks"] = marks_for(c)
         resolved.append(c)
+    for c in sorted((c for c in claims.values()
+                     if c["status"] == "active" and c["confidence"] == "inferred"
+                     and c["id"] not in ordinals), key=lambda c: c["id"]):
+        c = dict(c)
+        c["ordinal"] = None
+        c["marks"] = marks_for(c)
+        resolved.append(c)
     return json.dumps({"schema_version": 1, "ledger": resolved}, indent=2, ensure_ascii=False) + "\n"
 
 

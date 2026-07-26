@@ -169,6 +169,25 @@
       "text": "Tate notes that collage can gain power from unexpected combinations.",
       "topic_key": "collage.unexpected-combinations",
       "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_442447936b14",
+      "kind": "interpretation",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "A stream archive is most honest when it behaves like collage: not one final portrait, but a set of positions whose adjacency creates meaning.",
+      "topic_key": "plural-self.synthesis",
+      "volatile": false
     }
   ],
   "schema_version": 1,

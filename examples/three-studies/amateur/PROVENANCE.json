@@ -1,17 +1,76 @@
 {
   "claims": 7,
-  "gate_report": {},
-  "generated_at": "2026-07-26T11:51:53Z",
+  "gate_report": {
+    "gates": [
+      {
+        "findings": [],
+        "gate": "schemas",
+        "note": "5 sources, 7 claims"
+      },
+      {
+        "findings": [],
+        "gate": "normalizer",
+        "note": "5 sources at v1"
+      },
+      {
+        "findings": [],
+        "gate": "quotes",
+        "note": "6/6 byte-exact"
+      },
+      {
+        "findings": [],
+        "gate": "confidence",
+        "note": "7 claims consistent"
+      },
+      {
+        "findings": [],
+        "gate": "tiers",
+        "note": "0 claim(s) correctly held at reported"
+      },
+      {
+        "findings": [],
+        "gate": "volatility",
+        "note": "0 volatile claim(s), all dated"
+      },
+      {
+        "findings": [],
+        "gate": "clusters",
+        "note": "0 cluster(s), 0 adjudicated"
+      },
+      {
+        "findings": [],
+        "gate": "plan",
+        "note": "no plan.json yet"
+      },
+      {
+        "findings": [],
+        "gate": "html",
+        "note": "7 refs resolved, 7 ledger entries, 6 ordinals"
+      },
+      {
+        "findings": [],
+        "gate": "licenses",
+        "note": "1 asset(s), 1 referenced"
+      },
+      {
+        "findings": [],
+        "gate": "lint",
+        "note": "0 errors, 1 waived, 0 unresolved"
+      }
+    ],
+    "pass": true
+  },
+  "generated_at": "2026-07-26T12:13:20Z",
   "question": "What becomes possible when work is made for love instead of a scoreboard?",
   "redacted_quotes": 2,
   "sb_version": "0.1.0",
   "schema_version": 1,
   "sources": [
     {
-      "canonical_locator": "input/03-amabile-creativity.md",
+      "canonical_locator": null,
       "id": "src_5f71aed2e39c",
       "kind": "file",
-      "locator": "input/03-amabile-creativity.md",
+      "locator": null,
       "normalized_sha256": "771b292a2ca2b643a5e8811500cb1c98b5177f7ef97cb31f0f3a4d71eac662ea",
       "normalizer_version": 1,
       "published_at": null,
@@ -23,10 +82,10 @@
       "title": "03 amabile creativity"
     },
     {
-      "canonical_locator": "input/02-amateur-etymology.md",
+      "canonical_locator": null,
       "id": "src_9d06041e14e4",
       "kind": "file",
-      "locator": "input/02-amateur-etymology.md",
+      "locator": null,
       "normalized_sha256": "b827b4ace2cdf213ea5a63e9a2f35147efc69cc6789b95dad69eda05ed26dce9",
       "normalizer_version": 1,
       "published_at": null,
@@ -38,10 +97,10 @@
       "title": "02 amateur etymology"
     },
     {
-      "canonical_locator": "input/05-inner-game.md",
+      "canonical_locator": null,
       "id": "src_a4c146a2b2bc",
       "kind": "file",
-      "locator": "input/05-inner-game.md",
+      "locator": null,
       "normalized_sha256": "bfe6f7539475e018647918483d887a701fb74893f4ba2b98485c08fd69538390",
       "normalizer_version": 1,
       "published_at": null,
@@ -53,10 +112,10 @@
       "title": "05 inner game"
     },
     {
-      "canonical_locator": "input/01-stream-amateur.md",
+      "canonical_locator": null,
       "id": "src_b690e8097d18",
       "kind": "file",
-      "locator": "input/01-stream-amateur.md",
+      "locator": null,
       "normalized_sha256": "c1b342c58dc947badd30cd965899928b72428ed55d67f57bf9c420f785884222",
       "normalizer_version": 1,
       "published_at": null,
@@ -68,10 +127,10 @@
       "title": "01 stream amateur"
     },
     {
-      "canonical_locator": "input/04-art-brut.md",
+      "canonical_locator": null,
       "id": "src_f1def8fef902",
       "kind": "file",
-      "locator": "input/04-art-brut.md",
+      "locator": null,
       "normalized_sha256": "67c8ca02ad3a14eb9c6b255eb7064901f2402d6277dfcd395b69b40bb348868c",
       "normalizer_version": 1,
       "published_at": null,

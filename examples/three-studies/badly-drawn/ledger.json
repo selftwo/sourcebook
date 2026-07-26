@@ -181,6 +181,25 @@
       "text": "David Shrigley describes a productive slippage in which image and text do not merely illustrate or describe one another.",
       "topic_key": "shrigley.slippage",
       "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_c79f28c33a8b",
+      "kind": "interpretation",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "Editorial synthesis and proposal, not a measured causal effect.",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "Editorial proposal: treat deliberate awkwardness as a constraint, with the aim of lowering the cost of beginning and preserving room for accident and revision.",
+      "topic_key": "badly-drawn.synthesis",
+      "volatile": false
     }
   ],
   "schema_version": 1,

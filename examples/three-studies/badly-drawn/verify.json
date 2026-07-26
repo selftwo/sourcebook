@@ -1,0 +1,60 @@
+{
+  "gates": [
+    {
+      "gate": "schemas",
+      "findings": [],
+      "note": "5 sources, 8 claims"
+    },
+    {
+      "gate": "normalizer",
+      "findings": [],
+      "note": "5 sources at v1"
+    },
+    {
+      "gate": "quotes",
+      "findings": [],
+      "note": "7/7 byte-exact"
+    },
+    {
+      "gate": "confidence",
+      "findings": [],
+      "note": "8 claims consistent"
+    },
+    {
+      "gate": "tiers",
+      "findings": [],
+      "note": "0 claim(s) correctly held at reported"
+    },
+    {
+      "gate": "volatility",
+      "findings": [],
+      "note": "0 volatile claim(s), all dated"
+    },
+    {
+      "gate": "clusters",
+      "findings": [],
+      "note": "0 cluster(s), 0 adjudicated"
+    },
+    {
+      "gate": "plan",
+      "findings": [],
+      "note": "no plan.json yet"
+    },
+    {
+      "gate": "html",
+      "findings": [],
+      "note": "8 refs resolved, 8 ledger entries, 7 ordinals"
+    },
+    {
+      "gate": "licenses",
+      "findings": [],
+      "note": "1 asset(s), 1 referenced"
+    },
+    {
+      "gate": "lint",
+      "findings": [],
+      "note": "0 errors, 1 waived, 0 unresolved"
+    }
+  ],
+  "pass": true
+}

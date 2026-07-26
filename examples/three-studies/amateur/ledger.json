@@ -159,6 +159,25 @@
       "text": "In Amabile’s 1985 experiment with 72 young writers, poems produced after an extrinsic-orientation prompt were rated less creative than poems in the other two conditions.",
       "topic_key": "creativity.motivation.amabile",
       "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_b5d0f411698d",
+      "kind": "interpretation",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "The useful meaning of amateur here is not unskilled; it is work whose motive has not been fully outsourced to evaluation.",
+      "topic_key": "amateur.synthesis",
+      "volatile": false
     }
   ],
   "schema_version": 1,
