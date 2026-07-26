@@ -16,7 +16,7 @@ from pathlib import Path
 from urllib.parse import urljoin
 
 from . import EXIT_GATE, EXIT_OK
-from .ids import NORMALIZER_VERSION, decode_bytes, normalize, sha256_text
+from .ids import NORMALIZER_VERSION, decode_bytes, normalize, sha256_text, sniff_charset
 from .manifest import advance, write_json
 
 try:  # optional; its absence degrades, never fails
@@ -334,11 +334,19 @@ def extract(root: Path, force: bool = False) -> int:
         tool = "sb.text"
         note = ""
 
+        # The charset the transfer declared, else the one the bytes declare about themselves.
+        # Without it a Windows-1252 or Shift-JIS source becomes U+FFFD-laced canonical text and
+        # every sentence the agent pastes back fails to match.
+        raw_bytes = raw.read_bytes()
+        charset = rec.get("charset") or sniff_charset(raw_bytes)
+        if charset and rec.get("charset") != charset:
+            rec["charset"] = charset
+
         if media in ("text/markdown", "text/plain", "text/x-markdown") or raw.suffix in (".md", ".txt"):
-            text = decode_bytes(raw.read_bytes())
+            text = decode_bytes(raw_bytes, charset)
             tool = "sb.text"
         elif media in ("text/html", "application/xhtml+xml") or raw.suffix in (".html", ".htm"):
-            body = decode_bytes(raw.read_bytes())
+            body = decode_bytes(raw_bytes, charset)
             base = rec["locator"] if rec["kind"] == "url" else ""
             text, meta = html_to_markdown(body, base)
             tool = "sb.html"

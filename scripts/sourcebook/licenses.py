@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+import base64
+import binascii
+import hashlib
 import json
 import sys
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import unquote, unquote_to_bytes
 
 from . import EXIT_GATE, EXIT_OK
 from .ids import sha256_file
@@ -17,6 +20,33 @@ PERMITTED = {"cc0", "pd", "public domain", "cc by", "cc by 2.0", "cc by 3.0", "c
              "apache-2.0", "ogl", "generated"}
 DENIED_SUBSTR = {"nc", "nd", "unknown", "all rights reserved"}
 GENERATED_LABEL = "Generated illustration"
+
+
+def data_uri_name(src: str) -> str:
+    """A stable credits.json key for an inlined image.
+
+    `struct.external-ref` bans every `http(s)://` subresource, so a `data:` URI is the only
+    way to put an image in a compliant artifact. It is therefore the path the licensing gate
+    most needs to see, not a corner case to skip. The name is the digest of the decoded bytes,
+    so it survives re-indentation and is printable in the finding that asks for the entry.
+    """
+    payload = src.split(",", 1)[1] if "," in src else ""
+    header = src.split(",", 1)[0]
+    try:
+        raw = (base64.b64decode(payload, validate=False) if ";base64" in header.lower()
+               else unquote_to_bytes(payload))
+    except (binascii.Error, ValueError):
+        raw = src.encode("utf-8", errors="replace")
+    return "data:sha256:" + hashlib.sha256(raw).hexdigest()[:16]
+
+
+def asset_name(img) -> str:
+    """The credits key an `<img>` claims. `data-asset` names an inlined image legibly."""
+    src = img.attrs.get("src", "")
+    declared = (img.attrs.get("data-asset") or "").strip()
+    if src.startswith("data:"):
+        return declared or data_uri_name(src)
+    return declared or Path(unquote(src)).name
 
 
 def credits_path(root: Path) -> Path:
@@ -57,10 +87,10 @@ def check_licenses(root: Path, html_path: Path | None) -> tuple[list[str], str]:
 
     referenced = set()
     for img in imgs:
-        src = unquote(img.attrs.get("src", ""))
-        name = Path(src).name
-        if not src or src.startswith("data:"):
+        src = img.attrs.get("src", "")
+        if not src:
             continue
+        name = asset_name(img)
         referenced.add(name)
         if name not in credits:
             findings.append(f"E-IMG-UNCREDITED  {name}  no assets/credits.json entry")

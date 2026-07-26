@@ -42,7 +42,8 @@ NEXT_COMMAND = {
 ESCALATION = (
     "ESCALATE: three verify loops have failed. Stop revising. Report to the user which "
     "claims and error codes are blocking, and ask how to proceed. Do not loosen a claim "
-    "to make a gate pass."
+    "to make a gate pass. Once the user has decided what changes, clear the block with: "
+    "sb unblock --reason \"<what the user decided>\""
 )
 
 ARTIFACT_TYPES = ["answer", "explainer", "deck", "brief", "infographic", "podcast"]
@@ -208,6 +209,21 @@ def derive_state(root: Path) -> str:
     if not (root / "build" / "PROVENANCE.json").is_file():
         return "RENDER" if m.get("state") not in ("VERIFY", "PACKAGE", "DONE") else "VERIFY"
     return "DONE"
+
+
+def unblock(root: Path, reason: str) -> dict:
+    """The one documented way out of BLOCKED. Resets the revise counter and clears blockers.
+
+    The reason is recorded in `history`, not discarded: the escape hatch leaves a trace, so a
+    later reader can see that a gate was cleared by a decision rather than by attrition.
+    """
+    m = load(root)
+    m["revise_count"] = 0
+    m["blockers"] = []
+    m["history"].append({"state": "REVISE", "at": now(), "note": f"unblocked: {reason}"})
+    m["state"] = "REVISE"
+    save(root, m)
+    return m
 
 
 def status_report(root: Path) -> dict:

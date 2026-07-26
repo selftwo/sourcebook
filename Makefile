@@ -4,7 +4,7 @@ PY ?= python3
 .PHONY: help test lint demo demo-tamper install skill clean
 
 help:
-	@echo "make test          the 20 acceptance tests, hermetic, no network"
+	@echo "make test          the 22 acceptance tests, hermetic, no network"
 	@echo "make lint          every shipped template through the rule registry"
 	@echo "make demo          rebuild examples/demo/answer.html from the local sources"
 	@echo "make demo-tamper   build, then break one quote and watch the gate refuse"

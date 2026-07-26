@@ -120,3 +120,27 @@ def decode_bytes(b: bytes, charset: str | None = None) -> str:
         except (UnicodeDecodeError, LookupError):
             continue
     return b.decode("utf-8", errors="replace")
+
+
+_BOMS = [(b"\xef\xbb\xbf", "utf-8-sig"), (b"\xff\xfe\x00\x00", "utf-32-le"),
+         (b"\x00\x00\xfe\xff", "utf-32-be"), (b"\xff\xfe", "utf-16-le"),
+         (b"\xfe\xff", "utf-16-be")]
+_META_CHARSET = re.compile(rb"""<meta[^>]+charset\s*=\s*["']?\s*([A-Za-z0-9_.:-]+)""", re.I)
+
+
+def sniff_charset(b: bytes) -> str | None:
+    """The encoding the bytes declare about themselves: a BOM, then a `<meta charset>`.
+
+    Only a declaration is honoured; nothing here guesses. A Windows-1252 page that says so
+    decodes as Windows-1252 instead of becoming U+FFFD-laced canonical text.
+    """
+    for bom, enc in _BOMS:
+        if b.startswith(bom):
+            return enc
+    m = _META_CHARSET.search(b[:4096])
+    if m:
+        try:
+            return m.group(1).decode("ascii").strip().lower()
+        except UnicodeDecodeError:
+            return None
+    return None

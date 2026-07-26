@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+import ipaddress
 import mimetypes
 import shutil
+import socket
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -16,6 +19,7 @@ from .manifest import advance, load, now, save, write_json
 UA = "sourcebook/0.1 (+https://github.com/sourcebook-kit/sourcebook) stdlib-urllib"
 MAX_BYTES = 25 * 1024 * 1024
 TIMEOUT = 20
+ALLOWED_SCHEMES = ("http", "https")
 
 EXT_FOR = {
     "text/html": ".html",
@@ -37,10 +41,86 @@ def _guess_media(path: Path, declared: str | None = None) -> str:
     return guessed or "application/octet-stream"
 
 
+class BlockedURL(ValueError):
+    """A destination `sb add` refuses to fetch. Raised before any socket is opened."""
+
+
+def _blocked_reason(addr: str) -> str | None:
+    try:
+        ip = ipaddress.ip_address(addr)
+    except ValueError:
+        return None
+    # Most specific reason first: link-local and loopback are also "private".
+    for flag, why in (("is_loopback", "loopback"), ("is_link_local", "link-local"),
+                      ("is_multicast", "multicast"), ("is_unspecified", "unspecified"),
+                      ("is_reserved", "reserved"), ("is_private", "private")):
+        if getattr(ip, flag, False):
+            return why
+    mapped = getattr(ip, "ipv4_mapped", None)
+    if mapped is not None:
+        return _blocked_reason(str(mapped))
+    return None
+
+
+def assert_fetchable(url: str) -> None:
+    """Refuse a destination the workspace has no business reaching.
+
+    `sb add http://169.254.169.254/…` would otherwise pull cloud instance metadata into the
+    ledger as a citable source. Every hostname is resolved and every resolved address checked,
+    so a public name that points at 127.0.0.1 is refused too. Applied to the original URL and
+    again to every redirect target, because a redirect is a second destination.
+    """
+    parts = urllib.parse.urlsplit(url)
+    scheme = parts.scheme.lower()
+    if scheme not in ALLOWED_SCHEMES:
+        raise BlockedURL(f"blocked: scheme '{scheme or '(none)'}' is not http or https ({url})")
+    if parts.username or parts.password:
+        raise BlockedURL(f"blocked: credentials in the URL are not fetched ({url})")
+    host = parts.hostname
+    if not host:
+        raise BlockedURL(f"blocked: no host in {url}")
+
+    literal = _blocked_reason(host)
+    if literal:
+        raise BlockedURL(f"blocked: {host} is a {literal} address")
+    try:
+        infos = socket.getaddrinfo(host, parts.port or (443 if scheme == "https" else 80),
+                                   proto=socket.IPPROTO_TCP)
+    except socket.gaierror as exc:
+        raise BlockedURL(f"blocked: cannot resolve {host} ({exc})") from exc
+    for info in infos:
+        reason = _blocked_reason(info[4][0])
+        if reason:
+            raise BlockedURL(f"blocked: {host} resolves to {info[4][0]}, a {reason} address")
+
+
+class _GuardedRedirects(urllib.request.HTTPRedirectHandler):
+    """A redirect is a destination the caller never named. Check it like the first one."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        assert_fetchable(newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def _opener() -> urllib.request.OpenerDirector:
+    """Only the handlers http(s) needs. No FileHandler, no FTPHandler, no DataHandler."""
+    op = urllib.request.OpenerDirector()
+    handlers = [urllib.request.ProxyHandler(), urllib.request.HTTPHandler(),
+                _GuardedRedirects(), urllib.request.HTTPErrorProcessor(),
+                urllib.request.HTTPDefaultErrorHandler()]
+    if hasattr(urllib.request, "HTTPSHandler"):
+        handlers.append(urllib.request.HTTPSHandler())
+    for handler in handlers:
+        op.add_handler(handler)
+    op.addheaders = [("User-Agent", UA)]
+    return op
+
+
 def _fetch(url: str) -> tuple[bytes, str, str]:
     """Returns (body, media_type, charset). Raises on failure."""
+    assert_fetchable(url)
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+    with _opener().open(req, timeout=TIMEOUT) as resp:
         body = resp.read(MAX_BYTES + 1)
         if len(body) > MAX_BYTES:
             raise ValueError(f"response exceeds {MAX_BYTES} bytes")
@@ -92,6 +172,7 @@ def add(root: Path, args) -> int:
             "tier_reason": args.reason,
             "license": args.license,
             "media_type": None,
+            "charset": None,
             "lang": args.lang,
             "raw_sha256": None,
             "normalized_sha256": None,
@@ -145,6 +226,8 @@ def add(root: Path, args) -> int:
                     rec["media_type"] = media
                     ext = EXT_FOR.get(media, ".bin")
                     if charset:
+                        # Recorded, and actually used: `sb extract` decodes with it.
+                        rec["charset"] = charset
                         rec["extraction"]["notes"].append(f"charset={charset}")
                 except (urllib.error.URLError, ValueError, OSError) as exc:
                     rec["status"] = "failed"

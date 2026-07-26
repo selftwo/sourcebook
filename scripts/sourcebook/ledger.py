@@ -40,6 +40,15 @@ CLAIM_DEFAULTS = {
 }
 
 
+def is_http_url(value: str | None) -> bool:
+    """The only schemes a rendered artifact ever links to.
+
+    `format: uri` accepts `javascript:` and `data:text/html` just as happily as `https:`, and
+    the artifact is built to be shared and opened. Agent-authored URLs get an allowlist.
+    """
+    return isinstance(value, str) and value.lower().startswith(("http://", "https://"))
+
+
 def claims_path(root: Path) -> Path:
     return Path(root) / "ledger" / "claims.json"
 
@@ -227,9 +236,13 @@ def render_html(root: Path) -> str:
         lines.append(f'    <p class="ledger-meta">{badges}')
         if c.get("as_of"):
             lines.append(f'      <span class="as-of">as of {escape(c["as_of"])}</span>')
-        if c.get("recheck"):
+        if is_http_url(c.get("recheck")):
             lines.append(f'      <a class="recheck" href="{escape(c["recheck"], quote=True)}"'
                          f' rel="nofollow noopener">recheck</a>')
+        elif c.get("recheck"):
+            # Never rendered as a link. `sb verify` reports it as E-RECHECK-SCHEME.
+            lines.append(f'      <span class="recheck">recheck URL withheld; '
+                         f'not an http(s) address: {escape(c["recheck"])}</span>')
         lines.append("    </p>")
         if not c.get("evidence"):
             lines.append('    <p class="ledger-source"><span class="tier tier-none">no source</span> '
@@ -281,8 +294,10 @@ def render_md(root: Path) -> str:
         meta = [f"`{marks}`"]
         if c.get("as_of"):
             meta.append(f"as of {c['as_of']}")
-        if c.get("recheck"):
+        if is_http_url(c.get("recheck")):
             meta.append(f"[recheck]({c['recheck']})")
+        elif c.get("recheck"):
+            meta.append(f"recheck URL withheld; not an http(s) address: {c['recheck']}")
         out.append("   " + " · ".join(meta))
         for e in c.get("evidence", []):
             s = srcs.get(e["source_id"], {})

@@ -19,6 +19,7 @@
     "tier_reason": {"type": "string"},
     "license": {"type": ["string", "null"]},
     "media_type": {"type": ["string", "null"]},
+    "charset": {"type": ["string", "null"]},
     "lang": {"type": ["string", "null"]},
     "raw_sha256": {"type": ["string", "null"]},
     "normalized_sha256": {"type": ["string", "null"]},

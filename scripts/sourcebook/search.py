@@ -82,14 +82,17 @@ def find(root: Path, source_id: str, needle: str, show_all: bool = False) -> int
             print(f"{source_id}  {start}..{end}  exact  ({len(spans)} match{'es' if len(spans) != 1 else ''})")
         return EXIT_OK
 
-    # Second pass: whitespace-insensitive. Report the ORIGINAL offsets of the matched region.
+    # Second pass: whitespace-insensitive. It locates the region and still exits 1, because
+    # the paste was not byte-exact and no approximate quote may become a citation.
     span = _ws_insensitive(text, needle)
     if span:
         start, end = span
-        print(f"{source_id}  {start}..{end}  whitespace-normalized  (1 match)")
-        print("  NOTE: the source text differs from your paste only in whitespace.")
-        print(f"  Copy the exact slice with: sb quote {source_id} {start} {end}")
-        return EXIT_OK
+        print(f"E-FIND-INEXACT  {source_id}  {start}..{end}  whitespace-normalized  (1 match)",
+              file=sys.stderr)
+        print("  The source text differs from your paste in whitespace, so this is not a span "
+              "you may cite.", file=sys.stderr)
+        print(f"  Copy the exact slice with: sb quote {source_id} {start} {end}", file=sys.stderr)
+        return EXIT_USAGE
 
     print(f"E-FIND-NOMATCH  {source_id}  that text is not in this source", file=sys.stderr)
     idx = load_index(root)

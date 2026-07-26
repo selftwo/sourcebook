@@ -12,8 +12,8 @@ from pathlib import Path
 from . import EXIT_GATE, EXIT_OK
 from .ids import NORMALIZER_VERSION, sha256_text
 from .ledger import (MAX_QUOTE_CHARS, MAX_QUOTE_CHARS_PER_SOURCE, MAX_QUOTE_WORDS,
-                     MAX_QUOTES_PER_SOURCE, load_adjudications, load_claims, load_plan,
-                     marks_for, resolve_ordinals, verify_evidence)
+                     MAX_QUOTES_PER_SOURCE, is_http_url, load_adjudications, load_claims,
+                     load_plan, marks_for, resolve_ordinals, verify_evidence)
 from .lint.html import parse
 from .manifest import check, load, now, save, sources
 
@@ -143,6 +143,9 @@ def gate_volatility(root: Path, rep: Report) -> None:
     findings = []
     n = 0
     for c in load_claims(root):
+        if c.get("recheck") and not is_http_url(c["recheck"]):
+            findings.append(f"E-RECHECK-SCHEME  {c['id']}  recheck must be an http(s) URL, "
+                            f"found '{c['recheck']}'")
         if not c.get("volatile"):
             continue
         n += 1
@@ -154,16 +157,25 @@ def gate_volatility(root: Path, rep: Report) -> None:
 
 
 def gate_clusters(root: Path, rep: Report) -> None:
-    from .contradict import detect
+    from .contradict import detect, unapplied
 
     clusters = detect(root)
-    findings = [f"E-CLUSTER-OPEN  {c['cluster_id']}  {c['topic_key']} "
-                f"({'+'.join(c['detectors'])}) is unadjudicated"
-                for c in clusters if c["status"] == "OPEN"]
+    findings = []
+    for c in clusters:
+        if c["status"] != "OPEN":
+            continue
+        new = c.get("unadjudicated_claim_ids") or []
+        why = (f"; {', '.join(new)} joined the cluster after the adjudication" if new
+               else "")
+        findings.append(f"E-CLUSTER-OPEN  {c['cluster_id']}  {c['topic_key']} "
+                        f"({'+'.join(c['detectors'])}) is unadjudicated{why}")
     adj = load_adjudications(root)
     for a in adj:
         if a["outcome"] == "supersede" and not a.get("winner"):
             findings.append(f"E-ADJ-NOWINNER  {a['cluster_id']}  a supersede needs a winner")
+    for claim_id, cluster, what in unapplied(root):
+        findings.append(f"E-ADJ-UNAPPLIED  {claim_id}  the adjudication of {cluster} still owes "
+                        f"this claim {what}; run `sb adjudicate --apply`")
     rep.gate("clusters", findings, f"{len(clusters)} cluster(s), {len(adj)} adjudicated")
 
 
@@ -389,27 +401,32 @@ def verify(root: Path, html: str | None = None, artifact: str | None = None,
     gate_plan(root, rep)
 
     html_path: Path | None = None
+    plan = load_plan(root)
     if html:
         html_path = Path(html)
     elif artifact:
         html_path = root / "build" / f"{artifact}.html"
-    else:
-        plan = load_plan(root)
-        if plan and plan.get("type") and plan["type"] != "podcast":
-            candidate = root / "build" / f"{plan['type']}.html"
-            html_path = candidate if candidate.is_file() else None
+    elif plan and plan.get("type") and plan["type"] != "podcast":
+        # Expected, not merely looked for. An absent artifact is a finding, because every
+        # claim-to-DOM gate, the licence check, and all 28 lint rules live behind this branch.
+        html_path = root / "build" / f"{plan['type']}.html"
 
     if html_path is not None:
         if not html_path.is_file():
-            rep.gate("html", [f"E-HTML-MISSING  {html_path}  no such artifact"])
+            rep.gate("html", [f"E-HTML-MISSING  {html_path}  no such artifact; the claim-to-DOM, "
+                              f"licence, and lint gates cannot run against a page that is not "
+                              f"there"])
+            gate_licenses(root, rep, None)
         else:
             gate_html(root, rep, html_path)
             gate_licenses(root, rep, html_path)
             gate_lint(root, rep, html_path)
     else:
+        why = "plan.type=podcast" if plan else "no plan.json yet"
+        rep.gate("html", [], f"no artifact expected ({why})")
         gate_licenses(root, rep, None)
 
-    if podcast or (load_plan(root) or {}).get("type") == "podcast":
+    if podcast or (plan or {}).get("type") == "podcast":
         gate_podcast(root, rep)
 
     if as_json:
@@ -420,6 +437,12 @@ def verify(root: Path, html: str | None = None, artifact: str | None = None,
 
     m = load(root)
     if rep.errors:
+        # "Not composed yet" is not a failed revision. It still fails the gate loudly, but it
+        # must not walk a workspace toward BLOCKED for the crime of checking early.
+        if all(f.startswith("E-HTML-MISSING") for f in rep.errors):
+            for f in rep.errors:
+                print(f, file=sys.stderr)
+            return EXIT_GATE
         m["revise_count"] = min(3, m.get("revise_count", 0) + 1)
         m["state"] = "BLOCKED" if m["revise_count"] >= 3 else "REVISE"
         m["history"].append({"state": m["state"], "at": now(),
@@ -439,5 +462,7 @@ def verify(root: Path, html: str | None = None, artifact: str | None = None,
 
 _ESCALATE = (
     "ESCALATE: three verify loops have failed. Stop and report to the user which claims and "
-    "error codes are blocking. Do not loosen a claim to make a gate pass."
+    "error codes are blocking. Do not loosen a claim to make a gate pass.\n"
+    "Once the user has decided what changes, clear the block with:\n"
+    "  sb unblock --reason \"<what the user decided>\""
 )

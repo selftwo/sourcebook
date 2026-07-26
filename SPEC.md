@@ -264,6 +264,7 @@ All schemas are JSON Schema draft 2020-12 in `schemas/`. Validation is a small s
   "tier_reason": "operator of the national payment scheme, primary source for its own status",
   "license": "unknown",
   "media_type": "text/html",
+  "charset": "windows-1252",
   "lang": "en",
   "raw_sha256": "…",
   "normalized_sha256": "…",
@@ -275,6 +276,9 @@ All schemas are JSON Schema draft 2020-12 in `schemas/`. Validation is a small s
 
 `kind`: `url` | `file` | `paste`.
 `status`: `pending` | `needs_extraction` | `ready` | `failed`.
+`charset`: the encoding the transfer declared, else the one the bytes declare (a BOM or a `<meta charset>`).
+`sb extract` decodes with it, so a non-UTF-8 source produces canonical text rather than replacement
+characters. Null means "decode as UTF-8".
 `needs_extraction` is the agent-assisted fallback: the script could not parse the bytes (a PDF with no
 `pypdf`, a scanned image, a JS-only page), so it hands the file to the agent, which reads it with
 whatever tool it has and writes `normalized.md` itself. The provenance record is identical either way.
@@ -469,7 +473,7 @@ template. Re-running the command re-generates it, so drift between prose and led
 | `VERIFY` | script | `sb verify` | gate report | **G5**: exit 0 |
 | `PACKAGE` | script | `sb package` | checksums, `PROVENANCE.json` | checksums recomputed and matching |
 | `REVISE` | agent | back to `COMPOSE`, `GROUND`, or `COLLECT` | | `revise_count ≤ 3` |
-| `BLOCKED` | agent | writes `blockers[]`, stops and asks the user | | user input |
+| `BLOCKED` | agent | writes `blockers[]`, stops and asks the user | | user input, then `sb unblock --reason …` |
 
 `sb status` prints the current state, the failing gate if any, and the single next command to run.
 This is what makes the kit resumable across a context compaction, a crash, or a different agent
@@ -478,6 +482,12 @@ picking the work up tomorrow.
 **Escalation rule.** After three failed `VERIFY` loops, the agent must stop and report to the user
 rather than continuing to churn. Silently loosening a claim to make a gate pass is the failure mode
 this rule exists to prevent.
+
+**Recovery from `BLOCKED`.** One documented command, run only after the user has decided what
+changes: `sb unblock --reason "<what the user decided>"`. It resets `revise_count`, clears
+`blockers`, records the reason in `history`, and leaves the state at `REVISE`. It changes no claim
+and waives no gate; the next `sb verify` still has to pass. The reason is required, so the escape
+hatch always leaves a trace.
 
 **Blocking conditions** (go to `BLOCKED`, do not improvise):
 - Fewer than two independent tier A/B sources for a factual question.
@@ -864,8 +874,10 @@ or error id it asserts. `sb` exit codes: `0` pass, `1` usage or input error, `2`
 | **AT-18** | Normalizer drift | Bump `normalizer_version` in a source and re-verify → exit 2, `E-NORM-DRIFT`. Nothing silently passes. |
 | **AT-19** | Revise ceiling | Simulate four consecutive `VERIFY` failures. The manifest reaches `revise_count: 3` and `sb status` prints an escalation instruction rather than a next command. |
 | **AT-20** | Install portability | `python scripts/install.py --harness all` into a temp dir creates the skill and commands under `.claude/`, `.agents/`, `.codex/`, and `.cursor/`, and the skill body contains no harness-specific tool name. |
+| **AT-21** | Gate reachability | (a) Deleting `build/<type>.html` → exit 2 `E-HTML-MISSING`, never a `PASS` with the html/lint rows absent. (b) A `javascript:` `recheck` → exit 2 `E-RECHECK-SCHEME`, and the rendered ledger emits no such `href`. (c) A `both_stand` recorded without `--apply` → exit 2 `E-ADJ-UNAPPLIED`. (d) A third conflicting claim on an adjudicated `topic_key` reopens the cluster → `E-CLUSTER-OPEN`. (e) A `data:` URI image with no `credits.json` entry → `E-IMG-UNCREDITED`, and an unlabelled generated one → `E-IMG-UNLABELED`. |
+| **AT-22** | Ingest hardening | (a) A paste matching only after whitespace normalization → exit 1 `E-FIND-INEXACT`. (b) A Windows-1252 source with a declared charset normalizes to its real characters, with no U+FFFD. (c) `assert_fetchable` refuses loopback, private, link-local, reserved, multicast, unspecified, credentialed, and non-http destinations, on the first URL and on every redirect. (d) `sb unblock --reason` clears `BLOCKED` and records the reason. |
 
-**Definition of done for v0.1.0:** all twenty pass, `examples/demo` completes end to end on a machine
+**Definition of done for v0.1.0:** all twenty-two pass, `examples/demo` completes end to end on a machine
 with network, and the same demo completes from `examples/demo/frozen/` with the network off.
 
 ---
@@ -950,5 +962,5 @@ a `reported` mark on the traveller-thread evidence, and a ledger entry for every
 
 **Offline variant.** `make demo-freeze` captures the live sources into `examples/demo/frozen/` on first
 run. Afterwards `sb init --from examples/demo/frozen` reproduces the entire demo with the network off,
-which is also how AT-01 through AT-20 stay hermetic. The repository ships the runbook and the URLs,
+which is also how AT-01 through AT-22 stay hermetic. The repository ships the runbook and the URLs,
 never the captured third-party text.

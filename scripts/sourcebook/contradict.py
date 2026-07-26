@@ -124,13 +124,17 @@ def detect(root: Path) -> list[dict]:
             continue
         cid = cluster_id(topic)
         adj = adjudicated.get(cid)
+        # An adjudication covers the claims it names. A member that arrived afterwards was
+        # never weighed, so the cluster reopens rather than inheriting somebody else's verdict.
+        unadjudicated = sorted(involved - set(adj.get("claim_ids", []))) if adj else []
         clusters.append({
             "cluster_id": cid,
             "topic_key": topic,
             "claim_ids": sorted(involved),
             "detectors": sorted(reasons),
-            "status": "RESOLVED" if adj else "OPEN",
+            "status": "RESOLVED" if adj and not unadjudicated else "OPEN",
             "outcome": adj["outcome"] if adj else None,
+            "unadjudicated_claim_ids": unadjudicated,
         })
     return clusters
 
@@ -148,6 +152,9 @@ def report(root: Path, as_json: bool = False, strict: bool = False) -> int:
     else:
         for c in clusters:
             state = c["status"] + (f" {c['outcome']}" if c["outcome"] else "")
+            if c["unadjudicated_claim_ids"]:
+                state += " (new since the adjudication: " \
+                         + ", ".join(c["unadjudicated_claim_ids"]) + ")"
             print(f"{c['cluster_id']}  {c['topic_key']}  {'+'.join(c['detectors'])}  "
                   f"{' vs '.join(c['claim_ids'])}   {state}")
         opens = [c for c in clusters if c["status"] == "OPEN"]
@@ -165,6 +172,36 @@ def report(root: Path, as_json: bool = False, strict: bool = False) -> int:
     return EXIT_OK
 
 
+def _apply(claims: dict[str, dict], adjs: list[dict]) -> list[tuple[str, str, str]]:
+    """Mutate `claims` in place. Returns [(claim_id, cluster_id, what changed)].
+
+    The single definition of what a recorded adjudication mechanically obliges. `apply_outcomes`
+    writes the result; `unapplied` runs it on a throwaway copy so `sb verify` can fail on the
+    difference instead of trusting that somebody remembered `--apply`.
+    """
+    changed: list[tuple[str, str, str]] = []
+    for adj in adjs:
+        cid = adj.get("cluster_id", "?")
+        members = [claims[c] for c in adj["claim_ids"] if c in claims]
+        if adj["outcome"] == "supersede" and adj.get("winner"):
+            for c in members:
+                if c["id"] != adj["winner"] and c["status"] == "active":
+                    c["status"] = "superseded"
+                    c["superseded_by"] = adj["winner"]
+                    changed.append((c["id"], cid, f"status -> superseded by {adj['winner']}"))
+        elif adj["outcome"] == "both_stand":
+            for c in members:
+                if c["status"] == "active" and c["confidence"] != "contested":
+                    c["confidence"] = "contested"
+                    changed.append((c["id"], cid, "confidence -> contested"))
+        elif adj["outcome"] == "retract":
+            for c in members:
+                if adj.get("winner") and c["id"] != adj["winner"] and c["status"] == "active":
+                    c["status"] = "retracted"
+                    changed.append((c["id"], cid, "status -> retracted"))
+    return changed
+
+
 def apply_outcomes(root: Path) -> list[str]:
     """Enforce the mechanical consequences of a recorded adjudication.
 
@@ -175,25 +212,17 @@ def apply_outcomes(root: Path) -> list[str]:
     from .ledger import save_claims
 
     claims = {c["id"]: c for c in load_claims(root)}
-    changed: list[str] = []
-    for adj in load_adjudications(root):
-        members = [claims[c] for c in adj["claim_ids"] if c in claims]
-        if adj["outcome"] == "supersede" and adj.get("winner"):
-            for c in members:
-                if c["id"] != adj["winner"] and c["status"] == "active":
-                    c["status"] = "superseded"
-                    c["superseded_by"] = adj["winner"]
-                    changed.append(c["id"])
-        elif adj["outcome"] == "both_stand":
-            for c in members:
-                if c["status"] == "active" and c["confidence"] != "contested":
-                    c["confidence"] = "contested"
-                    changed.append(c["id"])
-        elif adj["outcome"] == "retract":
-            for c in members:
-                if adj.get("winner") and c["id"] != adj["winner"] and c["status"] == "active":
-                    c["status"] = "retracted"
-                    changed.append(c["id"])
+    changed = _apply(claims, load_adjudications(root))
     if changed:
         save_claims(root, list(claims.values()))
-    return changed
+    return [cid for cid, _, _ in changed]
+
+
+def unapplied(root: Path) -> list[tuple[str, str, str]]:
+    """What `sb adjudicate --apply` would still change: an adjudication with no effect.
+
+    A `both_stand` that never reached the claims leaves nothing for `E-CONTESTED-HIDDEN` to
+    fire on, so an artifact that quietly picks a side would pass the whole gate.
+    """
+    claims = {c["id"]: json.loads(json.dumps(c)) for c in load_claims(root)}
+    return _apply(claims, load_adjudications(root))

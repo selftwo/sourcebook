@@ -114,7 +114,10 @@ You choose one of four outcomes and write the reason:
 - `retract` one claim was a misreading of its own source.
 
 Write them to a file and run `sb adjudicate --file adj.json --apply`. Nothing is ever deleted;
-a superseded claim keeps its evidence and gains `superseded_by`.
+a superseded claim keeps its evidence and gains `superseded_by`. `--apply` is not optional
+bookkeeping: without it the outcome never reaches the claims, and `sb verify` fails with
+`E-ADJ-UNAPPLIED`. If a new claim later joins an adjudicated cluster, the cluster reopens and
+you adjudicate it again over the full membership.
 
 ## 5. COMPOSE
 
@@ -162,6 +165,10 @@ code and a subject.
 **Escalation.** After three failed verify loops, stop. Tell the user which claims and which
 error codes are blocking, and ask how to proceed. Silently loosening a claim to make a gate
 pass is the exact failure this kit exists to prevent.
+
+**Recovery.** BLOCKED clears with one command, and only after the user has decided what
+changes: `sb unblock --reason "<what the user decided>"`. It resets the loop counter and
+records the reason; it waives no gate, so the next `sb verify` still has to pass.
 
 **Blocking conditions.** Go to BLOCKED and ask, do not improvise: fewer than two independent
 tier A/B sources for a factual question; the central claim has only tier C or D evidence; a

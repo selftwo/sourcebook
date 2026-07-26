@@ -10,4 +10,6 @@ exactly that. If there is no workspace here, run `sb init --question "$ARGUMENTS
 report where it was created.
 
 If the state is BLOCKED, do not run the next command. Report the blockers and the failing
-claims to the user, and ask how to proceed.
+claims to the user, and ask how to proceed. When they have decided, clear it with
+`sb unblock --reason "<what they decided>"` and continue from the state `sb status` then
+reports.

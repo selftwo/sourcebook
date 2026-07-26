@@ -16,3 +16,7 @@ one change that fixes it.
 If `revise_count` has reached 3, stop. Report the blocking claims and error codes to the user
 and ask how to proceed. Do not loosen a claim, drop a contested side, or weaken a confidence
 level to make a gate pass.
+
+Once the user has decided what changes, clear the block with
+`sb unblock --reason "<what the user decided>"`, make the change they asked for, and run
+`sb verify` again. `sb unblock` waives no gate; it only resets the loop counter.

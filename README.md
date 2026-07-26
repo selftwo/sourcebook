@@ -82,6 +82,18 @@ sb find src_1823e227204b "No other partner scheme is live at this time."
 The judgment (what to claim, how to adjudicate a conflict, what the page should say) is the
 part a person or an agent does.
 
+### What `sb add <url>` will and will not fetch
+
+`capabilities.web_fetch` is `agent` by default: `sb add <url>` records the source as pending
+and your harness saves the bytes. Set it to `script` and `sb` fetches with `urllib` itself —
+and then only over `http`/`https`, only to an address that is not loopback, private,
+link-local, reserved, multicast, or unspecified, and never with credentials in the URL. Every
+redirect target is checked the same way, because a redirect is a destination you did not name.
+`sb add http://169.254.169.254/…` is refused rather than pulling cloud instance metadata into
+the ledger as a citable source. The check resolves the hostname before connecting; it is not a
+defence against a name that changes its answer between the check and the connection, so treat
+`script` mode as "fetch from the public web", not as a sandbox.
+
 ---
 
 ## The one architectural decision
@@ -145,6 +157,13 @@ gains `superseded_by`.
 `both_stand` puts an obligation on the artifact. `sb verify` checks that every `contested`
 claim id appears in the rendered HTML (`E-CONTESTED-HIDDEN`). A tidy artifact that quietly
 picks a side is exactly the failure this kit exists to prevent.
+
+A verdict that never reached the claims is not a verdict. `sb adjudicate --apply` writes the
+mechanical consequences (`both_stand` → `contested`, `supersede` → `superseded`), and
+`sb verify` fails with `E-ADJ-UNAPPLIED` when a recorded outcome still owes a claim its
+change — otherwise `E-CONTESTED-HIDDEN` would have nothing to fire on. A verdict also covers
+only the claims it names: when a new claim joins an adjudicated cluster, the cluster reopens
+rather than inheriting a decision nobody made about it.
 
 ## Design as a gate, not a suggestion
 
@@ -220,6 +239,12 @@ is never evidence and may not illustrate a cited claim (`E-IMG-EVIDENCE`); it re
 visible `Generated illustration` label (`E-IMG-UNLABELED`); and the prompt is recorded
 verbatim, because that is provenance rather than trivia.
 
+An inlined `data:` image is checked exactly like a file on disk, because a self-contained
+artifact bans `http(s)` subresources and inlining is therefore the normal way to ship a
+picture, not a way around the gate. Its `credits.json` key is the digest of the decoded bytes
+(`data:sha256:…`, printed in the finding that asks for the entry), or whatever you put in
+`data-asset="…"` on the `<img>`.
+
 ## Resumability
 
 `sb status` derives the state from the files on disk. It does not trust the stored value. If
@@ -230,6 +255,17 @@ or a different agent picking it up tomorrow.
 After three failed verify loops the manifest goes to `BLOCKED` and `sb status` prints an
 escalation instruction instead of a next command. Silently loosening a claim to make a gate
 pass is the failure that rule exists to prevent.
+
+`BLOCKED` is a stop, not a dead end. It clears in one command, once a person has decided what
+changes:
+
+```bash
+sb unblock --reason "dropped the disputed figure; the user will ask the operator directly"
+```
+
+That resets `revise_count`, clears `blockers`, and writes the reason into `history`, so the
+record shows the block was cleared by a decision rather than by attrition. The reason is
+required, and the gate itself is unchanged: the next `sb verify` still has to pass.
 
 ## Repository layout
 
@@ -242,7 +278,7 @@ scripts/sourcebook/           the implementation package, standard library only
 scripts/install.py            copies the skill and commands into a harness
 schemas/                      JSON Schema draft 2020-12 for every contract
 templates/                    six inert, lint-clean HTML shells
-tests/                        the twenty acceptance tests and their fixtures
+tests/                        the twenty-two acceptance tests and their fixtures
 examples/demo/                the runbook, the local example sources, the built artifact
 .claude/ .agents/ .hermes/    pre-installed adapters, so the repo works as a checkout
 ```
@@ -256,7 +292,7 @@ it instead) and never to a failure.
 ## Development
 
 ```bash
-make test        # the 20 acceptance tests, hermetic, no network
+make test        # the 22 acceptance tests, hermetic, no network
 make lint        # every template through the design rule registry
 make demo        # rebuild examples/demo/answer.html from the local sources
 make install     # refresh the checked-in .claude/.agents/.hermes adapters

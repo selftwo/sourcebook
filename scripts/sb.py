@@ -24,7 +24,7 @@ from sourcebook.lint import rules as lint_rules  # noqa: E402
 COMMANDS = [
     "init", "config", "add", "extract", "chunk", "index", "search", "find", "quote",
     "claim", "adjudicate", "contradictions", "ledger", "plan", "inject", "lint",
-    "verify", "licenses", "tts-plan", "package", "status", "template",
+    "verify", "licenses", "tts-plan", "package", "status", "unblock", "template",
 ]
 
 
@@ -131,6 +131,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     s = add("status", help="derived state and the single next command")
     s.add_argument("--json", action="store_true")
+
+    s = add("unblock", help="clear BLOCKED after the user has decided how to proceed")
+    s.add_argument("--reason", required=True, help="what the user decided; recorded in history")
 
     s = add("template", help="copy a starting template into build/")
     s.add_argument("ttype", choices=["answer", "explainer", "deck", "brief", "infographic", "podcast"])
@@ -333,6 +336,20 @@ def cmd_status(root: Path, args) -> int:
     return EXIT_OK
 
 
+def cmd_unblock(root: Path, args) -> int:
+    reason = (args.reason or "").strip()
+    if not reason:
+        print("usage: sb unblock --reason \"<what the user decided>\"", file=sys.stderr)
+        return EXIT_USAGE
+    manifest.unblock(root, reason)
+    rep = manifest.status_report(root)
+    print("unblocked  revise_count = 0, blockers cleared")
+    print(f"reason     {reason}")
+    print(f"state      {rep['state']}")
+    print(f"next       {rep['next']}")
+    return EXIT_OK
+
+
 def cmd_template(root: Path, args) -> int:
     src = kit_root() / "templates" / (
         f"{args.ttype}.html" if args.ttype != "podcast" else "podcast.html")
@@ -406,6 +423,8 @@ def main(argv: list[str] | None = None) -> int:
         return package_mod.package(root, args.out, args.public and not args.private, args.do_verify)
     if args.cmd == "status":
         return cmd_status(root, args)
+    if args.cmd == "unblock":
+        return cmd_unblock(root, args)
     if args.cmd == "template":
         return cmd_template(root, args)
     parser.print_help()
