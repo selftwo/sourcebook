@@ -1,0 +1,100 @@
+{
+  "claims": 20,
+  "gate_report": {
+    "status": "PASS",
+    "verified_at": "2026-07-26",
+    "sourcebook": {
+      "sources": 4,
+      "claims": 20,
+      "quotes_exact": "16/16",
+      "planned_claims": 20,
+      "html_refs": 9,
+      "ledger_entries": 20,
+      "ordinals": 9,
+      "lint_errors": 0,
+      "lint_waived": 1,
+      "lint_unresolved": 11
+    },
+    "browser_qa": {
+      "viewports_css_px": [360, 768, 1200],
+      "horizontal_overflow": false,
+      "axe_violations": 0,
+      "no_js_visible_claims": "25/25",
+      "citation_label_mismatches": 0,
+      "interactive_nesting_issues": 0
+    }
+  },
+  "generated_at": "2026-07-26T12:56:36Z",
+  "question": "For six friends travelling to Kodaikanal on Saturday 12 September 2026 for three or four days, how should they compare Madurai, Coimbatore, Tiruchirappalli and rail gateways, build safe arrival and return timing windows, and choose a car-hire model?",
+  "redacted_quotes": 8,
+  "sb_version": "0.1.0",
+  "schema_version": 1,
+  "sources": [
+    {
+      "canonical_locator": null,
+      "id": "src_1bc0879e4661",
+      "kind": "file",
+      "locator": null,
+      "normalized_sha256": "2e809378fa27fcb42ad8b4046b4d38b8cd1452e0734c9e15c0e96bca6dd76b5a",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "f2fdc314618792d7d5664ae00f8df00efed9452407ff1fe136824653f6f7f299",
+      "retrieved_at": "2026-07-26T12:41:45Z",
+      "tier": "A",
+      "tier_reason": "This is the retained output of the primary OSRM routing service over OpenStreetMap road data for the exact coordinates and date stated; it is authoritative only for its own computed route distance and baseline duration.",
+      "title": "route model"
+    },
+    {
+      "canonical_locator": null,
+      "id": "src_5942fa9154ee",
+      "kind": "file",
+      "locator": null,
+      "normalized_sha256": "bf507eac9d85d2e1f0ee03fe89e4c8330918891085ef6919dd5383bd416a6719",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "bf507eac9d85d2e1f0ee03fe89e4c8330918891085ef6919dd5383bd416a6719",
+      "retrieved_at": "2026-07-26T12:41:45Z",
+      "tier": "B",
+      "tier_reason": "Dated, attributable travel reporting documents the court-ordered e-pass history and, importantly, its changing seasonal scope; it is not treated as proof of September 2026 status.",
+      "title": "epass history"
+    },
+    {
+      "canonical_locator": null,
+      "id": "src_689411911e51",
+      "kind": "file",
+      "locator": null,
+      "normalized_sha256": "a73b8b327263850520ffda5a7ea5686361826a8cf9b0ba32a09045a8d5e85698",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "a73b8b327263850520ffda5a7ea5686361826a8cf9b0ba32a09045a8d5e85698",
+      "retrieved_at": "2026-07-26T12:41:45Z",
+      "tier": "A",
+      "tier_reason": "Dindigul District Administration is the government authority for Kodaikanal's district and is authoritative for the official access gateways it names.",
+      "title": "dindigul official"
+    },
+    {
+      "canonical_locator": null,
+      "id": "src_daae8d31f6ea",
+      "kind": "file",
+      "locator": null,
+      "normalized_sha256": "bc68eeeae0c6a401714e882aca7687d6b0128eb707b68664822c2db4484ff025",
+      "normalizer_version": 1,
+      "published_at": null,
+      "publisher": null,
+      "raw_sha256": "bc68eeeae0c6a401714e882aca7687d6b0128eb707b68664822c2db4484ff025",
+      "retrieved_at": "2026-07-26T12:41:46Z",
+      "tier": "C",
+      "tier_reason": "A named car-hire vendor describes its own round-trip product and pricing inclusions; this is pattern evidence for quote structure, not a universal market rule.",
+      "title": "car hire"
+    }
+  ],
+  "tool_versions": {
+    "chunker": 1,
+    "indexer": 1,
+    "normalizer": 1
+  },
+  "visibility": "public"
+}

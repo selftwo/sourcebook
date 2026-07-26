@@ -1,0 +1,514 @@
+{
+  "ledger": [
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 320,
+          "quote": "Madurai is the Nearest Airport",
+          "source_id": "src_689411911e51",
+          "start": 290
+        }
+      ],
+      "id": "clm_578f109228c6",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 1,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "The Dindigul District Administration names Madurai as Kodaikanal's nearest airport.",
+      "topic_key": "access.nearest-airport",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 588,
+          "quote": "OSRM route distance: 136.7 km.",
+          "source_id": "src_1bc0879e4661",
+          "start": 558
+        },
+        {
+          "end": 625,
+          "quote": "OSRM baseline duration: 169 minutes.",
+          "source_id": "src_1bc0879e4661",
+          "start": 589
+        }
+      ],
+      "id": "clm_5e81a29e2369",
+      "kind": "number",
+      "marks": [
+        "m-checked",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 2,
+      "recheck": "https://router.project-osrm.org/route/v1/driving/78.0939177,9.8362608;77.4919719,10.233712?overview=false",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The 26 July 2026 OSRM baseline from Madurai airport to central Kodaikanal is 136.7 km and 169 minutes without live traffic.",
+      "topic_key": "route.ixm.baseline",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 743,
+          "quote": "OSRM route distance: 165.2 km.",
+          "source_id": "src_1bc0879e4661",
+          "start": 713
+        },
+        {
+          "end": 780,
+          "length": 36,
+          "quote_sha256": "93493a79dabac5c0ad33f35aacc77f4000e8b77030693cd2447c208d86425c10",
+          "redacted": true,
+          "source_id": "src_1bc0879e4661",
+          "start": 744
+        }
+      ],
+      "id": "clm_644fd643b127",
+      "kind": "number",
+      "marks": [
+        "m-checked",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 3,
+      "recheck": "https://router.project-osrm.org/route/v1/driving/77.0427014,11.0329077;77.4919719,10.233712?overview=false",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The 26 July 2026 OSRM baseline from Coimbatore airport to central Kodaikanal is 165.2 km and 186 minutes without live traffic.",
+      "topic_key": "route.cjb.baseline",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 903,
+          "length": 30,
+          "quote_sha256": "bfd3f5b9be1958bcda3ae9b6f97e7881b76645cc67c5ccb38d9f9fdf9941856d",
+          "redacted": true,
+          "source_id": "src_1bc0879e4661",
+          "start": 873
+        },
+        {
+          "end": 940,
+          "length": 36,
+          "quote_sha256": "cf31a81cb9ac88bd2ea9b117f8ce6a4c0ef10cf9c93a20bbb0181734d4a2247e",
+          "redacted": true,
+          "source_id": "src_1bc0879e4661",
+          "start": 904
+        }
+      ],
+      "id": "clm_1893b881f39c",
+      "kind": "number",
+      "marks": [
+        "m-checked",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 4,
+      "recheck": "https://router.project-osrm.org/route/v1/driving/78.7078502,10.7621192;77.4919719,10.233712?overview=false",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The 26 July 2026 OSRM baseline from Tiruchirappalli airport to central Kodaikanal is 198.9 km and 245 minutes without live traffic.",
+      "topic_key": "route.trz.baseline",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 1055,
+          "length": 29,
+          "quote_sha256": "0fbcb0071f7f12e67abdc10ec913743afdf342f630af55c8b765d44578bd4e82",
+          "redacted": true,
+          "source_id": "src_1bc0879e4661",
+          "start": 1026
+        },
+        {
+          "end": 1092,
+          "length": 36,
+          "quote_sha256": "c4dabefb57ade8247f03b6423b8c4d924b366f124f4c75a53d31344ed8c29688",
+          "redacted": true,
+          "source_id": "src_1bc0879e4661",
+          "start": 1056
+        }
+      ],
+      "id": "clm_382bb0964eb9",
+      "kind": "number",
+      "marks": [
+        "m-checked",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 5,
+      "recheck": "https://router.project-osrm.org/route/v1/driving/77.9834295,10.3527913;77.4919719,10.233712?overview=false",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The 26 July 2026 OSRM baseline from Dindigul Junction to central Kodaikanal is 98.2 km and 125 minutes without live traffic.",
+      "topic_key": "route.dg.baseline",
+      "volatile": true
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 1220,
+          "length": 29,
+          "quote_sha256": "b796aad827aad809e4b6cc7e9199b574ead176afad970c352bfafd5efac195af",
+          "redacted": true,
+          "source_id": "src_1bc0879e4661",
+          "start": 1191
+        },
+        {
+          "end": 1257,
+          "length": 36,
+          "quote_sha256": "0187c8f3a04c5466b98d9b2214c7d2fc97a22c67d654a1a17139a18816241da0",
+          "redacted": true,
+          "source_id": "src_1bc0879e4661",
+          "start": 1221
+        }
+      ],
+      "id": "clm_3d0781363c34",
+      "kind": "number",
+      "marks": [
+        "m-checked",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 6,
+      "recheck": "https://router.project-osrm.org/route/v1/driving/77.9142384,10.1685395;77.4919719,10.233712?overview=false",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The 26 July 2026 OSRM baseline from Kodai Road to central Kodaikanal is 86.4 km and 119 minutes without live traffic.",
+      "topic_key": "route.kqn.baseline",
+      "volatile": true
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 369,
+          "quote": "Dindigul - Kodai Road Railway station",
+          "source_id": "src_689411911e51",
+          "start": 332
+        }
+      ],
+      "id": "clm_b3943d3f8f5d",
+      "kind": "fact",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 7,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "The district's Kodaikanal access page names Dindigul and Kodai Road as the rail gateways.",
+      "topic_key": "access.rail-gateways",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "reported",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 382,
+          "quote": "Round-trip cabs are perfect for customers planning a roundtrip journey with a doorstep pickup and drop service without booking separate cabs for a return journey.",
+          "source_id": "src_daae8d31f6ea",
+          "start": 220
+        },
+        {
+          "end": 552,
+          "quote": "Savaari round-trip taxi fare is quite affordable as it is an all-inclusive price comprising driver allowance, toll tax, fuel charges, and GST.",
+          "source_id": "src_daae8d31f6ea",
+          "start": 410
+        }
+      ],
+      "id": "clm_4252c738828e",
+      "kind": "fact",
+      "marks": [
+        "m-reported",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": 8,
+      "recheck": "https://www.savaari.com/outstation-taxi/car-rentals",
+      "status": "active",
+      "superseded_by": null,
+      "text": "One chauffeur-driven vendor describes its round-trip product as using one pickup and return booking and says its own quoted package includes driver allowance, tolls, fuel and GST.",
+      "topic_key": "car.roundtrip.vendor-model",
+      "volatile": true
+    },
+    {
+      "as_of": null,
+      "confidence": "verified",
+      "contradicts": [],
+      "evidence": [
+        {
+          "end": 1232,
+          "quote": "The e-pass system was first implemented by the Tamil Nadu government in May 2024.",
+          "source_id": "src_5942fa9154ee",
+          "start": 1151
+        },
+        {
+          "end": 1133,
+          "length": 182,
+          "quote_sha256": "dec7a3c5e28a879edd6663622f0a19965ff487e0660a5ce2b53b893cd6b90a42",
+          "redacted": true,
+          "source_id": "src_5942fa9154ee",
+          "start": 951
+        }
+      ],
+      "id": "clm_0addb35fdaab",
+      "kind": "date",
+      "marks": [
+        "m-checked"
+      ],
+      "notes": "",
+      "ordinal": 9,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "The Kodaikanal vehicle e-pass was introduced in 2024, and a later vehicle cap described by Outlook Traveller applied between April and June 2025.",
+      "topic_key": "car.epass.history",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_06d9643eea35",
+      "kind": "number",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "Calculated from the high end of each road-planning window plus a 90-minute airport assembly allowance.",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "To reach Kodaikanal around 16:30 on Saturday with a 90-minute group rendezvous, target the last landing by 11:00 at Madurai, 10:15 at Coimbatore or 09:30 at Tiruchirappalli.",
+      "topic_key": "plan.arrival.cutoff-1630",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_1bd84228a27f",
+      "kind": "number",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "Each offset includes the high road window, a two-hour domestic-airport target and a further 30-minute contingency.",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "For the return, leave Kodaikanal about 6½ hours before a Madurai flight, 7¼ hours before a Coimbatore flight or 8 hours before a Tiruchirappalli flight.",
+      "topic_key": "plan.return.flight-offset",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_1cd2221334e3",
+      "kind": "recommendation",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "For six passengers plus a driver, price a nine-seat traveller against a seven-seat MPV before choosing; the MPV uses every seat and leaves luggage as the constraint.",
+      "topic_key": "car.capacity",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_2903c2975890",
+      "kind": "recommendation",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "Use Dindigul or Kodai Road as individual train wildcards, not the six-person rendezvous default, unless the travellers' live train options line up better than the available flights.",
+      "topic_key": "plan.gateway.rail",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_453519106ae4",
+      "kind": "recommendation",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "Use Madurai as the baseline gateway; switch to Coimbatore only when its flights improve the latest traveller's rendezvous by roughly 75 minutes or more.",
+      "topic_key": "plan.gateway.default",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_8b6a3d551708",
+      "kind": "recommendation",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "A chauffeur is the lower-friction default after six separate journeys: it avoids assigning a tired friend the ghat ascent, but the quote must state vehicle age, luggage capacity, hill experience, driver allowance, tolls, parking, daily kilometre minimum and driver night stay.",
+      "topic_key": "car.chauffeur-checklist",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_9f6b0c294c55",
+      "kind": "number",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "Editorial ranges add margin to no-traffic route-engine baselines for a stop, weekend traffic and the ghat ascent.",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "For planning, allow 3½–4 hours on the road from Madurai, 4–4¾ hours from Coimbatore, 4¾–5½ hours from Tiruchirappalli, 2¾–3¼ hours from Dindigul Junction and 2½–3 hours from Kodai Road.",
+      "topic_key": "plan.road-windows",
+      "volatile": false
+    },
+    {
+      "as_of": "2026-07-26",
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_c8eea25e76c4",
+      "kind": "recommendation",
+      "marks": [
+        "m-thin",
+        "m-moving"
+      ],
+      "notes": "",
+      "ordinal": null,
+      "recheck": "https://tnepass.tn.gov.in/",
+      "status": "active",
+      "superseded_by": null,
+      "text": "The source set does not establish the e-pass rule for 12 September 2026, so check the Tamil Nadu portal after the vehicle number is known and again during travel week.",
+      "topic_key": "car.epass.recheck",
+      "volatile": true
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_d1bcb15cd0e0",
+      "kind": "recommendation",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "Keep the whole group on one arrival and return gateway unless split flights save more time than an extra vehicle, a second rendezvous and a second failure path cost.",
+      "topic_key": "plan.gateway.single",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_e2f2ce9e40d5",
+      "kind": "number",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "Calculated from the high end of each road-planning window plus a 90-minute airport assembly allowance.",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "For a dinner-only arrival around 19:30 with the same 90-minute rendezvous, target the last landing by 14:00 at Madurai, 13:15 at Coimbatore or 12:30 at Tiruchirappalli.",
+      "topic_key": "plan.arrival.cutoff-1930",
+      "volatile": false
+    },
+    {
+      "as_of": null,
+      "confidence": "inferred",
+      "contradicts": [],
+      "evidence": [],
+      "id": "clm_ea42762eeaf6",
+      "kind": "recommendation",
+      "marks": [
+        "m-thin"
+      ],
+      "notes": "",
+      "ordinal": null,
+      "recheck": null,
+      "status": "active",
+      "superseded_by": null,
+      "text": "Treat Tiruchirappalli as a flight wildcard only when it removes a connection or saves roughly two hours of air-side delay; it has the longest road transfer of the flight gateways modelled here.",
+      "topic_key": "plan.gateway.trz",
+      "volatile": false
+    }
+  ],
+  "schema_version": 1,
+  "visibility": "public"
+}
