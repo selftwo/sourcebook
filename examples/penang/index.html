@@ -299,6 +299,7 @@ these invisible (but thoroughly present, according to believers) guests</q>
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){at=scenes.indexOf(e.target);count.textContent=String(at+1).padStart(2,'0')+' / '+scenes.length;bar.style.width=((at+1)/scenes.length*100)+'%'}}),{threshold:.55});scenes.forEach(s=>io.observe(s));
  document.querySelectorAll('.dish').forEach(b=>b.onclick=()=>b.setAttribute('aria-expanded',String(b.getAttribute('aria-expanded')!=='true')));
  document.querySelectorAll('[role="tab"]').forEach(t=>t.onclick=()=>{document.querySelectorAll('[role="tab"]').forEach(x=>x.setAttribute('aria-selected','false'));document.querySelectorAll('[role="tabpanel"]').forEach(x=>x.hidden=true);t.setAttribute('aria-selected','true');document.getElementById(t.getAttribute('aria-controls')).hidden=false});
+ const requested=new URLSearchParams(location.search).get('scene');if(requested&&document.getElementById(requested)){requestAnimationFrame(()=>document.getElementById(requested).scrollIntoView())}
  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')show(at+1);if(e.key==='ArrowLeft'||e.key==='PageUp')show(at-1);if(e.key==='Escape'){jump.hidden=true;menu.setAttribute('aria-expanded','false')}});
 })();
 </script>
