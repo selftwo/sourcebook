@@ -298,6 +298,12 @@ make demo        # rebuild examples/demo/answer.html from the local sources
 make install     # refresh the checked-in .claude/.agents/.hermes adapters
 ```
 
+The post-v0.1 iteration backlog lives in [`TASKS.md`](TASKS.md). It proposes a dependency-ordered
+path from the current research artifact pipeline to source-grounded interactive essays, experience
+atlases, experiments, versioned takes, and small local-first instruments. The tasks preserve the
+existing evidence, privacy, progressive-enhancement, packaging, and offline contracts rather than
+introducing a parallel content system.
+
 Exit codes are the API: `0` pass, `1` usage or input error, `2` gate failure.
 
 ## License

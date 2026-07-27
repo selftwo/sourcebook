@@ -568,3 +568,6 @@ Embeddings and semantic search (BM25 plus an agent that can read is enough at th
 adding vectors would mean a model call, a key, and a store, which breaks the zero-dependency promise).
 Incremental re-indexing. Multi-workspace linking. A web UI. Any hosted anything. Translation.
 OCR. A TTS implementation. Live collaboration. Watch mode.
+
+Post-v0.1 work is tracked in [`TASKS.md`](TASKS.md). That backlog keeps these exclusions intact while
+testing additional artifact grammars through the same deterministic evidence and packaging seams.
